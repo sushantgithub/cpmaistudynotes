@@ -61,7 +61,13 @@ fun StatChip(label: String, value: String, color: Color) {
 }
 
 @Composable
-fun TopicCard(topic: Topic, progress: Float, onClick: () -> Unit, modifier: Modifier = Modifier) {
+fun TopicCard(
+    topic: Topic,
+    progress: Float,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier,
+    locked: Boolean = false
+) {
     val accent = parseHex(topic.accent)
     val navy = parseHex(topic.color)
     Card(
@@ -81,7 +87,7 @@ fun TopicCard(topic: Topic, progress: Float, onClick: () -> Unit, modifier: Modi
                 contentAlignment = Alignment.Center
             ) {
                 Text(
-                    text = topic.phase?.toString() ?: "★",
+                    text = if (locked) "🔒" else (topic.phase?.toString() ?: "★"),
                     color = Color.White,
                     fontWeight = FontWeight.Bold
                 )
@@ -89,7 +95,11 @@ fun TopicCard(topic: Topic, progress: Float, onClick: () -> Unit, modifier: Modi
             Spacer(Modifier.width(14.dp))
             Column(Modifier.weight(1f)) {
                 Text(topic.shortTitle, fontWeight = FontWeight.ExtraBold, color = navy)
-                Text(topic.subtitle, fontSize = 13.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                Text(
+                    if (locked) "Full version · ${topic.subtitle}" else topic.subtitle,
+                    fontSize = 13.sp,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
                 Spacer(Modifier.height(8.dp))
                 LinearProgressIndicator(
                     progress = { progress.coerceIn(0f, 1f) },

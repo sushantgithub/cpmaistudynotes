@@ -24,6 +24,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
@@ -35,6 +36,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.cpmai.study.data.ContentRepository
+import com.cpmai.study.data.Entitlement
 import com.cpmai.study.data.ProgressStore
 import com.cpmai.study.data.QuizQuestion
 import com.cpmai.study.ui.components.OptionButton
@@ -49,12 +51,15 @@ fun QuizScreen(
     examMode: Boolean,
     onDone: () -> Unit
 ) {
-    val questions = remember(topicId, examMode) {
+    val unlocked = store.progress.collectAsState().value.fullUnlocked
+    val questions = remember(topicId, examMode, unlocked) {
+        val pool = if (unlocked) repo.quizzes else repo.quizzes.filter { it.topicId in Entitlement.freeTopicIds }
         when {
-            examMode -> repo.quizzes.shuffled().take(20)
-            topicId == "daily" -> (repo.quizzes.shuffled().take(5))
-            topicId == null -> repo.quizzes.shuffled()
-            else -> repo.quizzesFor(topicId).ifEmpty { repo.quizzes.filter { it.topicId == topicId } }
+            examMode -> if (unlocked) pool.shuffled().take(20) else emptyList()
+            topicId == "daily" -> pool.shuffled().take(5)
+            topicId == null -> pool.shuffled()
+            !Entitlement.topicAllowed(topicId, unlocked) -> emptyList()
+            else -> repo.quizzesFor(topicId).ifEmpty { pool.filter { it.topicId == topicId } }
         }
     }
     QuizPager(

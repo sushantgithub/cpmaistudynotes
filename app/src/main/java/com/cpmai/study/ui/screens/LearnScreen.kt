@@ -18,7 +18,12 @@ import com.cpmai.study.data.UserProgress
 import com.cpmai.study.ui.components.TopicCard
 
 @Composable
-fun LearnScreen(repo: ContentRepository, progress: UserProgress, onOpen: (String) -> Unit) {
+fun LearnScreen(
+    repo: ContentRepository,
+    progress: UserProgress,
+    onOpen: (String) -> Unit,
+    onUnlock: () -> Unit
+) {
     LazyColumn(
         modifier = Modifier.fillMaxSize(),
         contentPadding = PaddingValues(16.dp),
@@ -27,7 +32,7 @@ fun LearnScreen(repo: ContentRepository, progress: UserProgress, onOpen: (String
         item {
             Text("Syllabus", style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.ExtraBold)
             Text(
-                "Unofficial independent notes. Study foundations, then Phases I–VI, then the 7 Patterns. Not PMI training.",
+                "Free: Core Concepts and Phase I. Unlock the rest for ${com.cpmai.study.data.Entitlement.priceLabel}.",
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.padding(top = 6.dp, bottom = 8.dp)
             )
@@ -36,7 +41,12 @@ fun LearnScreen(repo: ContentRepository, progress: UserProgress, onOpen: (String
             val cards = repo.cardsFor(topic.id)
             val done = cards.count { it.id in progress.masteredCards }
             val p = if (cards.isEmpty()) 0f else done.toFloat() / cards.size
-            TopicCard(topic, p, onClick = { onOpen(topic.id) })
+            val locked = !com.cpmai.study.data.Entitlement.topicAllowed(topic.id, progress.fullUnlocked)
+            TopicCard(
+                topic, p,
+                locked = locked,
+                onClick = { if (locked) onUnlock() else onOpen(topic.id) }
+            )
         }
     }
 }

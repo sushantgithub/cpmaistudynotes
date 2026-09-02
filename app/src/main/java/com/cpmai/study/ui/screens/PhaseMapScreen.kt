@@ -23,6 +23,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
@@ -42,7 +43,8 @@ import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun PhaseMapScreen(repo: ContentRepository, store: ProgressStore, onBack: () -> Unit) {
+fun PhaseMapScreen(repo: ContentRepository, store: ProgressStore, onBack: () -> Unit, onUnlock: () -> Unit) {
+    val unlocked = store.progress.collectAsState().value.fullUnlocked
     var mode by remember { mutableIntStateOf(0) }
     Scaffold(
         topBar = {
@@ -54,7 +56,11 @@ fun PhaseMapScreen(repo: ContentRepository, store: ProgressStore, onBack: () -> 
         Column(Modifier.padding(padding).fillMaxSize()) {
             Row(Modifier.padding(12.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 FilterChip(selected = mode == 0, onClick = { mode = 0 }, label = { Text("Map") })
-                FilterChip(selected = mode == 1, onClick = { mode = 1 }, label = { Text("Which phase?") })
+                FilterChip(
+                    selected = mode == 1,
+                    onClick = { if (unlocked) mode = 1 else onUnlock() },
+                    label = { Text(if (unlocked) "Which phase?" else "Which phase? 🔒") }
+                )
             }
             if (mode == 0) {
                 Column(Modifier.verticalScroll(rememberScrollState()).padding(16.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {

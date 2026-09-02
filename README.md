@@ -16,7 +16,15 @@ Practice questions are original study items, not PMI exam questions.
 - Pattern lab + “which phase?” drills
 - Glossary search and study streak / weak-spot tracking
 
-## APK
+## Freemium
+
+Free: Core Concepts + Phase I. Full version (₹499): remaining phases, 7 Patterns, exam simulator.
+
+Customers enter a license code (`PREP-XXXXXX-XXXX`). Generate codes:
+
+```bash
+python3 tools/generate_license_keys.py 10
+```
 
 A signed release APK is in [`dist/CPMAI-Study.apk`](dist/CPMAI-Study.apk). On your phone: enable install from this source if prompted, then open the file.
 

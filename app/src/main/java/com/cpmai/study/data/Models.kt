@@ -96,5 +96,6 @@ data class UserProgress(
     val lastStudyEpochDay: Long = 0,
     val streak: Int = 0,
     val studyMinutes: Int = 0,
-    val disclaimerAccepted: Boolean = false
+    val disclaimerAccepted: Boolean = false,
+    val fullUnlocked: Boolean = false
 )

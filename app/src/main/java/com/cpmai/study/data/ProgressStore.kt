@@ -63,12 +63,17 @@ class ProgressStore(context: Context) {
             lastStudyEpochDay = prefs.getLong("last_day", 0L),
             streak = prefs.getInt("streak", 0),
             studyMinutes = prefs.getInt("minutes", 0),
-            disclaimerAccepted = prefs.getBoolean("disclaimer", false)
+            disclaimerAccepted = prefs.getBoolean("disclaimer", false),
+            fullUnlocked = prefs.getBoolean("full_unlocked", false)
         )
     }
 
     fun acceptDisclaimer() {
         write(_progress.value.copy(disclaimerAccepted = true))
+    }
+
+    fun unlockFull() {
+        write(_progress.value.copy(fullUnlocked = true))
     }
 
     private fun write(value: UserProgress) {
@@ -81,6 +86,7 @@ class ProgressStore(context: Context) {
             .putInt("streak", value.streak)
             .putInt("minutes", value.studyMinutes)
             .putBoolean("disclaimer", value.disclaimerAccepted)
+            .putBoolean("full_unlocked", value.fullUnlocked)
             .apply()
         _progress.value = value
     }

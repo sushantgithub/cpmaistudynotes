@@ -18,6 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.cpmai.study.data.Entitlement
 import com.cpmai.study.data.ContentRepository
 import com.cpmai.study.data.UserProgress
 
@@ -31,25 +32,29 @@ fun PracticeHubScreen(repo: ContentRepository, progress: UserProgress, nav: NavC
         item {
             Text("Practice", style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.ExtraBold)
             Text(
-                "Scenario MCQs from the notes plus extra traps written for the exam. Accuracy is stored so Home can show weak spots.",
+                "Free quizzes: Core Concepts and Phase I. Exam simulator and other modules are full version (${Entitlement.priceLabel}).",
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.padding(top = 6.dp, bottom = 8.dp)
             )
         }
         item {
-            PracticeRow("Exam simulator", "20 mixed questions · scored like a mini mock") { nav.navigate("exam") }
+            PracticeRow(
+                "Exam simulator",
+                if (progress.fullUnlocked) "20 mixed questions" else "🔒 Full version"
+            ) { nav.navigate(if (progress.fullUnlocked) "exam" else "unlock") }
         }
         item {
-            PracticeRow("Daily drill", "5 random questions across the syllabus") { nav.navigate("quiz/daily") }
+            PracticeRow("Daily drill", "5 questions (free pool until you unlock)") { nav.navigate("quiz/daily") }
         }
         items(repo.topics) { topic ->
             val qs = repo.quizzesFor(topic.id)
             val answered = qs.count { it.id in progress.quizAttempts }
             val right = qs.count { progress.quizAttempts[it.id] == 1 }
+            val locked = !Entitlement.topicAllowed(topic.id, progress.fullUnlocked)
             PracticeRow(
-                topic.title,
-                "${qs.size} questions · last pass $right/$answered answered"
-            ) { nav.navigate("quiz/${topic.id}") }
+                if (locked) "🔒 ${topic.title}" else topic.title,
+                if (locked) "Full version · ${Entitlement.priceLabel}" else "${qs.size} questions · last pass $right/$answered answered"
+            ) { nav.navigate(if (locked) "unlock" else "quiz/${topic.id}") }
         }
     }
 }

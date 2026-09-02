@@ -19,6 +19,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
@@ -38,21 +39,31 @@ import com.cpmai.study.ui.theme.SoftSaffron
 import kotlinx.coroutines.launch
 
 @Composable
-fun PatternLabScreen(repo: ContentRepository, store: ProgressStore) {
+fun PatternLabScreen(repo: ContentRepository, store: ProgressStore, onUnlock: () -> Unit) {
+    val unlocked = store.progress.collectAsState().value.fullUnlocked
     var mode by remember { mutableIntStateOf(0) }
     Column(Modifier.fillMaxSize()) {
         Text("7 Patterns of AI", fontWeight = FontWeight.ExtraBold, fontSize = 24.sp, modifier = Modifier.padding(16.dp, 16.dp, 16.dp, 4.dp))
-        Text("Tap a pattern to study it, then play Identify the pattern.", color = MaterialTheme.colorScheme.onSurfaceVariant, modifier = Modifier.padding(horizontal = 16.dp))
+        Text(
+            if (unlocked) "Tap a pattern to study it, then play Identify the pattern."
+            else "Free preview: patterns 1–2. Unlock full version for all seven and the Identify game.",
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+            modifier = Modifier.padding(horizontal = 16.dp)
+        )
         Row(Modifier.padding(12.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             FilterChip(selected = mode == 0, onClick = { mode = 0 }, label = { Text("Explorer") })
-            FilterChip(selected = mode == 1, onClick = { mode = 1 }, label = { Text("Identify") })
+            FilterChip(
+                selected = mode == 1,
+                onClick = { if (unlocked) mode = 1 else onUnlock() },
+                label = { Text(if (unlocked) "Identify" else "Identify 🔒") }
+            )
         }
-        if (mode == 0) Explorer(repo) else PatternGame(repo, store)
+        if (mode == 0) Explorer(repo, unlocked, onUnlock) else PatternGame(repo, store)
     }
 }
 
 @Composable
-private fun Explorer(repo: ContentRepository) {
+private fun Explorer(repo: ContentRepository, unlocked: Boolean, onUnlock: () -> Unit) {
     var selected by remember { mutableIntStateOf(1) }
     val p = repo.patterns.find { it.id == selected } ?: return
     Column(Modifier.verticalScroll(rememberScrollState()).padding(16.dp)) {
@@ -64,7 +75,7 @@ private fun Explorer(repo: ContentRepository) {
                     modifier = Modifier
                         .clip(RoundedCornerShape(10.dp))
                         .background(if (on) Navy else Color(0xFFE5E7EB))
-                        .clickable { selected = pat.id }
+                        .clickable { if (!unlocked && pat.id > 2) onUnlock() else selected = pat.id }
                         .padding(horizontal = 12.dp, vertical = 8.dp),
                     color = if (on) Color.White else Navy,
                     fontWeight = FontWeight.Bold

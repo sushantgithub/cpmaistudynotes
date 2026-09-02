@@ -39,6 +39,7 @@ import com.cpmai.study.ui.screens.ProgressScreen
 import com.cpmai.study.ui.screens.QuizScreen
 import com.cpmai.study.ui.screens.SearchScreen
 import com.cpmai.study.ui.screens.TopicDetailScreen
+import com.cpmai.study.ui.screens.UnlockScreen
 
 private data class Tab(val route: String, val label: String, val icon: androidx.compose.ui.graphics.vector.ImageVector)
 
@@ -61,7 +62,7 @@ fun CpmaiRoot(repo: ContentRepository, store: ProgressStore) {
     val route = back?.destination?.route ?: "home"
     val hideBar = route.startsWith("quiz") || route.startsWith("exam") || route.startsWith("topic/") ||
         route.startsWith("notes") || route == "search" || route == "glossary" || route == "phases" ||
-        route == "progress" || route == "legal"
+        route == "progress" || route == "legal" || route == "unlock"
 
     Scaffold(
         bottomBar = {
@@ -90,7 +91,11 @@ fun CpmaiRoot(repo: ContentRepository, store: ProgressStore) {
                 HomeScreen(repo, progress, nav)
             }
             composable("learn") {
-                LearnScreen(repo, progress, onOpen = { nav.navigate("topic/$it") })
+                LearnScreen(
+                    repo, progress,
+                    onOpen = { nav.navigate("topic/$it") },
+                    onUnlock = { nav.navigate("unlock") }
+                )
             }
             composable("cards") {
                 FlashcardScreen(repo, store, progress, topicId = null, onBack = null)
@@ -106,11 +111,15 @@ fun CpmaiRoot(repo: ContentRepository, store: ProgressStore) {
                 )
             }
             composable("practice") { PracticeHubScreen(repo, progress, nav) }
-            composable("lab") { PatternLabScreen(repo, store) }
+            composable("lab") { PatternLabScreen(repo, store, onUnlock = { nav.navigate("unlock") }) }
             composable("progress") { ProgressScreen(repo, progress, onBack = { nav.popBackStack() }) }
-            composable("search") { SearchScreen(repo, onBack = { nav.popBackStack() }, onTopic = { nav.navigate("topic/$it") }) }
+            composable("search") { SearchScreen(repo, onBack = { nav.popBackStack() }, onTopic = {
+                if (com.cpmai.study.data.Entitlement.topicAllowed(it, progress.fullUnlocked)) nav.navigate("topic/$it")
+                else nav.navigate("unlock")
+            }) }
             composable("glossary") { GlossaryScreen(repo, onBack = { nav.popBackStack() }) }
-            composable("phases") { PhaseMapScreen(repo, store, onBack = { nav.popBackStack() }) }
+            composable("phases") { PhaseMapScreen(repo, store, onBack = { nav.popBackStack() }, onUnlock = { nav.navigate("unlock") }) }
+            composable("unlock") { UnlockScreen(store, progress, onBack = { nav.popBackStack() }) }
             composable("legal") { LegalScreen(onBack = { nav.popBackStack() }) }
             composable(
                 "topic/{id}",

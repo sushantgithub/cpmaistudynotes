@@ -46,6 +46,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.cpmai.study.data.ContentRepository
+import com.cpmai.study.data.Entitlement
 import com.cpmai.study.data.Flashcard
 import com.cpmai.study.data.ProgressStore
 import com.cpmai.study.data.UserProgress
@@ -67,8 +68,9 @@ fun FlashcardScreen(
     var onlyWeak by remember { mutableStateOf(false) }
     var shuffled by remember { mutableStateOf(false) }
 
-    val base = remember(topicId) {
-        if (topicId == null) repo.flashcards else repo.cardsFor(topicId)
+    val base = remember(topicId, progress.fullUnlocked) {
+        val all = if (topicId == null) repo.flashcards else repo.cardsFor(topicId)
+        if (progress.fullUnlocked) all else all.filter { it.topicId in Entitlement.freeTopicIds }
     }
     val cards = remember(base, onlyBookmarks, onlyWeak, shuffled, progress.bookmarkedCards, progress.masteredCards) {
         var list = base

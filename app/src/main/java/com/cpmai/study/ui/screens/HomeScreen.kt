@@ -74,8 +74,14 @@ fun HomeScreen(repo: ContentRepository, progress: UserProgress, nav: NavControll
 
         Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
             Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-                HomeQuickAction("Exam sim", "20 mixed MCQs", Navy) { nav.navigate("exam") }
-                HomeQuickAction("Daily drill", "Cards + quiz mix", Color(0xFF0F766E)) {
+                HomeQuickAction(
+                    "Exam sim",
+                    if (progress.fullUnlocked) "20 mixed MCQs" else "Full version",
+                    Navy
+                ) {
+                    nav.navigate(if (progress.fullUnlocked) "exam" else "unlock")
+                }
+                HomeQuickAction("Daily drill", "5 questions", Color(0xFF0F766E)) {
                     nav.navigate("quiz/daily")
                 }
             }
@@ -84,12 +90,26 @@ fun HomeScreen(repo: ContentRepository, progress: UserProgress, nav: NavControll
                 HomeQuickAction("Search", "Terms & notes", Color(0xFF9A3412)) { nav.navigate("search") }
             }
 
+            if (!progress.fullUnlocked) {
+                Button(
+                    onClick = { nav.navigate("unlock") },
+                    modifier = Modifier.fillMaxWidth(),
+                    colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFE8930C), contentColor = Navy)
+                ) {
+                    Text("Unlock full version · ${com.cpmai.study.data.Entitlement.priceLabel}")
+                }
+            }
             SectionLabel("Continue a module")
             repo.topics.take(4).forEach { topic ->
                 val cards = repo.cardsFor(topic.id)
                 val done = cards.count { it.id in progress.masteredCards }
                 val p = if (cards.isEmpty()) 0f else done.toFloat() / cards.size
-                TopicCard(topic, p, onClick = { nav.navigate("topic/${topic.id}") })
+                val locked = !com.cpmai.study.data.Entitlement.topicAllowed(topic.id, progress.fullUnlocked)
+                TopicCard(
+                    topic, p,
+                    locked = locked,
+                    onClick = { nav.navigate(if (locked) "unlock" else "topic/${topic.id}") }
+                )
             }
             TextButton(onClick = { nav.navigate("learn") }) { Text("See all 8 modules") }
 
