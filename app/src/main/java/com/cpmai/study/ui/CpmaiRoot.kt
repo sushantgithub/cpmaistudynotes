@@ -13,9 +13,11 @@ import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -23,6 +25,8 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.cpmai.study.BuildConfig
+import com.cpmai.study.CpmaiApplication
 import com.cpmai.study.data.ContentRepository
 import com.cpmai.study.data.ProgressStore
 import com.cpmai.study.ui.screens.DisclaimerGate
@@ -47,6 +51,10 @@ private data class Tab(val route: String, val label: String, val icon: androidx.
 fun CpmaiRoot(repo: ContentRepository, store: ProgressStore) {
     val nav = rememberNavController()
     val progress by store.progress.collectAsState(initial = com.cpmai.study.data.UserProgress())
+    val app = LocalContext.current.applicationContext as CpmaiApplication
+    LaunchedEffect(Unit) {
+        if (BuildConfig.USE_PLAY_BILLING) app.billing.restore()
+    }
     if (!progress.disclaimerAccepted) {
         DisclaimerGate(onAccept = { store.acceptDisclaimer() })
         return

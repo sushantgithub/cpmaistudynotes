@@ -11,8 +11,20 @@ android {
         applicationId = "com.cpmai.studylab"
         minSdk = 24
         targetSdk = 36
-        versionCode = 8
-        versionName = "1.6.1"
+        versionCode = 9
+        versionName = "1.7.0"
+    }
+
+    flavorDimensions += "distribution"
+    productFlavors {
+        create("sideload") {
+            dimension = "distribution"
+            buildConfigField("boolean", "USE_PLAY_BILLING", "false")
+        }
+        create("play") {
+            dimension = "distribution"
+            buildConfigField("boolean", "USE_PLAY_BILLING", "true")
+        }
     }
 
     signingConfigs {
@@ -50,6 +62,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.14"
@@ -77,5 +90,6 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.4")
     implementation("com.google.code.gson:gson:2.11.0")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1")
+    implementation("com.android.billingclient:billing-ktx:7.1.1")
     debugImplementation("androidx.compose.ui:ui-tooling")
 }

@@ -18,13 +18,32 @@ Practice questions are original study items, not PMI exam questions.
 
 ## Freemium
 
-Free: Core Concepts + Phase I. Full version (₹499): remaining phases, 7 Patterns, exam simulator.
+Free: Core Concepts + Phase I. Full version: remaining phases, 7 Patterns, exam simulator.
 
-Customers enter a license code (`PREP-XXXXXX-XXXX`). Generate codes:
+### Sideload APK (not Play Store)
+
+Customers enter a license code (`PREP-XXXXXX-XXXX`):
 
 ```bash
 python3 tools/generate_license_keys.py 10
+./gradlew :app:assembleSideloadRelease
 ```
+
+### Google Play
+
+Play builds **must** sell unlock through Google Play Billing (product id `full_unlock`).
+
+1. Play Console → your app (`com.cpmai.studylab`) → Monetize → In-app products → create **Managed product** `full_unlock` (one-time, e.g. ₹499).
+2. Add your Gmail under Settings → License testing.
+3. Upload an internal-testing **AAB**:
+
+```bash
+./gradlew :app:bundlePlayRelease
+```
+
+Output: `app/build/outputs/bundle/playRelease/app-play-release.aab`
+
+The Play app restores purchases on launch. Do not offer UPI/license codes in the Play listing.
 
 A signed release APK is in [`dist/CPMAI-Study.apk`](dist/CPMAI-Study.apk). On your phone: enable install from this source if prompted, then open the file.
 
@@ -33,8 +52,7 @@ Minimum Android: **8.0 (API 26)**.
 ## Build
 
 ```bash
-export ANDROID_HOME=/path/to/android-sdk
-./gradlew :app:assembleRelease
+./gradlew :app:assembleSideloadRelease
 ```
 
-Output: `app/build/outputs/apk/release/app-release.apk`
+Sideload APK: `app/build/outputs/apk/sideload/release/`
