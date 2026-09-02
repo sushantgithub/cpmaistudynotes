@@ -1,0 +1,492 @@
+
+<hr/>
+<h2>1. Topic Overview</h2>
+<h3>Definition</h3>
+<p><strong>Phase II: Data Understanding</strong> is the second CPMAI phase. Here you identify <strong>WHAT data</strong> is needed to solve the business problem defined in Phase I, find <strong>where it lives</strong>, assess its <strong>quality and quantity</strong>, and make a <strong>data go/no-go decision</strong>.</p>
+<blockquote>
+<p><strong>One-line memory hook:</strong> Phase I = WHY. <strong>Phase II = WHAT data?</strong></p>
+</blockquote>
+<h3>Why It Is Important</h3>
+<ul>
+<li><strong>AI projects are data projects.</strong> No good data = no AI, no matter how good the algorithm.</li>
+<li><strong>"Garbage In, Garbage Out" (GIGO):</strong> bad data produces bad models.</li>
+<li>Many projects die here — data may be missing, siloed, poor quality, or legally unusable.</li>
+<li>Prevents spending months on modeling only to discover the data can't support the use case.</li>
+</ul>
+<h3>Where It Is Used in AI Projects</h3>
+<ul>
+<li>Immediately <strong>after Phase I</strong>, in <strong>every iteration</strong>.</li>
+<li>Whenever new data sources are added or the use case is expanded.</li>
+<li>During data audits, data feasibility studies, and exploratory data analysis (EDA).</li>
+</ul>
+<hr/>
+<h2>2. Key Concepts</h2>
+<h3>2.1 Data Requirements</h3>
+<p>Derived directly from the Phase I business problem:
+- <strong>What data</strong> is needed (e.g., transactions, images, text)?
+- <strong>How much</strong> data (volume/quantity)?
+- <strong>What quality</strong> level is acceptable?
+- <strong>What labels</strong> are required (for supervised learning)?</p>
+<h3>2.2 Data Types</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Meaning</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Structured</strong></td>
+<td>Organized in rows/columns</td>
+<td>Bank transactions, Excel, SQL tables</td>
+</tr>
+<tr>
+<td><strong>Semi-structured</strong></td>
+<td>Partial structure with tags</td>
+<td>JSON, XML, emails, log files</td>
+</tr>
+<tr>
+<td><strong>Unstructured</strong></td>
+<td>No predefined format</td>
+<td>Images, videos, audio, free text, X-rays</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Exam note:</strong> Roughly <strong>80% of enterprise data is unstructured</strong> — a big reason AI (especially the Recognition pattern) is valuable.</p>
+<h3>2.3 Data Sources</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Internal</strong></td>
+<td>Core banking system, CRM, ERP, POS logs, EMR/EHR</td>
+</tr>
+<tr>
+<td><strong>External</strong></td>
+<td>Purchased datasets, open/public data, social media, partner data</td>
+</tr>
+<tr>
+<td><strong>Generated</strong></td>
+<td>Synthetic data, sensor/IoT streams, user-generated content</td>
+</tr>
+</tbody>
+</table></div>
+<h3>2.4 The Big Data "V's"</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>V</th>
+<th>Meaning</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Volume</strong></td>
+<td>How much data</td>
+<td>Billions of card transactions</td>
+</tr>
+<tr>
+<td><strong>Variety</strong></td>
+<td>Different formats/types</td>
+<td>Text + images + tables</td>
+</tr>
+<tr>
+<td><strong>Velocity</strong></td>
+<td>Speed of data arrival</td>
+<td>Real-time payment streams</td>
+</tr>
+<tr>
+<td><strong>Veracity</strong></td>
+<td>Trustworthiness/quality</td>
+<td>Duplicate or wrong entries reduce veracity</td>
+</tr>
+<tr>
+<td><em>(Value)</em></td>
+<td>Business usefulness</td>
+<td>Data must serve the Phase I goal</td>
+</tr>
+</tbody>
+</table></div>
+<h3>2.5 Data Quality Dimensions (heavily tested)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Question</th>
+<th>Bad Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Accuracy</strong></td>
+<td>Is it correct?</td>
+<td>Wrong birth dates</td>
+</tr>
+<tr>
+<td><strong>Completeness</strong></td>
+<td>Anything missing?</td>
+<td>40% of income fields blank</td>
+</tr>
+<tr>
+<td><strong>Consistency</strong></td>
+<td>Same across systems?</td>
+<td>"M/F" in one system, "Male/Female" in another</td>
+</tr>
+<tr>
+<td><strong>Timeliness</strong></td>
+<td>Is it fresh enough?</td>
+<td>5-year-old customer addresses</td>
+</tr>
+<tr>
+<td><strong>Validity</strong></td>
+<td>Follows rules/formats?</td>
+<td>Phone number = "ABC123"</td>
+</tr>
+<tr>
+<td><strong>Uniqueness</strong></td>
+<td>Duplicates removed?</td>
+<td>Same customer twice</td>
+</tr>
+</tbody>
+</table></div>
+<h3>2.6 Data Quantity</h3>
+<ul>
+<li>Supervised learning often needs <strong>thousands of labeled examples per class</strong>.</li>
+<li>More complex problems (deep learning) → <strong>more data</strong>.</li>
+<li><strong>Too little data</strong> is a valid <strong>no-go</strong> reason or a reason to descope/use simpler methods.</li>
+</ul>
+<h3>2.7 Exploratory Data Analysis (EDA)</h3>
+<ul>
+<li>First <strong>look inside</strong> the data: distributions, ranges, missing values, outliers, correlations.</li>
+<li>Done with statistics and visualizations (histograms, scatter plots).</li>
+<li>Purpose: understand what you have <strong>before</strong> cleaning (Phase III).</li>
+</ul>
+<h3>2.8 Data Governance, Privacy &amp; Access</h3>
+<ul>
+<li>Who <strong>owns</strong> the data? Do we have <strong>rights</strong> to use it?</li>
+<li><strong>Regulations:</strong> GDPR (EU), HIPAA (US healthcare), RBI/DPDP Act (India).</li>
+<li><strong>PII (Personally Identifiable Information)</strong> must be protected/anonymized.</li>
+<li>Data locked in <strong>silos</strong> or with legal restrictions can block the project.</li>
+</ul>
+<h3>2.9 Data Go/No-Go</h3>
+<p>End of Phase II asks: <strong>"Do we have enough, good-enough, legally usable data?"</strong>
+- Yes → proceed to Phase III.
+- No → find more data, fix quality, descope, or <strong>stop</strong>.</p>
+<hr/>
+<h2>3. PMI CPMAI Exam Focus</h2>
+<h3>What the Exam Expects</h3>
+<ul>
+<li>Phase II comes <strong>after</strong> business understanding and <strong>before</strong> data preparation.</li>
+<li>Identify data <strong>requirements from the business problem</strong>, not from "whatever data we have."</li>
+<li>Know the <strong>quality dimensions</strong> and the <strong>V's</strong>.</li>
+<li>Understand <strong>structured vs unstructured</strong> data and the ~80% unstructured fact.</li>
+<li>The <strong>data go/no-go</strong> concept.</li>
+</ul>
+<h3>Frequently Tested</h3>
+<ol>
+<li>"The team found the needed data doesn't exist / is poor quality — what phase caught this?" → <strong>Phase II</strong>.</li>
+<li>Matching quality problems to <strong>quality dimensions</strong>.</li>
+<li>Internal vs external data sourcing decisions.</li>
+<li>Privacy/regulatory checks on data (GDPR/HIPAA).</li>
+<li>GIGO principle.</li>
+</ol>
+<h3>Common Misconceptions</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Misconception</th>
+<th>Truth</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"Clean the data in Phase II"</td>
+<td>Cleaning is <strong>Phase III</strong>; Phase II only <strong>assesses</strong></td>
+</tr>
+<tr>
+<td>"More data is always better"</td>
+<td>Quality and <strong>relevance</strong> matter more than raw volume</td>
+</tr>
+<tr>
+<td>"If data exists, we can use it"</td>
+<td>Legal/privacy rights must be verified</td>
+</tr>
+<tr>
+<td>"Data understanding is a one-time task"</td>
+<td>Repeats <strong>every iteration</strong></td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2>4. AI Project Manager Perspective</h2>
+<h3>Responsibilities</h3>
+<ul>
+<li>Translate Phase I business needs into <strong>data requirements</strong>.</li>
+<li>Inventory <strong>data sources</strong>; negotiate access with data owners.</li>
+<li>Commission <strong>data quality assessment</strong> and EDA.</li>
+<li>Engage <strong>legal/compliance</strong> on privacy and usage rights.</li>
+<li>Estimate <strong>cost/effort</strong> of acquiring or labeling data.</li>
+<li>Drive the <strong>data go/no-go</strong> decision.</li>
+</ul>
+<h3>Stakeholders</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Stakeholder</th>
+<th>Role in Phase II</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Data owners / stewards</strong></td>
+<td>Grant access, explain data meaning</td>
+</tr>
+<tr>
+<td><strong>Data engineers</strong></td>
+<td>Extract and profile data</td>
+</tr>
+<tr>
+<td><strong>Data scientists</strong></td>
+<td>Perform EDA, judge sufficiency</td>
+</tr>
+<tr>
+<td><strong>Legal/compliance/DPO</strong></td>
+<td>Privacy, consent, regulations</td>
+</tr>
+<tr>
+<td><strong>Business SMEs</strong></td>
+<td>Explain what fields actually mean</td>
+</tr>
+<tr>
+<td><strong>IT/security</strong></td>
+<td>Secure access, infrastructure</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Risks</h3>
+<ul>
+<li>Required data <strong>doesn't exist</strong> or is too sparse.</li>
+<li><strong>Poor quality</strong> (incomplete, inconsistent, outdated).</li>
+<li><strong>Data silos</strong> and ownership disputes.</li>
+<li><strong>Privacy/regulatory</strong> violations (using data without consent).</li>
+<li><strong>Bias in data</strong> (unrepresentative samples → unfair models).</li>
+<li>Underestimating <strong>labeling cost/effort</strong>.</li>
+</ul>
+<h3>Best Practices</h3>
+<ul>
+<li>Start from <strong>business requirements → data requirements</strong> (never the reverse).</li>
+<li>Create a <strong>data inventory/catalog</strong> with source, owner, quality notes.</li>
+<li>Do EDA <strong>early</strong>; involve business SMEs to interpret fields.</li>
+<li>Check <strong>representativeness</strong> to avoid bias.</li>
+<li>Document data <strong>lineage</strong> (where it came from).</li>
+</ul>
+<h3>Decision-Making Approach</h3>
+<pre><code>Business problem (Phase I)
+        ▼
+List required data ──► Does it exist? ──No──► Acquire/generate? ──No──► NO-GO / descope
+        │Yes                                     │Yes
+        ▼                                        ▼
+Assess quality (6 dimensions) ──Poor──► Fixable in Phase III? ──No──► NO-GO
+        │Good/Fixable                            │Yes
+        ▼                                        │
+Legal/privacy cleared? ──No──► Resolve or NO-GO  │
+        │Yes ◄───────────────────────────────────┘
+        ▼
+GO → Phase III (Data Preparation)
+</code></pre>
+<hr/>
+<h2>5. Real-World Example (Retail — Demand Forecasting)</h2>
+<p><strong>Scenario:</strong> A retail chain wants to predict weekly demand per store per product (Phase I: <strong>Predictive Analytics</strong> pattern, KPI = reduce stock-outs 30%).</p>
+<p><strong>Phase II step by step:</strong>
+1. <strong>Data requirements:</strong> 2–3 years of sales history per store/SKU, promotions calendar, prices, holidays, weather.
+2. <strong>Source inventory:</strong> Sales → POS system (internal). Promotions → marketing Excel sheets (internal, messy). Weather → external API. Holidays → public data.
+3. <strong>EDA findings:</strong> 18 months of clean POS data available (not 3 years); 25% of promotion records missing dates; two stores changed SKU codes mid-year (<strong>consistency</strong> issue).
+4. <strong>Quality assessment:</strong> Completeness issue (promotions), consistency issue (SKU codes), timeliness OK.
+5. <strong>Quantity check:</strong> 18 months × 200 stores × 5,000 SKUs = enough volume for a first iteration.
+6. <strong>Legal check:</strong> All internal + public data → no privacy issues.
+7. <strong>Data go/no-go:</strong> <strong>GO</strong>, with scope note: first iteration uses 18 months of data and top 500 SKUs only (<strong>start small</strong>), promotion data to be fixed in Phase III.</p>
+<hr/>
+<h2>6. Visual Learning</h2>
+<h3>Phase II Position</h3>
+<pre><code>Phase I (WHY?) ──► ★ PHASE II (WHAT DATA?) ★ ──► Phase III (PREPARE)
+   Business            Identify sources,             Clean &amp;
+   problem, KPI        assess quality/quantity,      transform
+                       legal check, data GO/NO-GO
+</code></pre>
+<h3>Data Quality Assessment Snapshot (example)</h3>
+<pre><code>Dimension      Status   Note
+─────────      ──────   ────
+Accuracy        ✔       Spot-checks passed
+Completeness    ✘       25% promo dates missing
+Consistency     ✘       SKU codes changed mid-year
+Timeliness      ✔       Daily feeds
+Validity        ✔       Formats OK
+Uniqueness      ✔       De-duplicated
+Result: GO (fix ✘ items in Phase III)
+</code></pre>
+<hr/>
+<h2>7. Key Formulas or Frameworks</h2>
+<h3>Business → Data Mapping Framework</h3>
+<pre><code>Business Problem → Prediction Target → Required Inputs (features)
+→ Data Sources → Quality/Quantity/Legal Assessment → Data Go/No-Go
+</code></pre>
+<h3>The V's of Big Data</h3>
+<p><strong>Volume, Variety, Velocity, Veracity (+ Value)</strong> — memorize as "<strong>4V + Value</strong>".</p>
+<h3>Data Quality Dimensions</h3>
+<p>Mnemonic: <strong>"A CC TVU"</strong> → <strong>A</strong>ccuracy, <strong>C</strong>ompleteness, <strong>C</strong>onsistency, <strong>T</strong>imeliness, <strong>V</strong>alidity, <strong>U</strong>niqueness.</p>
+<hr/>
+<h2>8. Important Terminology (Glossary)</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Simple Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Data Understanding</strong></td>
+<td>Phase II — identifying and assessing required data</td>
+</tr>
+<tr>
+<td><strong>GIGO</strong></td>
+<td>Garbage In, Garbage Out — bad data → bad model</td>
+</tr>
+<tr>
+<td><strong>Structured data</strong></td>
+<td>Table-like data with rows/columns</td>
+</tr>
+<tr>
+<td><strong>Unstructured data</strong></td>
+<td>Images, audio, video, free text (~80% of enterprise data)</td>
+</tr>
+<tr>
+<td><strong>EDA</strong></td>
+<td>Exploratory Data Analysis — first statistical look at data</td>
+</tr>
+<tr>
+<td><strong>Data profiling</strong></td>
+<td>Summarizing data characteristics (ranges, nulls, types)</td>
+</tr>
+<tr>
+<td><strong>PII</strong></td>
+<td>Personally Identifiable Information (name, Aadhaar, SSN)</td>
+</tr>
+<tr>
+<td><strong>Data silo</strong></td>
+<td>Data trapped in one department/system</td>
+</tr>
+<tr>
+<td><strong>Data lineage</strong></td>
+<td>Record of where data came from and how it moved</td>
+</tr>
+<tr>
+<td><strong>Data catalog</strong></td>
+<td>Inventory of available data assets</td>
+</tr>
+<tr>
+<td><strong>Veracity</strong></td>
+<td>Trustworthiness of data</td>
+</tr>
+<tr>
+<td><strong>Labeled data</strong></td>
+<td>Data with known answers attached (for supervised ML)</td>
+</tr>
+<tr>
+<td><strong>Data steward/owner</strong></td>
+<td>Person responsible for a data asset</td>
+</tr>
+<tr>
+<td><strong>Representativeness</strong></td>
+<td>Data reflects the real population (avoids bias)</td>
+</tr>
+<tr>
+<td><strong>Data go/no-go</strong></td>
+<td>Phase II decision on whether data supports the project</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2>9. Exam Tips</h2>
+<h3>Memory Tricks</h3>
+<ul>
+<li><strong>Phase II = WHAT data</strong> (I=WHY, III=HOW to prepare).</li>
+<li>Quality dimensions: <strong>A-CC-TVU</strong>.</li>
+<li><strong>GIGO</strong> — quality first, always.</li>
+<li>"<strong>Assess in II, Fix in III</strong>" — understanding vs preparation.</li>
+</ul>
+<h3>Keywords Signaling Right Answers</h3>
+<ul>
+<li>"Identify data <strong>requirements from the business problem</strong>"</li>
+<li>"<strong>Assess</strong> data quality and quantity"</li>
+<li>"Verify <strong>data rights/privacy</strong>"</li>
+<li>"<strong>Data feasibility</strong> / data go/no-go"</li>
+</ul>
+<h3>Differentiators</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Pair</th>
+<th>Difference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Phase II vs Phase III</td>
+<td>II = <strong>assess/understand</strong>; III = <strong>clean/prepare</strong></td>
+</tr>
+<tr>
+<td>Accuracy vs Validity</td>
+<td>Accuracy = factually correct; Validity = correct <strong>format/rules</strong></td>
+</tr>
+<tr>
+<td>Volume vs Veracity</td>
+<td>Volume = amount; Veracity = trustworthiness</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Traps</h3>
+<ul>
+<li>Options that <strong>clean/transform data in Phase II</strong> → wrong phase.</li>
+<li>"Use whatever data we already have" without business mapping → wrong.</li>
+<li>Ignoring <strong>legal/privacy</strong> review → wrong.</li>
+</ul>
+<hr/>
+<h2>11. Quick Revision Sheet</h2>
+<ul>
+<li><strong>Phase II = WHAT data</strong> — after Phase I, before Phase III, every iteration.</li>
+<li>Derive <strong>data requirements from the business problem</strong> (never data-first).</li>
+<li>Data types: <strong>structured / semi-structured / unstructured</strong> (~<strong>80% unstructured</strong>).</li>
+<li>Sources: <strong>internal, external, generated</strong>.</li>
+<li>Big Data V's: <strong>Volume, Variety, Velocity, Veracity (+Value)</strong>.</li>
+<li>Quality dimensions (<strong>A-CC-TVU</strong>): Accuracy, Completeness, Consistency, Timeliness, Validity, Uniqueness.</li>
+<li><strong>GIGO</strong> — data quality decides model quality.</li>
+<li>Perform <strong>EDA</strong>; check <strong>quantity sufficiency</strong>; check <strong>bias/representativeness</strong>.</li>
+<li>Verify <strong>privacy, consent, regulations</strong> (GDPR/HIPAA/DPDP).</li>
+<li>Ends with <strong>data go/no-go</strong>.</li>
+<li><strong>Assess in II, fix in III.</strong></li>
+</ul>
+<hr/>
+<h2>⭐ Top 10 Things to Remember for the Exam</h2>
+<ol>
+<li><strong>Phase II = WHAT data</strong> — assessment only; cleaning is Phase III.</li>
+<li>Data requirements flow <strong>from the Phase I business problem</strong>.</li>
+<li><strong>GIGO</strong> — quality beats quantity.</li>
+<li>~<strong>80% of enterprise data is unstructured</strong>.</li>
+<li>Big Data V's: <strong>Volume, Variety, Velocity, Veracity</strong>.</li>
+<li>Quality dimensions: <strong>Accuracy, Completeness, Consistency, Timeliness, Validity, Uniqueness</strong>.</li>
+<li>Verify <strong>privacy/legal rights</strong> (GDPR, HIPAA, DPDP) before using data.</li>
+<li>Check <strong>quantity</strong> and <strong>representativeness</strong> (bias prevention).</li>
+<li>Phase II ends with a <strong>data go/no-go</strong> decision.</li>
+<li>Phase II repeats <strong>every iteration</strong>.</li>
+</ol>
+<hr/>
+<p><em>Next: Phase III — Data Preparation.</em></p>

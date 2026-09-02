@@ -1,0 +1,528 @@
+
+<hr/>
+<h2>1. Topic Overview</h2>
+<h3>Definition</h3>
+<p>The <strong>7 Patterns of AI</strong> are a classification framework stating that <strong>every AI use case, however complex, maps to one or more of seven repeatable patterns</strong>. They are pattern-shapes of business problems, independent of specific algorithms or technologies.</p>
+<blockquote>
+<p><strong>One-line memory hook:</strong> If a use case maps to <strong>no pattern</strong>, it's probably <strong>not an AI problem</strong>.</p>
+</blockquote>
+<h3>Why It Is Important</h3>
+<ul>
+<li>Used in <strong>Phase I</strong> to validate that a problem genuinely needs AI.</li>
+<li>Helps estimate <strong>data needs, complexity, and risk</strong> (each pattern has typical requirements).</li>
+<li>Provides a <strong>common language</strong> between business and technical teams.</li>
+<li>Combinations of patterns describe even the most advanced systems (a self-driving car = several patterns together).</li>
+</ul>
+<h3>Where It Is Used in AI Projects</h3>
+<ul>
+<li><strong>Phase I:</strong> map problem → pattern(s) → go/no-go.</li>
+<li><strong>Phase II:</strong> each pattern implies typical data types (images for Recognition, interaction logs for Hyperpersonalization).</li>
+<li><strong>Phase IV:</strong> patterns suggest algorithm families.</li>
+<li>Portfolio planning: classify all enterprise AI ideas by pattern.</li>
+</ul>
+<hr/>
+<h2>2. Key Concepts — The Seven Patterns Explained</h2>
+<h3>Pattern 1: Hyperpersonalization</h3>
+<ul>
+<li><strong>Idea:</strong> Treat <strong>each individual as a unique segment of one</strong> — learn preferences and tailor content, offers, pricing, or experiences.</li>
+<li><strong>Core question:</strong> <em>"What does THIS person want?"</em></li>
+<li><strong>Data:</strong> behavior history, clicks, purchases, profiles.</li>
+<li><strong>Examples:</strong> Netflix/Amazon recommendations; personalized banking offers; adaptive e-learning; personalized medicine dosing.</li>
+<li><strong>Keywords:</strong> <em>recommendation, personalized, individual, tailored, segment-of-one.</em></li>
+</ul>
+<h3>Pattern 2: Autonomous Systems</h3>
+<ul>
+<li><strong>Idea:</strong> Systems (physical or software) that <strong>accomplish tasks with minimal or no human involvement</strong>.</li>
+<li><strong>Core question:</strong> <em>"Can the machine act on its own?"</em></li>
+<li><strong>Data/tech:</strong> sensors, environment models, control loops; often combines other patterns.</li>
+<li><strong>Examples:</strong> self-driving vehicles; warehouse robots; autonomous drones; auto-scaling software agents; autonomous trading bots.</li>
+<li><strong>Keywords:</strong> <em>self-driving, autonomous, minimal human intervention, robot acting independently.</em></li>
+</ul>
+<h3>Pattern 3: Predictive Analytics &amp; Decision Support</h3>
+<ul>
+<li><strong>Idea:</strong> Use past data to <strong>predict future outcomes or values</strong> and <strong>help humans decide better</strong>.</li>
+<li><strong>Core question:</strong> <em>"What will happen next?"</em> (human still decides)</li>
+<li><strong>Data:</strong> historical structured data with outcomes.</li>
+<li><strong>Examples:</strong> loan default prediction; demand forecasting; churn prediction; predictive maintenance; disease-risk scoring.</li>
+<li><strong>Keywords:</strong> <em>forecast, predict, likelihood, risk score, decision support, what will happen.</em></li>
+</ul>
+<h3>Pattern 4: Conversation &amp; Human Interaction</h3>
+<ul>
+<li><strong>Idea:</strong> Machines <strong>communicating with humans in natural, human ways</strong> — text, voice — and understanding intent, sentiment, language.</li>
+<li><strong>Core question:</strong> <em>"Can the machine talk/understand like a human?"</em></li>
+<li><strong>Data:</strong> text corpora, dialogs, speech audio.</li>
+<li><strong>Examples:</strong> chatbots, voice assistants (Alexa/Siri), sentiment analysis, machine translation, content generation.</li>
+<li><strong>Keywords:</strong> <em>chatbot, voice assistant, NLP, dialogue, sentiment, translate.</em></li>
+</ul>
+<h3>Pattern 5: Patterns &amp; Anomalies</h3>
+<ul>
+<li><strong>Idea:</strong> Find <strong>hidden patterns/associations</strong> in data, or detect the <strong>outlier that doesn't fit</strong> the pattern.</li>
+<li><strong>Core question:</strong> <em>"What's normal — and what's NOT normal?"</em></li>
+<li><strong>Data:</strong> large transactional/log datasets; often unlabeled.</li>
+<li><strong>Examples:</strong> <strong>fraud detection</strong>; network intrusion detection; fake-news/bot detection; predictive quality (spot defective sensor readings); market-basket association ("bread buyers buy butter").</li>
+<li><strong>Keywords:</strong> <em>fraud, anomaly, outlier, unusual, intrusion, hidden pattern, association.</em></li>
+</ul>
+<h3>Pattern 6: Recognition</h3>
+<ul>
+<li><strong>Idea:</strong> <strong>Identify and label things in unstructured data</strong> — images, video, audio, text, handwriting.</li>
+<li><strong>Core question:</strong> <em>"What is this thing?"</em></li>
+<li><strong>Data:</strong> labeled unstructured data (images with tags, transcribed audio).</li>
+<li><strong>Examples:</strong> face recognition; tumor detection in X-rays; OCR of cheques/invoices; speech-to-text; defect detection on production lines; object detection for security cameras.</li>
+<li><strong>Keywords:</strong> <em>image, vision, OCR, detect object, classify picture, speech-to-text, identify.</em></li>
+</ul>
+<h3>Pattern 7: Goal-Driven Systems</h3>
+<ul>
+<li><strong>Idea:</strong> Systems that <strong>learn through trial and error to find the optimal solution to a goal</strong> — typically <strong>reinforcement learning</strong>.</li>
+<li><strong>Core question:</strong> <em>"What's the best move to reach the goal?"</em></li>
+<li><strong>Data/tech:</strong> environment + reward signals (often simulation).</li>
+<li><strong>Examples:</strong> game-playing AI (AlphaGo); route/logistics optimization; dynamic resource allocation; bidding optimization; robot motion learning.</li>
+<li><strong>Keywords:</strong> <em>optimize, trial-and-error, reward, best strategy, game, win, scenario simulation.</em></li>
+</ul>
+<h3>Combining Patterns</h3>
+<p>Real systems stack patterns:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>System</th>
+<th>Patterns Combined</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Self-driving car</strong></td>
+<td>Recognition (see objects) + Predictive (anticipate pedestrians) + Goal-Driven (route) + Autonomous (acts alone)</td>
+</tr>
+<tr>
+<td><strong>Smart voice assistant</strong></td>
+<td>Conversation + Hyperpersonalization + Predictive</td>
+</tr>
+<tr>
+<td><strong>Fraud platform</strong></td>
+<td>Patterns &amp; Anomalies + Predictive + (Recognition for document checks)</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2>3. PMI CPMAI Exam Focus</h2>
+<h3>What the Exam Expects</h3>
+<ul>
+<li><strong>Map any scenario to its pattern(s)</strong> — the single most common question style.</li>
+<li>Know each pattern's <strong>core question, data needs, and 2–3 examples</strong>.</li>
+<li>Understand patterns are <strong>technology-independent</strong> and can <strong>combine</strong>.</li>
+<li>Use patterns for the Phase I <strong>"is this AI?"</strong> test.</li>
+</ul>
+<h3>Frequently Tested Mappings</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Scenario Cue</th>
+<th>Pattern</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"Recommend products / personalize offers"</td>
+<td>Hyperpersonalization</td>
+</tr>
+<tr>
+<td>"Robot/vehicle operates without humans"</td>
+<td>Autonomous Systems</td>
+</tr>
+<tr>
+<td>"Forecast / predict / risk score"</td>
+<td>Predictive Analytics</td>
+</tr>
+<tr>
+<td>"Chatbot / voice / understand language"</td>
+<td>Conversation &amp; Human Interaction</td>
+</tr>
+<tr>
+<td>"Fraud / intrusion / unusual activity"</td>
+<td>Patterns &amp; Anomalies</td>
+</tr>
+<tr>
+<td>"Identify objects in images/audio/documents"</td>
+<td>Recognition</td>
+</tr>
+<tr>
+<td>"Learn best strategy via rewards / optimize"</td>
+<td>Goal-Driven Systems</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Common Misconceptions</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Misconception</th>
+<th>Truth</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"Fraud detection = Recognition"</td>
+<td>Recognition = unstructured media ID; fraud = <strong>Patterns &amp; Anomalies</strong></td>
+</tr>
+<tr>
+<td>"Prediction = Goal-Driven"</td>
+<td>Predictive forecasts outcomes; Goal-Driven <strong>learns actions</strong> via rewards</td>
+</tr>
+<tr>
+<td>"Chatbot = Hyperpersonalization"</td>
+<td>Talking = <strong>Conversation</strong>; tailoring content = Hyperpersonalization (may combine)</td>
+</tr>
+<tr>
+<td>"Autonomous = any automation"</td>
+<td>RPA scripts aren't autonomous AI; autonomy involves perception+decision in the world</td>
+</tr>
+<tr>
+<td>"One use case = exactly one pattern"</td>
+<td>Patterns <strong>combine</strong></td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2>4. AI Project Manager Perspective</h2>
+<h3>Responsibilities</h3>
+<ul>
+<li>Facilitate <strong>pattern-mapping workshops</strong> in Phase I.</li>
+<li>Use the pattern to set expectations on <strong>data needs, complexity, timeline</strong>:</li>
+<li>Recognition → needs labeled unstructured data (labeling budget!).</li>
+<li>Goal-Driven → may need <strong>simulation environments</strong>.</li>
+<li>Conversation → language data, dialog design, escalation paths.</li>
+<li>Classify the <strong>AI portfolio</strong> by pattern for skill and platform planning.</li>
+<li>Reject/redirect ideas that map to <strong>no pattern</strong> (probably RPA/rules/BI).</li>
+</ul>
+<h3>Stakeholders</h3>
+<ul>
+<li>Business owners (use-case framing), data scientists (feasibility per pattern), UX (Conversation pattern), safety/legal (Autonomous &amp; Recognition privacy issues), operations (deployment implications per pattern).</li>
+</ul>
+<h3>Risks by Pattern (sample)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>Signature Risk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hyperpersonalization</td>
+<td>Privacy, filter bubbles, creepiness factor</td>
+</tr>
+<tr>
+<td>Autonomous</td>
+<td>Safety, liability, edge-case failures</td>
+</tr>
+<tr>
+<td>Predictive</td>
+<td>Bias in historical data, drift</td>
+</tr>
+<tr>
+<td>Conversation</td>
+<td>Wrong answers, brand/tone risk, prompt abuse</td>
+</tr>
+<tr>
+<td>Patterns &amp; Anomalies</td>
+<td>False positives flood, adversarial adaptation</td>
+</tr>
+<tr>
+<td>Recognition</td>
+<td>Bias (face recognition), privacy/surveillance concerns</td>
+</tr>
+<tr>
+<td>Goal-Driven</td>
+<td>Reward hacking, unexpected strategies, sim-to-real gap</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Best Practices</h3>
+<ul>
+<li>Always document the <strong>pattern mapping</strong> in the Phase I business case.</li>
+<li>For combined-pattern systems, <strong>start small with one pattern</strong> (iterate!).</li>
+<li>Match <strong>team skills</strong> to the pattern (CV engineers for Recognition, NLP for Conversation).</li>
+</ul>
+<h3>Decision-Making Approach</h3>
+<pre><code>Business use case
+   ▼
+Which core question does it match?
+ "What does this person want?"        → Hyperpersonalization
+ "Can it act by itself?"              → Autonomous
+ "What will happen?"                  → Predictive
+ "Can it converse/understand text?"   → Conversation
+ "What's abnormal / hidden pattern?"  → Patterns &amp; Anomalies
+ "What is this (image/audio/doc)?"    → Recognition
+ "What's the best action to a goal?"  → Goal-Driven
+   ▼
+No match? → Likely NOT an AI problem (rules/RPA/BI instead)
+</code></pre>
+<hr/>
+<h2>5. Real-World Example (One Company, All 7 Patterns — Retail Bank)</h2>
+<p>A bank builds an AI portfolio; the PM maps each idea:</p>
+<ol>
+<li><strong>Personalized product offers</strong> in the mobile app based on each customer's transactions → <strong>Hyperpersonalization</strong>.</li>
+<li><strong>Loan default risk scores</strong> for underwriting decisions → <strong>Predictive Analytics &amp; Decision Support</strong>.</li>
+<li><strong>WhatsApp banking chatbot</strong> answering balance/EMI questions in Hindi &amp; English → <strong>Conversation &amp; Human Interaction</strong>.</li>
+<li><strong>Card fraud detection</strong> flagging unusual transactions in real time → <strong>Patterns &amp; Anomalies</strong>.</li>
+<li><strong>Cheque OCR</strong> reading amounts and signatures from scanned cheques → <strong>Recognition</strong>.</li>
+<li><strong>ATM cash-loading route optimization</strong> learning best replenishment strategy via simulated rewards → <strong>Goal-Driven Systems</strong>.</li>
+<li><strong>Autonomous document-processing agents</strong> that receive, classify, extract, validate, and post loan documents end-to-end with human review only on exceptions → <strong>Autonomous Systems</strong> (combining Recognition + Conversation).</li>
+</ol>
+<p>Step-by-step PM use: each idea gets a pattern label → pattern implies data/skill needs → prioritized by ROI and feasibility → "start small" pilots chosen (fraud + chatbot first) → others queued for later iterations.</p>
+<hr/>
+<h2>6. Visual Learning</h2>
+<h3>The 7 Patterns Wheel</h3>
+<pre><code>                ┌────────────────────────┐
+                │     7 PATTERNS OF AI   │
+                └────────────────────────┘
+   1 Hyperpersonalization   "Segment of one"
+   2 Autonomous Systems      "Acts by itself"
+   3 Predictive Analytics    "What happens next?"
+   4 Conversation            "Talks like a human"
+   5 Patterns &amp; Anomalies    "Spot the odd one out"
+   6 Recognition             "What is this thing?"
+   7 Goal-Driven Systems     "Best move to win"
+</code></pre>
+<h3>Quick Decision Table</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>If the system must…</th>
+<th>Pattern</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tailor to an individual</td>
+<td>1. Hyperpersonalization</td>
+</tr>
+<tr>
+<td>Operate unaided in the world</td>
+<td>2. Autonomous</td>
+</tr>
+<tr>
+<td>Forecast an outcome/value</td>
+<td>3. Predictive</td>
+</tr>
+<tr>
+<td>Understand/produce language or speech</td>
+<td>4. Conversation</td>
+</tr>
+<tr>
+<td>Detect the unusual / find associations</td>
+<td>5. Patterns &amp; Anomalies</td>
+</tr>
+<tr>
+<td>Identify content in image/audio/video/doc</td>
+<td>6. Recognition</td>
+</tr>
+<tr>
+<td>Learn optimal actions via rewards</td>
+<td>7. Goal-Driven</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2>7. Key Formulas or Frameworks</h2>
+<h3>Pattern Mapping Test (Phase I)</h3>
+<pre><code>1. State the business problem in one sentence.
+2. Match to a pattern core question.
+3. No match → challenge whether AI is needed.
+4. Multiple matches → decompose; start with ONE pattern (start small).
+</code></pre>
+<h3>Pattern → Typical Data → Typical ML</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>Typical Data</th>
+<th>Typical ML Family</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hyperpersonalization</td>
+<td>Behavior logs</td>
+<td>Recommender systems</td>
+</tr>
+<tr>
+<td>Autonomous</td>
+<td>Sensor streams</td>
+<td>Multi-pattern + control/RL</td>
+</tr>
+<tr>
+<td>Predictive</td>
+<td>Historical tabular</td>
+<td>Supervised (classif./regression)</td>
+</tr>
+<tr>
+<td>Conversation</td>
+<td>Text/speech</td>
+<td>NLP / language models</td>
+</tr>
+<tr>
+<td>Patterns &amp; Anomalies</td>
+<td>Transactions/logs</td>
+<td>Unsupervised + supervised hybrids</td>
+</tr>
+<tr>
+<td>Recognition</td>
+<td>Images/audio/docs</td>
+<td>Deep learning (CNNs etc.)</td>
+</tr>
+<tr>
+<td>Goal-Driven</td>
+<td>Simulated environments</td>
+<td>Reinforcement learning</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2>8. Important Terminology (Glossary)</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Simple Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pattern (of AI)</strong></td>
+<td>A repeatable problem-shape that AI solves</td>
+</tr>
+<tr>
+<td><strong>Hyperpersonalization</strong></td>
+<td>Individual-level tailoring ("segment of one")</td>
+</tr>
+<tr>
+<td><strong>Recommender system</strong></td>
+<td>Algorithm suggesting items per user</td>
+</tr>
+<tr>
+<td><strong>Autonomous system</strong></td>
+<td>Machine operating with minimal human input</td>
+</tr>
+<tr>
+<td><strong>Decision support</strong></td>
+<td>AI informs, human decides</td>
+</tr>
+<tr>
+<td><strong>NLP</strong></td>
+<td>Natural Language Processing — machines handling human language</td>
+</tr>
+<tr>
+<td><strong>Sentiment analysis</strong></td>
+<td>Detecting emotion/opinion in text</td>
+</tr>
+<tr>
+<td><strong>Anomaly detection</strong></td>
+<td>Spotting data points that deviate from normal</td>
+</tr>
+<tr>
+<td><strong>Association rules</strong></td>
+<td>"Items bought together" pattern mining</td>
+</tr>
+<tr>
+<td><strong>Computer vision</strong></td>
+<td>Machines interpreting images/video</td>
+</tr>
+<tr>
+<td><strong>OCR</strong></td>
+<td>Optical Character Recognition — reading text from images</td>
+</tr>
+<tr>
+<td><strong>Reinforcement learning</strong></td>
+<td>Learning actions via rewards (Goal-Driven engine)</td>
+</tr>
+<tr>
+<td><strong>Reward function</strong></td>
+<td>The score an RL agent tries to maximize</td>
+</tr>
+<tr>
+<td><strong>Segment of one</strong></td>
+<td>Marketing term for individual-level targeting</td>
+</tr>
+<tr>
+<td><strong>Pattern combination</strong></td>
+<td>Real systems stacking multiple patterns</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2>9. Exam Tips</h2>
+<h3>Memory Tricks</h3>
+<ul>
+<li>Mnemonic sentence: "<strong>H</strong>appy <strong>A</strong>unts <strong>P</strong>repare <strong>C</strong>hai, <strong>P</strong>akode <strong>R</strong>oz <strong>G</strong>arma-garam" → <strong>H</strong>yperpersonalization, <strong>A</strong>utonomous, <strong>P</strong>redictive, <strong>C</strong>onversation, <strong>P</strong>atterns&amp;Anomalies, <strong>R</strong>ecognition, <strong>G</strong>oal-driven. 🍵</li>
+<li>Core-question flash: personalize? act alone? predict? talk? odd-one-out? what-is-this? best-move?</li>
+</ul>
+<h3>Keyword → Pattern Reflexes</h3>
+<ul>
+<li><em>recommend/tailor</em> → 1 | <em>self-driving/robot</em> → 2 | <em>forecast/risk score</em> → 3</li>
+<li><em>chatbot/voice/translate</em> → 4 | <em>fraud/intrusion/unusual</em> → 5</li>
+<li><em>image/OCR/speech-to-text</em> → 6 | <em>optimize via reward/game</em> → 7</li>
+</ul>
+<h3>Confusion Killers</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Confusable</th>
+<th>Resolution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Recognition vs Anomalies</td>
+<td>Media identification vs behavioral oddity</td>
+</tr>
+<tr>
+<td>Predictive vs Goal-Driven</td>
+<td>Forecast outcome vs learn best <strong>action</strong></td>
+</tr>
+<tr>
+<td>Conversation vs Hyperpersonalization</td>
+<td>Language ability vs individual tailoring</td>
+</tr>
+<tr>
+<td>Autonomous vs RPA</td>
+<td>Perceive-decide-act in the world vs scripted clicks</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Traps</h3>
+<ul>
+<li>Fraud labeled "Recognition" → wrong (it's Patterns &amp; Anomalies).</li>
+<li>Assuming a use case can only have <strong>one</strong> pattern → combinations exist.</li>
+<li>Treating RPA/rule automation as the Autonomous pattern → wrong.</li>
+</ul>
+<hr/>
+<h2>11. Quick Revision Sheet</h2>
+<ul>
+<li>7 Patterns = <strong>universal classification of AI use cases</strong>; no pattern match → probably not AI.</li>
+<li><strong>1 Hyperpersonalization</strong> — segment of one; recommendations, tailored offers.</li>
+<li><strong>2 Autonomous Systems</strong> — acts with minimal human help; vehicles, robots, agents.</li>
+<li><strong>3 Predictive Analytics</strong> — forecast outcomes, decision support; churn, default, demand.</li>
+<li><strong>4 Conversation &amp; Human Interaction</strong> — chatbots, voice, NLP, sentiment, translation.</li>
+<li><strong>5 Patterns &amp; Anomalies</strong> — fraud, intrusion, odd-one-out, associations.</li>
+<li><strong>6 Recognition</strong> — identify things in images/audio/video/docs; OCR, face, tumor.</li>
+<li><strong>7 Goal-Driven Systems</strong> — reinforcement learning; optimize via rewards.</li>
+<li>Patterns are <strong>technology-independent</strong> and <strong>combine</strong> in real systems.</li>
+<li>Used in <strong>Phase I</strong> for AI validation; imply data/skill needs for later phases.</li>
+<li>Fraud ≠ Recognition — it's <strong>Patterns &amp; Anomalies</strong> (classic trap).</li>
+</ul>
+<hr/>
+<h2>⭐ Top 10 Things to Remember for the Exam</h2>
+<ol>
+<li><strong>Every AI use case maps to one or more of the 7 patterns</strong> — no match ⇒ not AI.</li>
+<li><strong>Hyperpersonalization = segment of one</strong> (recommendations, offers).</li>
+<li><strong>Autonomous = acts with minimal human involvement</strong> (not scripted RPA).</li>
+<li><strong>Predictive = forecast + decision support</strong> (human decides).</li>
+<li><strong>Conversation = NLP/chat/voice/sentiment/translation.</strong></li>
+<li><strong>Patterns &amp; Anomalies = fraud, intrusion, odd-one-out</strong> ← fraud lives HERE.</li>
+<li><strong>Recognition = identify things in unstructured media</strong> (OCR, vision, speech-to-text).</li>
+<li><strong>Goal-Driven = reinforcement learning, rewards, optimal strategy.</strong></li>
+<li>Patterns <strong>combine</strong> — scope iteration 1 around <strong>one</strong> pattern (start small).</li>
+<li>Patterns are <strong>technology-independent</strong> problem shapes, mapped in <strong>Phase I</strong>.</li>
+</ol>
+<hr/>
+<p><em>Next: Core AI Concepts &amp; CPMAI Principles.</em></p>

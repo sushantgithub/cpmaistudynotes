@@ -1,0 +1,824 @@
+[
+  {
+    "term": "Artificial Intelligence (AI)",
+    "definition": "Machines performing tasks that need human-like intelligence",
+    "extra": "",
+    "topicId": "core"
+  },
+  {
+    "term": "Machine Learning (ML)",
+    "definition": "Learning patterns from data without explicit rule programming",
+    "extra": "",
+    "topicId": "core"
+  },
+  {
+    "term": "Deep Learning",
+    "definition": "ML with multi-layer neural networks",
+    "extra": "",
+    "topicId": "core"
+  },
+  {
+    "term": "Narrow (Weak) AI",
+    "definition": "AI good at one specific task (all current AI)",
+    "extra": "",
+    "topicId": "core"
+  },
+  {
+    "term": "AGI (Strong AI)",
+    "definition": "Hypothetical human-level general intelligence",
+    "extra": "",
+    "topicId": "core"
+  },
+  {
+    "term": "Cognitive technology",
+    "definition": "Umbrella for AI/ML systems mimicking human cognition",
+    "extra": "",
+    "topicId": "core"
+  },
+  {
+    "term": "Deterministic vs Probabilistic",
+    "definition": "Fixed rule outputs vs prediction-with-confidence outputs",
+    "extra": "",
+    "topicId": "core"
+  },
+  {
+    "term": "DIKUW",
+    "definition": "Data-Information-Knowledge-Understanding-Wisdom pyramid",
+    "extra": "",
+    "topicId": "core"
+  },
+  {
+    "term": "Data-centric AI",
+    "definition": "Improving data quality as the main performance lever",
+    "extra": "",
+    "topicId": "core"
+  },
+  {
+    "term": "Model-centric AI",
+    "definition": "Improving algorithms while holding data fixed",
+    "extra": "",
+    "topicId": "core"
+  },
+  {
+    "term": "GIGO",
+    "definition": "Garbage In, Garbage Out",
+    "extra": "",
+    "topicId": "core"
+  },
+  {
+    "term": "CRISP-DM",
+    "definition": "Predecessor methodology CPMAI builds upon",
+    "extra": "",
+    "topicId": "core"
+  },
+  {
+    "term": "Iteration",
+    "definition": "One short pass through all six CPMAI phases",
+    "extra": "",
+    "topicId": "core"
+  },
+  {
+    "term": "Agile",
+    "definition": "Incremental, feedback-driven delivery philosophy",
+    "extra": "",
+    "topicId": "core"
+  },
+  {
+    "term": "Responsible AI",
+    "definition": "Fair, transparent, accountable, private, safe AI with human oversight",
+    "extra": "",
+    "topicId": "core"
+  },
+  {
+    "term": "Proxy variable",
+    "definition": "Innocent-looking feature secretly encoding a sensitive attribute",
+    "extra": "",
+    "topicId": "core"
+  },
+  {
+    "term": "Algorithmic bias",
+    "definition": "Systematic unfairness learned from data or design",
+    "extra": "",
+    "topicId": "core"
+  },
+  {
+    "term": "Human-in-the-loop",
+    "definition": "Humans reviewing/approving AI decisions",
+    "extra": "",
+    "topicId": "core"
+  },
+  {
+    "term": "CPMAI",
+    "definition": "Cognitive Project Management for AI — a 6-phase, iterative methodology for AI projects",
+    "extra": "",
+    "topicId": "p1"
+  },
+  {
+    "term": "CRISP-DM",
+    "definition": "Older data mining methodology that CPMAI is built upon",
+    "extra": "",
+    "topicId": "p1"
+  },
+  {
+    "term": "Business Understanding",
+    "definition": "Phase I — defining the problem, value, and go/no-go",
+    "extra": "",
+    "topicId": "p1"
+  },
+  {
+    "term": "7 Patterns of AI",
+    "definition": "Seven categories every AI use case maps to",
+    "extra": "",
+    "topicId": "p1"
+  },
+  {
+    "term": "KPI",
+    "definition": "Measurable business metric of success",
+    "extra": "",
+    "topicId": "p1"
+  },
+  {
+    "term": "ROI",
+    "definition": "Financial return compared to project cost",
+    "extra": "",
+    "topicId": "p1"
+  },
+  {
+    "term": "Go/No-Go Decision",
+    "definition": "Formal decision to proceed or stop, made in Phase I",
+    "extra": "",
+    "topicId": "p1"
+  },
+  {
+    "term": "RPA",
+    "definition": "Robotic Process Automation — rule-based task automation, not AI",
+    "extra": "",
+    "topicId": "p1"
+  },
+  {
+    "term": "MVP / Pilot",
+    "definition": "Smallest useful first version of the solution",
+    "extra": "",
+    "topicId": "p1"
+  },
+  {
+    "term": "Deterministic",
+    "definition": "Same input always gives same output (traditional software)",
+    "extra": "",
+    "topicId": "p1"
+  },
+  {
+    "term": "Probabilistic",
+    "definition": "Output is a prediction with a confidence level (AI systems)",
+    "extra": "",
+    "topicId": "p1"
+  },
+  {
+    "term": "Feasibility Assessment",
+    "definition": "Checking if the project is doable — business, data, tech, ethics, operations",
+    "extra": "",
+    "topicId": "p1"
+  },
+  {
+    "term": "Business Case",
+    "definition": "Document justifying the project: problem, benefits, costs, ROI",
+    "extra": "",
+    "topicId": "p1"
+  },
+  {
+    "term": "Iteration",
+    "definition": "One short cycle through all 6 CPMAI phases",
+    "extra": "",
+    "topicId": "p1"
+  },
+  {
+    "term": "Stakeholder",
+    "definition": "Anyone affected by or influencing the project",
+    "extra": "",
+    "topicId": "p1"
+  },
+  {
+    "term": "Data Understanding",
+    "definition": "Phase II — identifying and assessing required data",
+    "extra": "",
+    "topicId": "p2"
+  },
+  {
+    "term": "GIGO",
+    "definition": "Garbage In, Garbage Out — bad data → bad model",
+    "extra": "",
+    "topicId": "p2"
+  },
+  {
+    "term": "Structured data",
+    "definition": "Table-like data with rows/columns",
+    "extra": "",
+    "topicId": "p2"
+  },
+  {
+    "term": "Unstructured data",
+    "definition": "Images, audio, video, free text (~80% of enterprise data)",
+    "extra": "",
+    "topicId": "p2"
+  },
+  {
+    "term": "EDA",
+    "definition": "Exploratory Data Analysis — first statistical look at data",
+    "extra": "",
+    "topicId": "p2"
+  },
+  {
+    "term": "Data profiling",
+    "definition": "Summarizing data characteristics (ranges, nulls, types)",
+    "extra": "",
+    "topicId": "p2"
+  },
+  {
+    "term": "PII",
+    "definition": "Personally Identifiable Information (name, Aadhaar, SSN)",
+    "extra": "",
+    "topicId": "p2"
+  },
+  {
+    "term": "Data silo",
+    "definition": "Data trapped in one department/system",
+    "extra": "",
+    "topicId": "p2"
+  },
+  {
+    "term": "Data lineage",
+    "definition": "Record of where data came from and how it moved",
+    "extra": "",
+    "topicId": "p2"
+  },
+  {
+    "term": "Data catalog",
+    "definition": "Inventory of available data assets",
+    "extra": "",
+    "topicId": "p2"
+  },
+  {
+    "term": "Veracity",
+    "definition": "Trustworthiness of data",
+    "extra": "",
+    "topicId": "p2"
+  },
+  {
+    "term": "Labeled data",
+    "definition": "Data with known answers attached (for supervised ML)",
+    "extra": "",
+    "topicId": "p2"
+  },
+  {
+    "term": "Data steward/owner",
+    "definition": "Person responsible for a data asset",
+    "extra": "",
+    "topicId": "p2"
+  },
+  {
+    "term": "Representativeness",
+    "definition": "Data reflects the real population (avoids bias)",
+    "extra": "",
+    "topicId": "p2"
+  },
+  {
+    "term": "Data go/no-go",
+    "definition": "Phase II decision on whether data supports the project",
+    "extra": "",
+    "topicId": "p2"
+  },
+  {
+    "term": "Data cleaning",
+    "definition": "Fixing missing, duplicate, wrong, inconsistent values",
+    "extra": "",
+    "topicId": "p3"
+  },
+  {
+    "term": "Imputation",
+    "definition": "Filling missing values (mean/median/mode/model)",
+    "extra": "",
+    "topicId": "p3"
+  },
+  {
+    "term": "Outlier",
+    "definition": "Extreme value far from the rest",
+    "extra": "",
+    "topicId": "p3"
+  },
+  {
+    "term": "Normalization",
+    "definition": "Rescaling values to a 0–1 range",
+    "extra": "",
+    "topicId": "p3"
+  },
+  {
+    "term": "Standardization",
+    "definition": "Rescaling to mean 0, standard deviation 1",
+    "extra": "",
+    "topicId": "p3"
+  },
+  {
+    "term": "One-hot encoding",
+    "definition": "Turning categories into binary columns",
+    "extra": "",
+    "topicId": "p3"
+  },
+  {
+    "term": "Feature",
+    "definition": "An input variable for the model",
+    "extra": "",
+    "topicId": "p3"
+  },
+  {
+    "term": "Feature engineering",
+    "definition": "Creating better input variables using domain knowledge",
+    "extra": "",
+    "topicId": "p3"
+  },
+  {
+    "term": "Feature selection",
+    "definition": "Keeping only the most useful features",
+    "extra": "",
+    "topicId": "p3"
+  },
+  {
+    "term": "Labeling / annotation",
+    "definition": "Attaching correct answers for supervised learning",
+    "extra": "",
+    "topicId": "p3"
+  },
+  {
+    "term": "Data augmentation",
+    "definition": "Expanding data via modified copies (flip/rotate images)",
+    "extra": "",
+    "topicId": "p3"
+  },
+  {
+    "term": "Synthetic data",
+    "definition": "Artificially generated realistic data",
+    "extra": "",
+    "topicId": "p3"
+  },
+  {
+    "term": "Training / validation / test sets",
+    "definition": "Learn / tune / final-check data splits",
+    "extra": "",
+    "topicId": "p3"
+  },
+  {
+    "term": "Data leakage",
+    "definition": "Test or future information contaminating training",
+    "extra": "",
+    "topicId": "p3"
+  },
+  {
+    "term": "ETL / ELT",
+    "definition": "Extract-Transform-Load / Extract-Load-Transform",
+    "extra": "",
+    "topicId": "p3"
+  },
+  {
+    "term": "Data pipeline",
+    "definition": "Automated repeatable data processing flow",
+    "extra": "",
+    "topicId": "p3"
+  },
+  {
+    "term": "SMOTE / oversampling",
+    "definition": "Techniques to fix class imbalance",
+    "extra": "",
+    "topicId": "p3"
+  },
+  {
+    "term": "Algorithm",
+    "definition": "The learning recipe/method",
+    "extra": "",
+    "topicId": "p4"
+  },
+  {
+    "term": "Model",
+    "definition": "The trained result of algorithm + data",
+    "extra": "",
+    "topicId": "p4"
+  },
+  {
+    "term": "Supervised learning",
+    "definition": "Learning from labeled examples",
+    "extra": "",
+    "topicId": "p4"
+  },
+  {
+    "term": "Unsupervised learning",
+    "definition": "Finding structure in unlabeled data",
+    "extra": "",
+    "topicId": "p4"
+  },
+  {
+    "term": "Reinforcement learning",
+    "definition": "Learning actions via rewards and penalties",
+    "extra": "",
+    "topicId": "p4"
+  },
+  {
+    "term": "Classification",
+    "definition": "Predicting a category",
+    "extra": "",
+    "topicId": "p4"
+  },
+  {
+    "term": "Regression",
+    "definition": "Predicting a numeric value",
+    "extra": "",
+    "topicId": "p4"
+  },
+  {
+    "term": "Clustering",
+    "definition": "Grouping similar items without labels",
+    "extra": "",
+    "topicId": "p4"
+  },
+  {
+    "term": "Parameter",
+    "definition": "Value the model learns during training",
+    "extra": "",
+    "topicId": "p4"
+  },
+  {
+    "term": "Hyperparameter",
+    "definition": "Setting chosen by humans before training",
+    "extra": "",
+    "topicId": "p4"
+  },
+  {
+    "term": "Epoch",
+    "definition": "One full pass through training data",
+    "extra": "",
+    "topicId": "p4"
+  },
+  {
+    "term": "Overfitting",
+    "definition": "Memorizing training data; failing on new data",
+    "extra": "",
+    "topicId": "p4"
+  },
+  {
+    "term": "Underfitting",
+    "definition": "Too simple to learn the pattern",
+    "extra": "",
+    "topicId": "p4"
+  },
+  {
+    "term": "Regularization",
+    "definition": "Techniques that penalize complexity to fight overfitting",
+    "extra": "",
+    "topicId": "p4"
+  },
+  {
+    "term": "Cross-validation",
+    "definition": "Rotating train/validate splits for reliable estimates",
+    "extra": "",
+    "topicId": "p4"
+  },
+  {
+    "term": "Ensemble",
+    "definition": "Combining multiple models (e.g., random forest)",
+    "extra": "",
+    "topicId": "p4"
+  },
+  {
+    "term": "Transfer learning",
+    "definition": "Reusing a pre-trained model, fine-tuning on your data",
+    "extra": "",
+    "topicId": "p4"
+  },
+  {
+    "term": "Explainability (XAI)",
+    "definition": "Ability to explain why a model made a prediction",
+    "extra": "",
+    "topicId": "p4"
+  },
+  {
+    "term": "Baseline model",
+    "definition": "Simple first model used as comparison benchmark",
+    "extra": "",
+    "topicId": "p4"
+  },
+  {
+    "term": "Confusion matrix",
+    "definition": "Table of TP/TN/FP/FN outcomes",
+    "extra": "",
+    "topicId": "p5"
+  },
+  {
+    "term": "True/False Positive/Negative",
+    "definition": "Correct/incorrect predictions per class",
+    "extra": "",
+    "topicId": "p5"
+  },
+  {
+    "term": "Precision",
+    "definition": "Correctness of positive predictions",
+    "extra": "",
+    "topicId": "p5"
+  },
+  {
+    "term": "Recall (Sensitivity)",
+    "definition": "Coverage of actual positives",
+    "extra": "",
+    "topicId": "p5"
+  },
+  {
+    "term": "Specificity",
+    "definition": "Coverage of actual negatives",
+    "extra": "",
+    "topicId": "p5"
+  },
+  {
+    "term": "F1 score",
+    "definition": "Harmonic mean of precision & recall",
+    "extra": "",
+    "topicId": "p5"
+  },
+  {
+    "term": "AUC-ROC",
+    "definition": "Threshold-independent ranking quality (0.5 random, 1 perfect)",
+    "extra": "",
+    "topicId": "p5"
+  },
+  {
+    "term": "Accuracy paradox",
+    "definition": "High accuracy hiding uselessness on imbalanced data",
+    "extra": "",
+    "topicId": "p5"
+  },
+  {
+    "term": "Type I error",
+    "definition": "False positive",
+    "extra": "",
+    "topicId": "p5"
+  },
+  {
+    "term": "Type II error",
+    "definition": "False negative",
+    "extra": "",
+    "topicId": "p5"
+  },
+  {
+    "term": "MAE / RMSE / R²",
+    "definition": "Regression error and fit metrics",
+    "extra": "",
+    "topicId": "p5"
+  },
+  {
+    "term": "Threshold",
+    "definition": "Probability cutoff converting scores to decisions",
+    "extra": "",
+    "topicId": "p5"
+  },
+  {
+    "term": "Backtesting",
+    "definition": "Evaluating on historical periods",
+    "extra": "",
+    "topicId": "p5"
+  },
+  {
+    "term": "Shadow testing",
+    "definition": "Running the model in parallel without acting on it",
+    "extra": "",
+    "topicId": "p5"
+  },
+  {
+    "term": "A/B testing",
+    "definition": "Comparing model vs control on live traffic",
+    "extra": "",
+    "topicId": "p5"
+  },
+  {
+    "term": "Disparate impact",
+    "definition": "Unfair outcome differences across groups",
+    "extra": "",
+    "topicId": "p5"
+  },
+  {
+    "term": "Model validation",
+    "definition": "Independent verification of model soundness (esp. banking)",
+    "extra": "",
+    "topicId": "p5"
+  },
+  {
+    "term": "Operationalization",
+    "definition": "Putting a model into production use and maintaining it",
+    "extra": "",
+    "topicId": "p6"
+  },
+  {
+    "term": "MLOps / ModelOps",
+    "definition": "Practices for deploying, monitoring, and maintaining ML at scale",
+    "extra": "",
+    "topicId": "p6"
+  },
+  {
+    "term": "Inference",
+    "definition": "Using a trained model to make predictions",
+    "extra": "",
+    "topicId": "p6"
+  },
+  {
+    "term": "Batch inference",
+    "definition": "Scheduled predictions over datasets",
+    "extra": "",
+    "topicId": "p6"
+  },
+  {
+    "term": "Real-time inference",
+    "definition": "Instant predictions via API",
+    "extra": "",
+    "topicId": "p6"
+  },
+  {
+    "term": "Edge deployment",
+    "definition": "Running models on local devices",
+    "extra": "",
+    "topicId": "p6"
+  },
+  {
+    "term": "Shadow deployment",
+    "definition": "Parallel run without acting on outputs",
+    "extra": "",
+    "topicId": "p6"
+  },
+  {
+    "term": "Canary release",
+    "definition": "Gradual rollout to a small traffic slice first",
+    "extra": "",
+    "topicId": "p6"
+  },
+  {
+    "term": "Blue-green deployment",
+    "definition": "Two environments enabling instant switch/rollback",
+    "extra": "",
+    "topicId": "p6"
+  },
+  {
+    "term": "Data drift",
+    "definition": "Input data distribution changes over time",
+    "extra": "",
+    "topicId": "p6"
+  },
+  {
+    "term": "Concept drift",
+    "definition": "The relationship between inputs and target changes",
+    "extra": "",
+    "topicId": "p6"
+  },
+  {
+    "term": "Model decay/degradation",
+    "definition": "Performance decline in production",
+    "extra": "",
+    "topicId": "p6"
+  },
+  {
+    "term": "Retraining",
+    "definition": "Refreshing the model with new data",
+    "extra": "",
+    "topicId": "p6"
+  },
+  {
+    "term": "Model registry",
+    "definition": "Catalog of model versions and their lifecycle stage",
+    "extra": "",
+    "topicId": "p6"
+  },
+  {
+    "term": "Feature store",
+    "definition": "Central store ensuring consistent features in training & serving",
+    "extra": "",
+    "topicId": "p6"
+  },
+  {
+    "term": "Training-serving skew",
+    "definition": "Mismatch between training and production features",
+    "extra": "",
+    "topicId": "p6"
+  },
+  {
+    "term": "CI/CD",
+    "definition": "Automated build-test-deploy pipelines",
+    "extra": "",
+    "topicId": "p6"
+  },
+  {
+    "term": "Human-in-the-loop",
+    "definition": "Human review/approval within the AI decision flow",
+    "extra": "",
+    "topicId": "p6"
+  },
+  {
+    "term": "Rollback",
+    "definition": "Reverting to a previous model/version",
+    "extra": "",
+    "topicId": "p6"
+  },
+  {
+    "term": "Model retirement",
+    "definition": "Decommissioning a model at end of useful life",
+    "extra": "",
+    "topicId": "p6"
+  },
+  {
+    "term": "Adversarial attack",
+    "definition": "Deliberate inputs crafted to fool a model",
+    "extra": "",
+    "topicId": "p6"
+  },
+  {
+    "term": "Pattern (of AI)",
+    "definition": "A repeatable problem-shape that AI solves",
+    "extra": "",
+    "topicId": "pat"
+  },
+  {
+    "term": "Hyperpersonalization",
+    "definition": "Individual-level tailoring (\"segment of one\")",
+    "extra": "",
+    "topicId": "pat"
+  },
+  {
+    "term": "Recommender system",
+    "definition": "Algorithm suggesting items per user",
+    "extra": "",
+    "topicId": "pat"
+  },
+  {
+    "term": "Autonomous system",
+    "definition": "Machine operating with minimal human input",
+    "extra": "",
+    "topicId": "pat"
+  },
+  {
+    "term": "Decision support",
+    "definition": "AI informs, human decides",
+    "extra": "",
+    "topicId": "pat"
+  },
+  {
+    "term": "NLP",
+    "definition": "Natural Language Processing — machines handling human language",
+    "extra": "",
+    "topicId": "pat"
+  },
+  {
+    "term": "Sentiment analysis",
+    "definition": "Detecting emotion/opinion in text",
+    "extra": "",
+    "topicId": "pat"
+  },
+  {
+    "term": "Anomaly detection",
+    "definition": "Spotting data points that deviate from normal",
+    "extra": "",
+    "topicId": "pat"
+  },
+  {
+    "term": "Association rules",
+    "definition": "\"Items bought together\" pattern mining",
+    "extra": "",
+    "topicId": "pat"
+  },
+  {
+    "term": "Computer vision",
+    "definition": "Machines interpreting images/video",
+    "extra": "",
+    "topicId": "pat"
+  },
+  {
+    "term": "OCR",
+    "definition": "Optical Character Recognition — reading text from images",
+    "extra": "",
+    "topicId": "pat"
+  },
+  {
+    "term": "Reinforcement learning",
+    "definition": "Learning actions via rewards (Goal-Driven engine)",
+    "extra": "",
+    "topicId": "pat"
+  },
+  {
+    "term": "Reward function",
+    "definition": "The score an RL agent tries to maximize",
+    "extra": "",
+    "topicId": "pat"
+  },
+  {
+    "term": "Segment of one",
+    "definition": "Marketing term for individual-level targeting",
+    "extra": "",
+    "topicId": "pat"
+  },
+  {
+    "term": "Pattern combination",
+    "definition": "Real systems stacking multiple patterns",
+    "extra": "",
+    "topicId": "pat"
+  }
+]

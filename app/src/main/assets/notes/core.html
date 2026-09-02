@@ -1,0 +1,522 @@
+
+<p><em>(Covers: AI/ML fundamentals, ML types, DIKUW pyramid, Data-centric vs Model-centric, Why AI projects fail, CPMAI methodology &amp; agile foundations)</em></p>
+<hr/>
+<h2>1. Topic Overview</h2>
+<h3>Definition</h3>
+<p>This topic bundles the <strong>foundational knowledge</strong> the CPMAI exam assumes everywhere:
+- What <strong>AI, ML, and cognitive technology</strong> actually are.
+- The <strong>DIKUW pyramid</strong> (Data → Information → Knowledge → Understanding → Wisdom).
+- The <strong>types of machine learning</strong>.
+- <strong>Data-centric vs model-centric</strong> thinking.
+- <strong>Why AI projects fail</strong> and how CPMAI's structure and agile roots fix it.</p>
+<h3>Why It Is Important</h3>
+<ul>
+<li>These ideas appear <strong>inside every scenario question</strong>, whichever phase it tests.</li>
+<li>CPMAI's entire design is an answer to documented <strong>failure causes</strong> of AI projects.</li>
+<li>"AI projects are <strong>data projects</strong>" — the exam's most repeated worldview.</li>
+</ul>
+<h3>Where It Is Used</h3>
+<ul>
+<li>Phase I (is it AI? which learning type? realistic expectations).</li>
+<li>Phases II–III (data-centric mindset).</li>
+<li>Phases IV–VI (learning types, iteration, drift).</li>
+</ul>
+<hr/>
+<h2>2. Key Concepts</h2>
+<h3>2.1 AI vs ML vs Deep Learning (nesting dolls)</h3>
+<pre><code>┌───────────── ARTIFICIAL INTELLIGENCE ─────────────┐
+│  Machines showing human-like intelligence         │
+│  ┌────────── MACHINE LEARNING ────────────┐       │
+│  │  Systems that LEARN from data          │       │
+│  │  (no explicit programming of rules)    │       │
+│  │  ┌────── DEEP LEARNING ──────┐         │       │
+│  │  │ Multi-layer neural nets   │         │       │
+│  │  │ for images/text/audio     │         │       │
+│  │  └───────────────────────────┘         │       │
+│  └────────────────────────────────────────┘       │
+└───────────────────────────────────────────────────┘
+</code></pre>
+<ul>
+<li><strong>AI:</strong> broad goal — machines performing tasks needing human-like intelligence.</li>
+<li><strong>ML:</strong> the dominant approach — learn patterns <strong>from data</strong> instead of hand-coding rules.</li>
+<li><strong>Deep Learning (DL):</strong> ML using <strong>multi-layer neural networks</strong>; shines on unstructured data; needs lots of data/compute; less explainable.</li>
+<li><strong>Narrow (weak) AI:</strong> good at ONE task (all AI today). <strong>General (strong) AI / AGI:</strong> human-level across tasks (does not exist). Exam expects realistic framing: today's AI = <strong>narrow</strong>.</li>
+</ul>
+<h3>2.2 Cognitive Technology &amp; Probabilistic Systems</h3>
+<ul>
+<li>AI systems are <strong>probabilistic</strong>: outputs are predictions with confidence, not guaranteed answers.</li>
+<li>Traditional software is <strong>deterministic</strong>: coded rules, same input → same output.</li>
+<li>Consequences (exam-favorite): AI needs <strong>training data</strong>, produces <strong>errors by design</strong>, requires <strong>continuous monitoring/retraining</strong>, and success is measured <strong>statistically</strong>.</li>
+</ul>
+<h3>2.3 The DIKUW Pyramid</h3>
+<pre><code>            ▲  WISDOM        — knowing WHY / best action, judgment
+           ▲▲  UNDERSTANDING — insight into causes, "why it happens"
+          ▲▲▲  KNOWLEDGE     — applied, contextualized information ("how")
+         ▲▲▲▲  INFORMATION   — organized/processed data ("who/what/where/when")
+        ▲▲▲▲▲  DATA          — raw facts and signals
+</code></pre>
+<ul>
+<li><strong>Data:</strong> raw values ("₹5,000, 2:31 AM, Card #123").</li>
+<li><strong>Information:</strong> data with context ("Card #123 spent ₹5,000 at 2:31 AM in Dubai").</li>
+<li><strong>Knowledge:</strong> patterns applied ("this customer never shops abroad at night").</li>
+<li><strong>Understanding:</strong> why it matters ("this matches fraud behavior").</li>
+<li><strong>Wisdom:</strong> best action with judgment ("block and verify via call — balancing risk vs customer experience").</li>
+<li><strong>Exam point:</strong> AI helps climb the pyramid; most ML operates around <strong>information → knowledge/understanding</strong>; <strong>wisdom</strong> remains largely human.</li>
+</ul>
+<h3>2.4 Types of Machine Learning (consolidated)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Data</th>
+<th>Output</th>
+<th>Business Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Supervised</strong></td>
+<td>Labeled</td>
+<td>Classification (category) or Regression (number)</td>
+<td>Fraud yes/no, price forecast, churn</td>
+</tr>
+<tr>
+<td><strong>Unsupervised</strong></td>
+<td>Unlabeled</td>
+<td>Clusters, associations, reduced dimensions</td>
+<td>Customer segmentation, market basket</td>
+</tr>
+<tr>
+<td><strong>Semi-supervised</strong></td>
+<td>Few labels + many unlabeled</td>
+<td>Same as supervised</td>
+<td>Document classification at scale</td>
+</tr>
+<tr>
+<td><strong>Reinforcement</strong></td>
+<td>Reward signals from environment</td>
+<td>Action policy</td>
+<td>Routing, robotics, game AI</td>
+</tr>
+</tbody>
+</table></div>
+<h3>2.5 Data-Centric vs Model-Centric AI</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th><strong>Model-Centric</strong></th>
+<th><strong>Data-Centric</strong> (CPMAI-endorsed)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Focus</td>
+<td>Better algorithms/architectures</td>
+<td>Better <strong>data quality, labels, coverage</strong></td>
+</tr>
+<tr>
+<td>Data treated as</td>
+<td>Fixed</td>
+<td>The thing to improve</td>
+</tr>
+<tr>
+<td>Typical gain source</td>
+<td>Marginal tuning</td>
+<td>Often larger, cheaper improvements</td>
+</tr>
+<tr>
+<td>Slogan</td>
+<td>"Improve the code"</td>
+<td>"<strong>Improve the data</strong>"</td>
+</tr>
+<tr>
+<td>- CPMAI mindset: <strong>AI projects are data projects</strong> → most wins come from cleaner, better-labeled, more representative data (hence Phases II–III dominate effort).</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h3>2.6 Why AI Projects Fail (and CPMAI's antidotes)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Failure Cause</th>
+<th>CPMAI Antidote</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>No clear business problem ("tech looking for a problem")</td>
+<td><strong>Phase I</strong> business-first, go/no-go</td>
+</tr>
+<tr>
+<td>Data unavailable / poor quality discovered late</td>
+<td><strong>Phase II</strong> data understanding early</td>
+</tr>
+<tr>
+<td>Underestimating data preparation</td>
+<td><strong>Phase III</strong> planned as 60–80% effort</td>
+</tr>
+<tr>
+<td>Measuring only technical metrics</td>
+<td><strong>Phase V</strong> two-level (business+technical) evaluation</td>
+</tr>
+<tr>
+<td>"Deploy and forget" — drift kills value</td>
+<td><strong>Phase VI</strong> monitoring/retraining</td>
+</tr>
+<tr>
+<td>Big-bang, multi-year waterfall scope</td>
+<td><strong>Think Big, Start Small, Iterate Often</strong></td>
+</tr>
+<tr>
+<td>Unrealistic expectations (AI = magic)</td>
+<td>Probabilistic framing, stakeholder education</td>
+</tr>
+<tr>
+<td>Ethics/bias as afterthought</td>
+<td>Ethics woven through <strong>every phase</strong></td>
+</tr>
+<tr>
+<td>- Widely cited statistic: a <strong>large majority (~80%+) of AI projects fail</strong> to reach production value — mostly for <strong>management, not technology</strong> reasons.</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h3>2.7 CPMAI Methodology — The Frame That Holds It All</h3>
+<ul>
+<li><strong>Six phases:</strong> I Business → II Data Understanding → III Data Prep → IV Modeling → V Evaluation → VI Operationalization.</li>
+<li><strong>Heritage:</strong> built on <strong>CRISP-DM</strong>, upgraded with <strong>AI-specific practices</strong> (patterns, ethics, drift, MLOps) and <strong>agile iteration</strong>.</li>
+<li><strong>Iterative, not waterfall:</strong> short cycles; every iteration touches all six phases; scope grows gradually.</li>
+<li><strong>Vendor/technology-neutral</strong> and applicable to any AI pattern.</li>
+<li><strong>Agile alignment:</strong> small increments, working solutions over big documents, feedback loops, adaptability — but with <strong>data-project discipline</strong> added (agile alone isn't enough for AI; data work needs its own phases).</li>
+</ul>
+<h3>2.8 AI Ethics &amp; Responsible AI (cross-phase thread)</h3>
+<ul>
+<li>Principles: <strong>fairness, transparency/explainability, accountability, privacy, safety/security, human oversight</strong>.</li>
+<li>Bias enters via <strong>unrepresentative data, historical prejudice in labels, proxy variables</strong> (e.g., pincode ≈ community).</li>
+<li>Governance artifacts: data consent, model documentation, audit trails, human-in-the-loop for high-stakes calls.</li>
+<li>Trustworthy AI is a <strong>project requirement</strong>, not an optional add-on.</li>
+</ul>
+<hr/>
+<h2>3. PMI CPMAI Exam Focus</h2>
+<h3>What the Exam Expects</h3>
+<ul>
+<li>Place AI/ML/DL correctly; state that current AI is <strong>narrow</strong>.</li>
+<li>Walk the <strong>DIKUW</strong> levels for a scenario.</li>
+<li>Classify scenarios into <strong>ML types</strong> instantly.</li>
+<li>Champion <strong>data-centric</strong> thinking and effort distribution.</li>
+<li>Recite <strong>failure causes</strong> and match them to <strong>CPMAI phase remedies</strong>.</li>
+<li>Explain CPMAI's <strong>CRISP-DM + agile</strong> heritage and iterative nature.</li>
+</ul>
+<h3>Frequently Tested</h3>
+<ol>
+<li>"Raw numbers vs organized report vs actionable insight" → DIKUW levels.</li>
+<li>"Which is broader — AI or ML?" → AI ⊃ ML ⊃ DL.</li>
+<li>"Team keeps swapping algorithms with no gain; data is messy" → go <strong>data-centric</strong>.</li>
+<li>"Why did the AI project fail?" → almost always a <strong>business/data/management</strong> cause.</li>
+<li>"Is CPMAI waterfall?" → NO, <strong>iterative</strong>.</li>
+<li>Ethics scenarios: proxy bias, consent, explainability duty.</li>
+</ol>
+<h3>Common Misconceptions</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Misconception</th>
+<th>Truth</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"AI and ML are the same"</td>
+<td>ML is a <strong>subset</strong> of AI</td>
+</tr>
+<tr>
+<td>"Today's AI is nearly AGI"</td>
+<td>It's <strong>narrow AI</strong> — one task at a time</td>
+</tr>
+<tr>
+<td>"Better algorithms fix bad data"</td>
+<td>GIGO; data-centric wins</td>
+</tr>
+<tr>
+<td>"Failures are due to weak tech"</td>
+<td>Mostly <strong>management/data/business</strong> causes</td>
+</tr>
+<tr>
+<td>"CPMAI = documentation-heavy waterfall"</td>
+<td>Lightweight, <strong>agile-iterative</strong></td>
+</tr>
+<tr>
+<td>"Ethics slows projects, do it later"</td>
+<td>Late ethics = rework, legal risk, harm</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2>4. AI Project Manager Perspective</h2>
+<h3>Responsibilities</h3>
+<ul>
+<li>Educate stakeholders: probabilistic nature, narrow AI limits, data-first economics.</li>
+<li>Enforce <strong>data-centric</strong> effort allocation and iteration discipline.</li>
+<li>Maintain a <strong>risk register</strong> mapping classic failure causes to mitigations.</li>
+<li>Own <strong>responsible AI</strong> checklists across phases.</li>
+<li>Translate DIKUW: ensure projects deliver <strong>decision value</strong>, not just dashboards.</li>
+</ul>
+<h3>Stakeholders</h3>
+<ul>
+<li>Sponsors (expectation-setting), data &amp; ML teams (execution), compliance/ethics boards, end users, customers/society (fairness impact).</li>
+</ul>
+<h3>Risks</h3>
+<ul>
+<li>Hype-driven scope, data debt, ethics debt, iteration fatigue ("why revisit Phase I again?"), metric myopia.</li>
+</ul>
+<h3>Best Practices</h3>
+<ul>
+<li>Run an <strong>AI literacy session</strong> at kickoff (narrow AI, probabilistic, data-first).</li>
+<li>Keep a visible <strong>failure-cause checklist</strong> reviewed each iteration.</li>
+<li>Institutionalize <strong>ethics gates</strong> in Phases I, III, V, VI.</li>
+<li>Celebrate <strong>stopped projects</strong> that saved money — governance success.</li>
+</ul>
+<h3>Decision-Making Approach</h3>
+<pre><code>Any AI decision, any phase:
+  Business value clear? → data sufficient? → simplest approach? →
+  ethical/compliant? → measurable? → iterate small?
+  All yes → proceed. Any no → fix the "no" first.
+</code></pre>
+<hr/>
+<h2>5. Real-World Example (Retail — From Data to Wisdom, Done Right)</h2>
+<p><strong>Scenario:</strong> A supermarket chain wants "AI for better stocking."</p>
+<ol>
+<li><strong>DIKUW framing:</strong> POS records (<strong>Data</strong>) → weekly sales by store/SKU (<strong>Information</strong>) → "monsoon weeks spike umbrella + pakora-mix sales in Pune" (<strong>Knowledge</strong>) → "rain drives comfort-food buying" (<strong>Understanding</strong>) → "auto-raise stock 30% when IMD forecasts rain, cap by shelf life" (<strong>Wisdom</strong>, human-approved policy).</li>
+<li><strong>ML typing:</strong> demand forecasting = <strong>supervised regression</strong>; store clustering for assortment = <strong>unsupervised</strong>.</li>
+<li><strong>Data-centric moment:</strong> early models flop; instead of new algorithms, the team fixes promo-data gaps and SKU-code inconsistencies → accuracy jumps — <strong>data beat models</strong>.</li>
+<li><strong>Failure-avoidance:</strong> business KPI (stock-outs −30%) fixed in Phase I; pilot = 1 city, top 500 SKUs (<strong>start small</strong>); monitoring for festival-season <strong>drift</strong> planned in Phase VI.</li>
+<li>Iteration 2 expands cities and adds a Hyperpersonalization pattern (personalized offers) — the loop continues.</li>
+</ol>
+<hr/>
+<h2>6. Visual Learning</h2>
+<h3>CPMAI Master Map (everything connects)</h3>
+<pre><code>WHY (I) → WHAT DATA (II) → PREP (III) → BUILD (IV) → GOOD ENOUGH? (V) → RUN (VI) ─┐
+ ▲   7 Patterns • KPIs      Quality      60-80%     ML types      P/R/F1 + KPI    │ drift,
+ │   go/no-go               V's, GIGO    effort     overfit       fairness        │ retrain
+ └──────────────────────  ITERATE (Think Big, Start Small, Iterate Often)  ◄──────┘
+        Data-centric mindset + Responsible AI run through ALL phases
+</code></pre>
+<h3>Failure Causes → Phase Shields</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Failure</th>
+<th>Shielding Phase</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>No business case</td>
+<td>I</td>
+</tr>
+<tr>
+<td>Data surprises</td>
+<td>II</td>
+</tr>
+<tr>
+<td>Prep underestimated</td>
+<td>III</td>
+</tr>
+<tr>
+<td>Overfit/black-box issues</td>
+<td>IV</td>
+</tr>
+<tr>
+<td>Wrong success measure</td>
+<td>V</td>
+</tr>
+<tr>
+<td>Silent decay</td>
+<td>VI</td>
+</tr>
+<tr>
+<td>Big-bang collapse</td>
+<td>Iteration principle</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2>7. Key Formulas or Frameworks</h2>
+<ul>
+<li><strong>AI ⊃ ML ⊃ Deep Learning.</strong></li>
+<li><strong>DIKUW:</strong> Data → Information → Knowledge → Understanding → Wisdom ("<strong>D</strong>on't <strong>I</strong>gnore <strong>K</strong>nowledge, <strong>U</strong>se <strong>W</strong>isdom").</li>
+<li><strong>GIGO</strong> + <strong>Data-centric:</strong> improve data before improving models.</li>
+<li><strong>Think Big, Start Small, Iterate Often</strong> — CPMAI's agile heartbeat.</li>
+<li><strong>Two-question AI test:</strong> (1) Does it need learning from data? (2) Which of the 7 patterns? — else rules/RPA/BI.</li>
+<li><strong>Responsible AI pillars:</strong> Fairness, Explainability, Accountability, Privacy, Safety, Human oversight ("<strong>FEAPSH</strong>" or invent your own!).</li>
+</ul>
+<hr/>
+<h2>8. Important Terminology (Glossary)</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Simple Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Artificial Intelligence (AI)</strong></td>
+<td>Machines performing tasks that need human-like intelligence</td>
+</tr>
+<tr>
+<td><strong>Machine Learning (ML)</strong></td>
+<td>Learning patterns from data without explicit rule programming</td>
+</tr>
+<tr>
+<td><strong>Deep Learning</strong></td>
+<td>ML with multi-layer neural networks</td>
+</tr>
+<tr>
+<td><strong>Narrow (Weak) AI</strong></td>
+<td>AI good at one specific task (all current AI)</td>
+</tr>
+<tr>
+<td><strong>AGI (Strong AI)</strong></td>
+<td>Hypothetical human-level general intelligence</td>
+</tr>
+<tr>
+<td><strong>Cognitive technology</strong></td>
+<td>Umbrella for AI/ML systems mimicking human cognition</td>
+</tr>
+<tr>
+<td><strong>Deterministic vs Probabilistic</strong></td>
+<td>Fixed rule outputs vs prediction-with-confidence outputs</td>
+</tr>
+<tr>
+<td><strong>DIKUW</strong></td>
+<td>Data-Information-Knowledge-Understanding-Wisdom pyramid</td>
+</tr>
+<tr>
+<td><strong>Data-centric AI</strong></td>
+<td>Improving data quality as the main performance lever</td>
+</tr>
+<tr>
+<td><strong>Model-centric AI</strong></td>
+<td>Improving algorithms while holding data fixed</td>
+</tr>
+<tr>
+<td><strong>GIGO</strong></td>
+<td>Garbage In, Garbage Out</td>
+</tr>
+<tr>
+<td><strong>CRISP-DM</strong></td>
+<td>Predecessor methodology CPMAI builds upon</td>
+</tr>
+<tr>
+<td><strong>Iteration</strong></td>
+<td>One short pass through all six CPMAI phases</td>
+</tr>
+<tr>
+<td><strong>Agile</strong></td>
+<td>Incremental, feedback-driven delivery philosophy</td>
+</tr>
+<tr>
+<td><strong>Responsible AI</strong></td>
+<td>Fair, transparent, accountable, private, safe AI with human oversight</td>
+</tr>
+<tr>
+<td><strong>Proxy variable</strong></td>
+<td>Innocent-looking feature secretly encoding a sensitive attribute</td>
+</tr>
+<tr>
+<td><strong>Algorithmic bias</strong></td>
+<td>Systematic unfairness learned from data or design</td>
+</tr>
+<tr>
+<td><strong>Human-in-the-loop</strong></td>
+<td>Humans reviewing/approving AI decisions</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2>9. Exam Tips</h2>
+<h3>Memory Tricks</h3>
+<ul>
+<li><strong>Nesting dolls:</strong> AI (biggest) → ML → DL (smallest).</li>
+<li><strong>DIKUW ladder story:</strong> numbers → report → pattern → why → best action.</li>
+<li><strong>"Fix the data first"</strong> — when a scenario shows messy data + algorithm-hopping, the data-centric answer wins.</li>
+<li><strong>Failure question reflex:</strong> the cause is business/data/management ~always — never "the algorithm was unlucky."</li>
+</ul>
+<h3>Keywords</h3>
+<ul>
+<li>"<strong>AI projects are data projects</strong>"</li>
+<li>"<strong>Narrow AI</strong>", "<strong>probabilistic</strong>"</li>
+<li>"<strong>Iterative</strong>, built on <strong>CRISP-DM</strong>"</li>
+<li>"<strong>Responsible/trustworthy AI</strong>", "<strong>bias</strong>", "<strong>explainability</strong>"</li>
+</ul>
+<h3>Differentiators</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Pair</th>
+<th>Difference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI vs ML</td>
+<td>Goal vs data-learning approach (subset)</td>
+</tr>
+<tr>
+<td>ML vs DL</td>
+<td>Family vs neural multi-layer subset</td>
+</tr>
+<tr>
+<td>Information vs Knowledge</td>
+<td>Organized facts vs applied patterns</td>
+</tr>
+<tr>
+<td>Data-centric vs Model-centric</td>
+<td>Improve data vs improve algorithm</td>
+</tr>
+<tr>
+<td>CPMAI vs CRISP-DM</td>
+<td>AI-ready, agile-iterative extension vs original data-mining process</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Traps</h3>
+<ul>
+<li>"Buy a better algorithm to fix bad data" → wrong.</li>
+<li>"AI will fully replace human wisdom/judgment" → wrong (top of DIKUW stays human).</li>
+<li>"Run CPMAI phases once, sequentially, then done" → wrong (iterate).</li>
+<li>"Ethics review only before launch" → wrong (every phase).</li>
+</ul>
+<hr/>
+<h2>11. Quick Revision Sheet</h2>
+<ul>
+<li><strong>AI ⊃ ML ⊃ Deep Learning</strong>; all current AI = <strong>narrow</strong>; AI is <strong>probabilistic</strong>.</li>
+<li><strong>DIKUW:</strong> Data → Information → Knowledge → Understanding → Wisdom; wisdom stays human.</li>
+<li>ML types: <strong>Supervised (labels) / Unsupervised (none) / Semi-supervised / Reinforcement (rewards)</strong>.</li>
+<li><strong>Data-centric &gt; model-centric</strong>: fix data before chasing algorithms (GIGO).</li>
+<li><strong>~80%+ AI projects fail</strong> — for business/data/management reasons, not tech.</li>
+<li>Failure causes ↔ CPMAI phase shields (no KPI→I, data surprise→II, prep underrated→III, wrong metric→V, decay→VI, big-bang→iterate).</li>
+<li>CPMAI = <strong>CRISP-DM + AI-specific + agile</strong>; six phases; <strong>iterative</strong>; vendor-neutral.</li>
+<li><strong>Think Big, Start Small, Iterate Often.</strong></li>
+<li><strong>Responsible AI</strong> (fairness, explainability, accountability, privacy, safety, human oversight) runs through <strong>every phase</strong>; watch <strong>proxy variables</strong>.</li>
+</ul>
+<hr/>
+<h2>⭐ Top 10 Things to Remember for the Exam</h2>
+<ol>
+<li><strong>AI ⊃ ML ⊃ DL</strong>; today's AI is <strong>narrow</strong> and <strong>probabilistic</strong>.</li>
+<li><strong>AI projects are data projects</strong> — data-centric beats model-centric.</li>
+<li><strong>DIKUW</strong> — climb from raw data toward (human-held) wisdom.</li>
+<li><strong>Labels→Supervised, none→Unsupervised, rewards→Reinforcement.</strong></li>
+<li><strong>~80%+ failure rate</strong>, driven by business/data/management causes.</li>
+<li>Each failure cause has a <strong>CPMAI phase antidote</strong> — know the mapping.</li>
+<li>CPMAI = <strong>CRISP-DM + agile + AI-specific</strong>, six phases, <strong>iterative</strong>.</li>
+<li><strong>Think Big, Start Small, Iterate Often</strong> — reject big-bang answers.</li>
+<li><strong>Responsible AI in every phase</strong> — fairness, explainability, privacy, oversight.</li>
+<li><strong>Proxy variables</strong> smuggle bias — audit features and subgroups.</li>
+</ol>
+<hr/>
+<p><em>Complete set: Phases I–VI + 7 Patterns + Core Concepts. All the best, future CPMAI! 🎯</em></p>

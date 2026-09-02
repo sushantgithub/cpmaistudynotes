@@ -1,0 +1,74 @@
+{
+  "top10": [
+    "Phase I comes FIRST — every scenario asking \"what should the PM do first?\" → understand the business problem .",
+    "\"Do we even need AI?\" — rules/RPA beat AI for deterministic, repetitive tasks.",
+    "Every valid AI use case maps to one of the 7 Patterns of AI — memorize all seven with examples.",
+    "Success = business KPIs and ROI , never accuracy alone.",
+    "The Go/No-Go decision is a Phase I output (P-P-K-F: Problem, Pattern, KPI, Feasibility).",
+    "Think Big, Start Small, Iterate Often — reject big-bang answers.",
+    "CPMAI = CRISP-DM + AI-specific + agile/iterative enhancements.",
+    "Phase I repeats in every iteration — it is not one-time.",
+    "Ethics, bias, and regulation are assessed in Phase I, not left for the end.",
+    "1 cause of AI project failure = poor business understanding (\"solution looking for a problem\")."
+  ],
+  "revision": [
+    "Phase I = Business Understanding = the WHY phase = FIRST phase , repeated every iteration .",
+    "Built on CRISP-DM , enhanced with AI-specific + agile practices.",
+    "Core question: \"Do we even need AI?\" → If rules/RPA can solve it, don't use AI .",
+    "Map every use case to the 7 Patterns of AI : Hyperpersonalization, Autonomous Systems, Predictive Analytics, Conversation, Patterns & Anomalies, Recognition, Goal-Driven Systems.",
+    "Define business KPIs + ROI — accuracy alone ≠ success.",
+    "Go/No-Go decision happens in Phase I (P-P-K-F checklist).",
+    "Mantra: Think Big, Start Small, Iterate Often.",
+    "1 reason AI projects fail: poor business understanding / no clear business problem .",
+    "Feasibility check: business, data, tech/skills, ethics/regulatory , operational.",
+    "Stakeholders aligned early; expectations set that AI is probabilistic , not perfect.",
+    "Output of Phase I: problem statement, pattern mapping, business case (KPI+ROI), constraints, go/no-go, first-iteration scope .",
+    "Next phase: Phase II — Data Understanding ."
+  ],
+  "knowledgeCheck": [
+    "Why should an AI project never begin with data collection?",
+    "List the five types of feasibility assessed in Phase I.",
+    "Give one banking and one healthcare example of the Recognition pattern.",
+    "What is the difference between RPA and AI, and why does it matter in Phase I?",
+    "Write a well-formed business KPI for a customer churn project.",
+    "Explain \"Think Big, Start Small, Iterate Often\" in your own words.",
+    "What deliverables (outputs) should exist at the end of Phase I?",
+    "Why is stakeholder expectation-setting about \"probabilistic behavior\" important?",
+    "A use case maps to none of the 7 Patterns. What does this suggest?",
+    "How does CPMAI differ from classic waterfall project management?"
+  ],
+  "examTips": [
+    {
+      "heading": "Memory Tricks",
+      "bullets": [
+        "Phase I = WHY? (Phase II = WHAT data? Phase III = HOW to prepare?)",
+        "7 Patterns mnemonic: \"HAPPY CPR Goals\" → H yperpersonalization, A utonomous, P redictive, P atterns & Anomalies, Con v ersational, R ecognition, G oal-driven. (Or make your own — e.g., \"HAP-CPRG\" .)",
+        "Go/No-Go checklist: P-P-K-F (Problem, Pattern, KPI, Feasibility).",
+        "Mantra: \"Think Big, Start Small, Iterate Often.\""
+      ]
+    },
+    {
+      "heading": "Keywords That Signal the Right Answer",
+      "bullets": [
+        "\" First understand the business problem \"",
+        "\" Do we even need AI? \"",
+        "\"Map to one of the 7 Patterns \"",
+        "\"Define measurable KPIs and ROI \"",
+        "\" Start small with a pilot\""
+      ]
+    },
+    {
+      "heading": "Differentiating Similar Concepts",
+      "bullets": []
+    },
+    {
+      "heading": "Common Exam Traps to Avoid",
+      "bullets": [
+        "Any answer that says \" start by collecting data \" or \" start by selecting an algorithm \" in a new-project scenario → WRONG . Business understanding comes first.",
+        "Any answer implying AI should be used for simple rule-based tasks → WRONG (use RPA).",
+        "Any answer defining success only by accuracy → WRONG (need business KPI).",
+        "\"Complete all requirements upfront, then build\" (waterfall thinking) → WRONG (CPMAI is iterative)."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "top10": [
+    "Evaluation = technical + business + ethical — all gates must pass.",
+    "Precision = TP/(TP+FP); Recall = TP/(TP+FN); F1 = harmonic mean.",
+    "Accuracy paradox — never trust accuracy on imbalanced data.",
+    "Missing is worse → Recall; False alarm is worse → Precision.",
+    "Type I = FP; Type II = FN.",
+    "Final metrics come from the locked, untouched test set .",
+    "Threshold tradeoffs are business decisions.",
+    "Fairness/bias audits are mandatory before deployment.",
+    "Validate against Phase I KPIs — lab success ≠ business success.",
+    "Deploy / Iterate / Stop — stopping a bad model is good governance."
+  ],
+  "revision": [
+    "Phase V = \"Good enough?\" — technical + business + ethical evaluation.",
+    "Use the locked test set for final metrics (first touch!).",
+    "Confusion matrix: TP/TN/FP/FN ; Type I = FP, Type II = FN.",
+    "Precision = TP/(TP+FP) (predicted); Recall = TP/(TP+FN) (reality); F1 balances both.",
+    "Accuracy paradox: imbalanced data → accuracy misleads → use P/R/F1/AUC.",
+    "FN-costly (cancer/fraud) → Recall. FP-costly (spam) → Precision.",
+    "Regression: MAE, RMSE, R² .",
+    "Threshold tradeoff is a business decision (₹ cost of FP vs FN).",
+    "Fairness/bias audit + explainability are required gates.",
+    "Validate against Phase I business KPIs — technical success alone ≠ success.",
+    "Outcomes: Deploy / Iterate / Stop (stop is legitimate!)."
+  ],
+  "knowledgeCheck": [
+    "Why are two evaluation levels (technical + business) both mandatory?",
+    "Given TP=45, FP=15, FN=5, TN=935 — compute accuracy, precision, recall, F1.",
+    "Explain the accuracy paradox with a fraud example.",
+    "When would you prefer F1 over accuracy?",
+    "Describe the precision-recall tradeoff and who owns the threshold decision.",
+    "What is disparate impact and why must it be tested?",
+    "Difference between shadow testing and A/B testing?",
+    "Why is \"stop\" a legitimate Phase V outcome?",
+    "Which regression metric punishes large errors more — MAE or RMSE? Why?",
+    "How does Phase V connect back to Phase I?"
+  ],
+  "examTips": [
+    {
+      "heading": "Memory Tricks",
+      "bullets": [
+        "Precision = Predicted; Recall = Reality.",
+        "\"Cancer & Crime → Recall\" (never miss). \"Spam → Precision\" (never block good mail).",
+        "Accuracy + imbalanced data mentioned together = paradox trap → answer uses P/R/F1.",
+        "Phase V motto: \"Technically good AND business good.\""
+      ]
+    },
+    {
+      "heading": "Keywords",
+      "bullets": [
+        "\" Untouched/held-out test set \"",
+        "\" Business KPI validation \" against Phase I",
+        "\" Fairness/bias evaluation \"",
+        "\" Deploy / iterate / stop \""
+      ]
+    },
+    {
+      "heading": "Differentiators",
+      "bullets": []
+    },
+    {
+      "heading": "Traps",
+      "bullets": [
+        "Choosing accuracy for imbalanced scenarios → wrong.",
+        "\"Model passed metrics, deploy without business review\" → wrong.",
+        "\"Adjust the model using test results repeatedly\" → test set contamination.",
+        "Sunk-cost reasoning (\"we invested too much to stop\") → wrong; stop is valid ."
+      ]
+    }
+  ]
+}

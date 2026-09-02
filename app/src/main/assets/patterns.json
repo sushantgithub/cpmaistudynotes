@@ -1,0 +1,153 @@
+[
+  {
+    "id": 1,
+    "name": "Hyperpersonalization",
+    "tagline": "Segment of one",
+    "summary": "Tailor content, offers, or experience to an individual using their behavior and context.",
+    "examples": [
+      "Netflix homepage",
+      "Product recommendations",
+      "Next-best offer in banking"
+    ],
+    "notThis": "A single report for an entire region (that's segmentation, not segment-of-one).",
+    "typicalData": "Behavioral event streams, purchase history, profiles",
+    "examTrap": "Don't confuse with Conversation just because a chatbot delivers the offer.",
+    "keywords": [
+      "recommend",
+      "tailor",
+      "for you",
+      "next best action",
+      "individual"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Autonomous Systems",
+    "tagline": "Perceive → decide → act in the world",
+    "summary": "Systems that act with minimal human involvement in a physical or digital environment.",
+    "examples": [
+      "Self-driving vehicles",
+      "Warehouse robots",
+      "Autonomous agents"
+    ],
+    "notThis": "Scripted RPA that clicks the same buttons — that is automation, not autonomy.",
+    "typicalData": "Sensors, telemetry, maps, simulation",
+    "examTrap": "RPA / macros are NOT this pattern.",
+    "keywords": [
+      "self-driving",
+      "robot",
+      "agent",
+      "acts without human",
+      "navigate"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Predictive Analytics & Decision Support",
+    "tagline": "Forecast an outcome; a human (or process) still decides",
+    "summary": "Estimate what will happen (risk, demand, churn) to support decisions.",
+    "examples": [
+      "Loan default scores",
+      "Demand forecasting",
+      "Churn prediction"
+    ],
+    "notThis": "Learning the best action via rewards (that's Goal-Driven).",
+    "typicalData": "Historical labeled outcomes, features, time series",
+    "examTrap": "Predictive forecasts; Goal-Driven chooses actions.",
+    "keywords": [
+      "forecast",
+      "score",
+      "risk",
+      "churn",
+      "demand",
+      "will happen"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Conversation & Human Interaction",
+    "tagline": "Language in, language (or intent) out",
+    "summary": "Chat, voice, NLP, sentiment, translation, and conversational interfaces.",
+    "examples": [
+      "Chatbots",
+      "Voice assistants",
+      "Ticket sentiment",
+      "Translation"
+    ],
+    "notThis": "Tailoring a homepage silently is Hyperpersonalization, not Conversation.",
+    "typicalData": "Text, audio, transcripts, intents",
+    "examTrap": "Sentiment analysis is this pattern even without a bot.",
+    "keywords": [
+      "chatbot",
+      "voice",
+      "translate",
+      "NLP",
+      "sentiment"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Patterns & Anomalies",
+    "tagline": "What's normal, what's odd, what goes together",
+    "summary": "Find associations, clusters, and deviations from expected behavior.",
+    "examples": [
+      "Credit-card fraud",
+      "Network intrusion",
+      "Market-basket analysis"
+    ],
+    "notThis": "Reading digits from an image is Recognition, not fraud-style anomaly detection.",
+    "typicalData": "Transactions, logs, event sequences",
+    "examTrap": "Fraud is THIS pattern, not Recognition.",
+    "keywords": [
+      "fraud",
+      "intrusion",
+      "unusual",
+      "anomaly",
+      "association",
+      "odd"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Recognition",
+    "tagline": "Identify things in unstructured media",
+    "summary": "Classify or extract entities from images, video, audio, or documents (including OCR).",
+    "examples": [
+      "Face ID",
+      "Tumor on scan",
+      "OCR on meters/cheques",
+      "Speech-to-text"
+    ],
+    "notThis": "Detecting weird login behavior (that's Patterns & Anomalies).",
+    "typicalData": "Images, audio, video, scanned documents",
+    "examTrap": "OCR and speech-to-text are Recognition.",
+    "keywords": [
+      "image",
+      "OCR",
+      "face",
+      "speech-to-text",
+      "identify in media"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Goal-Driven Systems",
+    "tagline": "Learn the best action via rewards",
+    "summary": "Reinforcement learning: trial and error, reward signals, optimal policy.",
+    "examples": [
+      "AlphaGo",
+      "Dynamic pricing policies",
+      "Routing that maximizes reward"
+    ],
+    "notThis": "A static forecast of delivery time (Predictive) with no action learning.",
+    "typicalData": "Simulators, reward logs, state-action traces",
+    "examTrap": "If the story is 'learn strategy from rewards', pick 7.",
+    "keywords": [
+      "reward",
+      "reinforcement",
+      "optimize policy",
+      "trial and error",
+      "game AI"
+    ]
+  }
+]

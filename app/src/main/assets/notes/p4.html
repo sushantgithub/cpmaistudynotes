@@ -1,0 +1,538 @@
+
+<hr/>
+<h2>1. Topic Overview</h2>
+<h3>Definition</h3>
+<p><strong>Phase IV: Model Development</strong> is where the team <strong>selects algorithms, trains models on prepared data, tunes them, and produces candidate models</strong>. It answers: <strong>"HOW do we build the model?"</strong></p>
+<blockquote>
+<p><strong>One-line memory hook:</strong> Phase IV = <strong>BUILD &amp; TRAIN</strong> — but only ~10–15% of total project effort!</p>
+</blockquote>
+<h3>Why It Is Important</h3>
+<ul>
+<li>Converts prepared data into a working <strong>predictive/learning capability</strong>.</li>
+<li>Wrong algorithm choice or poor training discipline wastes the massive Phase III investment.</li>
+<li>Sets up honest evaluation (Phase V) through proper training practice.</li>
+</ul>
+<h3>Where It Is Used</h3>
+<ul>
+<li>After Phase III, before Phase V, <strong>every iteration</strong>.</li>
+<li>Re-entered whenever models are retrained with new data.</li>
+</ul>
+<hr/>
+<h2>2. Key Concepts</h2>
+<h3>2.1 Machine Learning Types (must know cold)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Learns From</th>
+<th>Goal</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Supervised learning</strong></td>
+<td><strong>Labeled</strong> data (inputs + correct answers)</td>
+<td>Predict labels for new data</td>
+<td>Fraud yes/no, price prediction</td>
+</tr>
+<tr>
+<td><strong>Unsupervised learning</strong></td>
+<td><strong>Unlabeled</strong> data</td>
+<td>Find hidden structure</td>
+<td>Customer segmentation (clustering)</td>
+</tr>
+<tr>
+<td><strong>Reinforcement learning (RL)</strong></td>
+<td><strong>Trial &amp; error + rewards</strong></td>
+<td>Learn best actions toward a goal</td>
+<td>Game AI, robotics, route optimization</td>
+</tr>
+<tr>
+<td><em>(Semi-supervised)</em></td>
+<td>Few labels + many unlabeled</td>
+<td>Stretch limited labels</td>
+<td>Web page classification</td>
+</tr>
+</tbody>
+</table></div>
+<h3>2.2 Supervised Sub-Types</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Sub-type</th>
+<th>Output</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Classification</strong></td>
+<td>A <strong>category</strong></td>
+<td>Spam/not-spam; approve/reject loan</td>
+</tr>
+<tr>
+<td><strong>Regression</strong></td>
+<td>A <strong>number</strong></td>
+<td>House price; demand quantity</td>
+</tr>
+</tbody>
+</table></div>
+<h3>2.3 Common Algorithms (recognition level)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Type</th>
+<th>Simple Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Linear/Logistic Regression</strong></td>
+<td>Regression / Classification</td>
+<td>Fit a line / probability curve</td>
+</tr>
+<tr>
+<td><strong>Decision Tree</strong></td>
+<td>Both</td>
+<td>If-then question tree — highly <strong>explainable</strong></td>
+</tr>
+<tr>
+<td><strong>Random Forest</strong></td>
+<td>Both</td>
+<td>Many trees voting (ensemble)</td>
+</tr>
+<tr>
+<td><strong>SVM</strong></td>
+<td>Classification</td>
+<td>Find the best separating boundary</td>
+</tr>
+<tr>
+<td><strong>k-Means</strong></td>
+<td>Unsupervised</td>
+<td>Group data into k clusters</td>
+</tr>
+<tr>
+<td><strong>k-NN</strong></td>
+<td>Classification</td>
+<td>Classify by nearest neighbors</td>
+</tr>
+<tr>
+<td><strong>Naive Bayes</strong></td>
+<td>Classification</td>
+<td>Probability-based (spam filters)</td>
+</tr>
+<tr>
+<td><strong>Neural Networks / Deep Learning</strong></td>
+<td>All</td>
+<td>Layered "brain-like" networks; great for images/text/audio; less explainable; data-hungry</td>
+</tr>
+</tbody>
+</table></div>
+<h3>2.4 Model Training Concepts</h3>
+<ul>
+<li><strong>Training</strong> = the algorithm adjusts internal <strong>parameters</strong> to minimize error on training data.</li>
+<li><strong>Hyperparameters</strong> = settings chosen <strong>by humans before</strong> training (learning rate, tree depth, number of clusters k). Tuned using the <strong>validation set</strong>.</li>
+<li><strong>Epoch</strong> = one full pass through the training data (deep learning term).</li>
+</ul>
+<h3>2.5 Overfitting vs Underfitting (top exam topic)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>What Happens</th>
+<th>Signs</th>
+<th>Fixes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Overfitting</strong></td>
+<td>Model <strong>memorizes</strong> training data incl. noise</td>
+<td>Great on training, poor on new data</td>
+<td>More data, simpler model, <strong>regularization</strong>, dropout, early stopping, cross-validation</td>
+</tr>
+<tr>
+<td><strong>Underfitting</strong></td>
+<td>Model <strong>too simple</strong> to capture patterns</td>
+<td>Poor on training AND new data</td>
+<td>More complex model, better features, train longer</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>Analogy: Overfitting = student memorizes past papers, fails new questions. Underfitting = student never studied.</p>
+</blockquote>
+<h3>2.6 Bias–Variance Tradeoff</h3>
+<ul>
+<li><strong>High bias</strong> → underfitting (too simple).</li>
+<li><strong>High variance</strong> → overfitting (too sensitive to training data).</li>
+<li>Goal: balanced middle ground.</li>
+</ul>
+<h3>2.7 Cross-Validation</h3>
+<ul>
+<li><strong>k-fold cross-validation:</strong> split data into k parts; train on k-1, validate on 1; rotate; average results.</li>
+<li>Gives a <strong>more reliable</strong> performance estimate, reduces luck of a single split.</li>
+</ul>
+<h3>2.8 Model Selection Principles (CPMAI mindset)</h3>
+<ul>
+<li><strong>Simplest model that meets the business need wins</strong> (Occam's razor).</li>
+<li>Explainability may <strong>outrank</strong> raw accuracy in regulated fields (banking, healthcare) — a decision tree you can explain to RBI beats a black-box that you cannot.</li>
+<li>Consider <strong>compute cost, latency, maintainability</strong>, not just accuracy.</li>
+<li><strong>Baseline first:</strong> build a simple baseline model, then improve iteratively.</li>
+</ul>
+<h3>2.9 Build vs Buy vs Pre-trained</h3>
+<ul>
+<li><strong>Build:</strong> custom model from scratch — max control, max cost.</li>
+<li><strong>Buy/API:</strong> vendor AI services (vision APIs, LLM APIs) — fast, less control.</li>
+<li><strong>Pre-trained + fine-tune (transfer learning):</strong> start from an existing model, adapt with your data — the practical middle path, especially for images/text.</li>
+</ul>
+<hr/>
+<h2>3. PMI CPMAI Exam Focus</h2>
+<h3>What the Exam Expects</h3>
+<ul>
+<li>Classify scenarios into <strong>supervised / unsupervised / reinforcement</strong> learning.</li>
+<li>Distinguish <strong>classification vs regression</strong>.</li>
+<li>Spot <strong>overfitting/underfitting</strong> from symptoms and pick fixes.</li>
+<li>Understand <strong>hyperparameters vs parameters</strong>, validation set usage.</li>
+<li>CPMAI attitude: <strong>simplest sufficient model, baseline first, iterate</strong>; explainability matters.</li>
+</ul>
+<h3>Frequently Tested</h3>
+<ol>
+<li>"Labeled data + predict category" → supervised classification.</li>
+<li>"No labels, find groups" → unsupervised clustering.</li>
+<li>"Learns via rewards" → reinforcement learning.</li>
+<li>"99% train accuracy, 65% test" → <strong>overfitting</strong>.</li>
+<li>"Regulator demands explanation" → choose <strong>explainable model</strong> (e.g., decision tree) over black box.</li>
+<li>Model development is a <strong>small slice (~10–15%) of effort</strong> — resist over-focus.</li>
+</ol>
+<h3>Common Misconceptions</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Misconception</th>
+<th>Truth</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"Deep learning is always best"</td>
+<td>Simple models often suffice and are explainable</td>
+</tr>
+<tr>
+<td>"Higher training accuracy = better model"</td>
+<td>May indicate <strong>overfitting</strong></td>
+</tr>
+<tr>
+<td>"Model development is most of the project"</td>
+<td>It's ~10–15%; data prep dominates</td>
+</tr>
+<tr>
+<td>"Hyperparameters are learned by the model"</td>
+<td>Humans set them; <strong>parameters</strong> are learned</td>
+</tr>
+<tr>
+<td>"One perfect model, first try"</td>
+<td>Baseline → iterate → improve</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2>4. AI Project Manager Perspective</h2>
+<h3>Responsibilities</h3>
+<ul>
+<li>Facilitate <strong>algorithm/approach selection</strong> balancing accuracy, explainability, cost, speed.</li>
+<li>Enforce <strong>baseline-first, iterate</strong> discipline; timebox experiments.</li>
+<li>Ensure proper use of <strong>validation data</strong> (no test-set peeking).</li>
+<li>Decide <strong>build vs buy vs fine-tune</strong> with architects and business.</li>
+<li>Track experiment results transparently (experiment logs).</li>
+<li>Keep sponsors informed: modeling is <strong>experimental</strong> — outcomes are probabilistic, some experiments fail.</li>
+</ul>
+<h3>Stakeholders</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Stakeholder</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Data scientists / ML engineers</strong></td>
+<td>Train, tune, compare models</td>
+</tr>
+<tr>
+<td><strong>ML architects</strong></td>
+<td>Framework/platform choices, build-vs-buy</td>
+</tr>
+<tr>
+<td><strong>Business SMEs</strong></td>
+<td>Sanity-check model behavior</td>
+</tr>
+<tr>
+<td><strong>Compliance/risk</strong></td>
+<td>Explainability requirements</td>
+</tr>
+<tr>
+<td><strong>IT/infra</strong></td>
+<td>Compute resources (GPUs, cloud)</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Risks</h3>
+<ul>
+<li><strong>Overfitting</strong> discovered late.</li>
+<li><strong>Endless experimentation</strong> without timeboxes ("just one more model…").</li>
+<li>Choosing <strong>unexplainable models</strong> in regulated contexts.</li>
+<li><strong>Compute cost</strong> overruns (GPU bills!).</li>
+<li>Reproducibility failures (no versioning of code/data/models).</li>
+<li>Team chasing accuracy while ignoring business KPI.</li>
+</ul>
+<h3>Best Practices</h3>
+<ul>
+<li><strong>Baseline model first</strong> — even simple logistic regression — then iterate.</li>
+<li><strong>Timebox</strong> experiments; define stop criteria.</li>
+<li>Version <strong>code + data + model</strong> together (reproducibility).</li>
+<li>Prefer the <strong>simplest model meeting the KPI</strong>.</li>
+<li>Check <strong>fairness/bias</strong> during development, not just at the end.</li>
+<li>Keep the <strong>business KPI</strong> visible on every experiment report.</li>
+</ul>
+<h3>Decision-Making Approach</h3>
+<pre><code>Prepared data (Phase III)
+        ▼
+Labeled? ──Yes──► Supervised ──► Category output? → Classification
+   │                              Numeric output?  → Regression
+   No
+   ▼
+Structure-finding? ──Yes──► Unsupervised (clustering etc.)
+   │
+Goal + reward loop? ──Yes──► Reinforcement Learning
+        ▼
+Pick candidate algorithms (simple → complex)
+        ▼
+Train baseline → tune (validation set) → compare
+        ▼
+Meets KPI + explainability + cost constraints? ──Yes──► Phase V
+        └─No──► iterate (features? more data? different algo?)
+</code></pre>
+<hr/>
+<h2>5. Real-World Example (Banking — Loan Default Prediction)</h2>
+<p><strong>Scenario:</strong> Bank predicts which loan applicants may default (Phase I: Predictive Analytics; KPI: reduce NPA losses 15% while keeping approval rates stable; regulator requires explainable decisions).</p>
+<p><strong>Phase IV step by step:</strong>
+1. <strong>Type identification:</strong> Historical loans with known outcomes (default yes/no) = <strong>labeled</strong> data → <strong>supervised classification</strong>.
+2. <strong>Baseline:</strong> Logistic regression on prepared features → 78% recall of defaulters. Documented as baseline.
+3. <strong>Candidates:</strong> Decision tree (explainable), random forest, gradient boosting.
+4. <strong>Hyperparameter tuning:</strong> Tree depth, number of trees — tuned on <strong>validation set</strong> with 5-fold cross-validation.
+5. <strong>Overfitting check:</strong> Gradient boosting: 97% train vs 80% validation → overfitting → apply regularization + reduce depth → 88% train / 85% validation. Healthy gap.
+6. <strong>Explainability decision:</strong> Random forest slightly more accurate, but compliance requires reason codes → choose gradient boosting <strong>with SHAP explanations</strong> (or a tuned decision tree) meeting both accuracy and explainability.
+7. <strong>Business check:</strong> Model surfaces top default drivers (income ratio, past delinquency) — SMEs confirm they make sense.
+8. Candidate model frozen and versioned → <strong>Phase V evaluation</strong>.</p>
+<hr/>
+<h2>6. Visual Learning</h2>
+<h3>ML Types Map</h3>
+<pre><code>                 MACHINE LEARNING
+        ┌───────────────┼────────────────┐
+   SUPERVISED      UNSUPERVISED     REINFORCEMENT
+   (labeled)       (unlabeled)      (reward/trial-error)
+   ┌──────┴──────┐      │                │
+Classification Regression Clustering,   Agent learns
+(category)     (number)   Assoc. rules, actions to
+Spam? Fraud?   Price,     Segmentation  maximize reward
+Approve?       Demand     k-Means       (games, robots)
+</code></pre>
+<h3>Overfitting vs Underfitting</h3>
+<pre><code>Error
+  │\  Underfit zone      Overfit zone
+  │ \  (high bias)      (high variance)
+  │  \____   Validation error   ____/
+  │       \_______  ______/
+  │               \/   ← SWEET SPOT
+  │      Training error keeps falling…
+  └──────────────────────────────► Model complexity
+</code></pre>
+<hr/>
+<h2>7. Key Formulas or Frameworks</h2>
+<h3>Type Decision Rules</h3>
+<ul>
+<li><strong>Labels present + predict category → Classification</strong></li>
+<li><strong>Labels present + predict number → Regression</strong></li>
+<li><strong>No labels + find groups → Clustering (Unsupervised)</strong></li>
+<li><strong>Reward signal + sequential actions → Reinforcement Learning</strong></li>
+</ul>
+<h3>Overfit Signal</h3>
+<pre><code>Training performance HIGH  +  Validation/Test performance LOW  = OVERFITTING
+Both LOW = UNDERFITTING
+</code></pre>
+<h3>CPMAI Modeling Principles</h3>
+<p><strong>Baseline first → simplest sufficient model → timeboxed iteration → business KPI + explainability + cost, not accuracy alone.</strong></p>
+<hr/>
+<h2>8. Important Terminology (Glossary)</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Simple Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Algorithm</strong></td>
+<td>The learning recipe/method</td>
+</tr>
+<tr>
+<td><strong>Model</strong></td>
+<td>The trained result of algorithm + data</td>
+</tr>
+<tr>
+<td><strong>Supervised learning</strong></td>
+<td>Learning from labeled examples</td>
+</tr>
+<tr>
+<td><strong>Unsupervised learning</strong></td>
+<td>Finding structure in unlabeled data</td>
+</tr>
+<tr>
+<td><strong>Reinforcement learning</strong></td>
+<td>Learning actions via rewards and penalties</td>
+</tr>
+<tr>
+<td><strong>Classification</strong></td>
+<td>Predicting a category</td>
+</tr>
+<tr>
+<td><strong>Regression</strong></td>
+<td>Predicting a numeric value</td>
+</tr>
+<tr>
+<td><strong>Clustering</strong></td>
+<td>Grouping similar items without labels</td>
+</tr>
+<tr>
+<td><strong>Parameter</strong></td>
+<td>Value the model learns during training</td>
+</tr>
+<tr>
+<td><strong>Hyperparameter</strong></td>
+<td>Setting chosen by humans before training</td>
+</tr>
+<tr>
+<td><strong>Epoch</strong></td>
+<td>One full pass through training data</td>
+</tr>
+<tr>
+<td><strong>Overfitting</strong></td>
+<td>Memorizing training data; failing on new data</td>
+</tr>
+<tr>
+<td><strong>Underfitting</strong></td>
+<td>Too simple to learn the pattern</td>
+</tr>
+<tr>
+<td><strong>Regularization</strong></td>
+<td>Techniques that penalize complexity to fight overfitting</td>
+</tr>
+<tr>
+<td><strong>Cross-validation</strong></td>
+<td>Rotating train/validate splits for reliable estimates</td>
+</tr>
+<tr>
+<td><strong>Ensemble</strong></td>
+<td>Combining multiple models (e.g., random forest)</td>
+</tr>
+<tr>
+<td><strong>Transfer learning</strong></td>
+<td>Reusing a pre-trained model, fine-tuning on your data</td>
+</tr>
+<tr>
+<td><strong>Explainability (XAI)</strong></td>
+<td>Ability to explain why a model made a prediction</td>
+</tr>
+<tr>
+<td><strong>Baseline model</strong></td>
+<td>Simple first model used as comparison benchmark</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2>9. Exam Tips</h2>
+<h3>Memory Tricks</h3>
+<ul>
+<li><strong>"Labels = Supervised"</strong> — the word to hunt in every scenario.</li>
+<li><strong>Class = Category, Regress = Real number</strong> (both start matching letters).</li>
+<li><strong>Overfit = Over-memorized</strong> (great at home, fails in exam hall).</li>
+<li><strong>Hyper = Human</strong> — hyperparameters are human-set.</li>
+<li>RL keyword scan: <strong>reward, agent, environment, trial-and-error, goal</strong>.</li>
+</ul>
+<h3>Keywords</h3>
+<ul>
+<li>"<strong>Simplest model that meets the need</strong>"</li>
+<li>"<strong>Baseline first, iterate</strong>"</li>
+<li>"<strong>Explainability</strong> for regulators"</li>
+<li>"<strong>Validation set for tuning</strong>"</li>
+</ul>
+<h3>Differentiators</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Pair</th>
+<th>Difference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Parameter vs Hyperparameter</td>
+<td>Learned by model vs set by human</td>
+</tr>
+<tr>
+<td>Classification vs Clustering</td>
+<td>With labels (categories known) vs without labels (discover groups)</td>
+</tr>
+<tr>
+<td>Overfitting vs Underfitting</td>
+<td>Memorized vs never learned</td>
+</tr>
+<tr>
+<td>Model vs Algorithm</td>
+<td>Trained artifact vs learning method</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Traps</h3>
+<ul>
+<li>"Choose deep learning because it's advanced" → wrong; match to need.</li>
+<li>"Tune hyperparameters on the test set" → leakage, wrong.</li>
+<li>"Training accuracy 99% proves success" → overfitting suspicion.</li>
+<li>"Spend most project time perfecting models" → wrong effort model.</li>
+</ul>
+<hr/>
+<h2>11. Quick Revision Sheet</h2>
+<ul>
+<li><strong>Phase IV = build &amp; train</strong> — only ~<strong>10–15% of effort</strong>.</li>
+<li>ML types: <strong>Supervised (labeled) / Unsupervised (unlabeled) / Reinforcement (rewards)</strong>.</li>
+<li>Supervised outputs: <strong>Classification = category, Regression = number</strong>.</li>
+<li><strong>Parameters</strong> learned; <strong>hyperparameters</strong> human-set, tuned on <strong>validation set</strong>.</li>
+<li><strong>Overfitting</strong> = memorize (train↑ test↓); fix: regularization, simpler model, more data, early stopping, cross-validation.</li>
+<li><strong>Underfitting</strong> = too simple (both↓); fix: complexity, better features.</li>
+<li><strong>k-fold cross-validation</strong> → reliable estimates.</li>
+<li><strong>Baseline first → simplest sufficient model → timeboxed iteration.</strong></li>
+<li><strong>Explainability</strong> can outrank accuracy (regulated industries).</li>
+<li>Options: <strong>build vs buy/API vs pre-trained fine-tune (transfer learning)</strong>.</li>
+<li>Version code+data+models for <strong>reproducibility</strong>.</li>
+</ul>
+<hr/>
+<h2>⭐ Top 10 Things to Remember for the Exam</h2>
+<ol>
+<li><strong>Labels → Supervised; No labels → Unsupervised; Rewards → RL.</strong></li>
+<li><strong>Classification = category; Regression = number.</strong></li>
+<li><strong>Overfitting:</strong> train↑ test↓ → regularization/more data/simpler model.</li>
+<li><strong>Underfitting:</strong> both↓ → more complexity/better features.</li>
+<li><strong>Hyperparameters = human-set</strong>, tuned on the <strong>validation set</strong> only.</li>
+<li><strong>Baseline first</strong>, then iterate — timebox experiments.</li>
+<li><strong>Simplest sufficient model wins</strong>; explainability can beat accuracy.</li>
+<li>Phase IV ≈ <strong>10–15% of effort</strong> — data prep still dominates.</li>
+<li><strong>Cross-validation</strong> = reliable performance estimates.</li>
+<li><strong>Transfer learning</strong> = practical shortcut using pre-trained models.</li>
+</ol>
+<hr/>
+<p><em>Next: Phase V — Model Evaluation.</em></p>

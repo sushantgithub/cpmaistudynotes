@@ -1,0 +1,898 @@
+[
+  {
+    "id": "core-q-1",
+    "question": "A dashboard shows \"Store 12 sold 4,200 units of SKU-88 last week, 30% above its seasonal norm.\" On the DIKUW pyramid, \"30% above its seasonal norm\" chiefly represents:",
+    "options": [
+      "Data",
+      "Information",
+      "Knowledge",
+      "Wisdom"
+    ],
+    "correctIndex": 2,
+    "explanation": "Comparing against learned patterns/norms = applied context = Knowledge . Raw counts = data; organized totals = information; choosing the best action = wisdom.",
+    "topicId": "core",
+    "source": "notes"
+  },
+  {
+    "id": "core-q-2",
+    "question": "For three sprints, the team has swapped algorithms (SVM → random forest → deep net) with no improvement. Labels are known to be inconsistent and 20% of records have missing key fields. The CPMAI-aligned next step is:",
+    "options": [
+      "Try a transformer architecture",
+      "Adopt a data-centric approach — fix labels and data quality first",
+      "Double the training epochs",
+      "Lower the success criteria"
+    ],
+    "correctIndex": 1,
+    "explanation": "Messy data + algorithm-hopping = classic cue for data-centric correction (GIGO). A/C stay model-centric; D hides the problem.",
+    "topicId": "core",
+    "source": "notes"
+  },
+  {
+    "id": "core-q-3",
+    "question": "An executive asks, \"Since our chess AI is superhuman, can it also negotiate supplier contracts?\" The correct framing is:",
+    "options": [
+      "Yes — intelligence transfers automatically",
+      "No — current AI is narrow; each task needs its own data, training, and validation",
+      "Yes, after adding more GPUs",
+      "No — AI can never help with negotiation tasks"
+    ],
+    "correctIndex": 1,
+    "explanation": "Today's AI is narrow ; capabilities don't transfer across domains without new data/training. A/C assume AGI; D over-corrects (an NLP negotiation-support tool could be built as its own project).",
+    "topicId": "core",
+    "source": "notes"
+  },
+  {
+    "id": "core-q-4",
+    "question": "A post-mortem of a failed AI initiative shows: no defined KPI, data quality found unusable in month 7, and a 2-year big-bang plan. Which CPMAI principles were violated? (best answer)",
+    "options": [
+      "Only technical model selection was wrong",
+      "Phase I business grounding, early Phase II data assessment, and iterative delivery were all skipped",
+      "The team lacked GPUs",
+      "Evaluation metrics were miscalculated"
+    ],
+    "correctIndex": 1,
+    "explanation": "The trio — no KPI (Phase I), late data discovery (Phase II), big-bang scope (anti-iteration) — are the textbook failure causes CPMAI exists to prevent. A/C/D miss the management-level causes.",
+    "topicId": "core",
+    "source": "notes"
+  },
+  {
+    "id": "core-q-5",
+    "question": "A lending model excludes \"religion\" but uses \"residential pincode,\" which strongly correlates with community in that city, producing skewed approvals. This illustrates:",
+    "options": [
+      "Data drift",
+      "Proxy-variable bias requiring responsible-AI mitigation",
+      "Underfitting",
+      "A deployment latency issue"
+    ],
+    "correctIndex": 1,
+    "explanation": "An innocent-looking feature encoding a protected attribute = proxy bias — detect via subgroup analysis, mitigate via feature review/fairness techniques. A/C/D are unrelated phenomena.",
+    "topicId": "core",
+    "source": "notes"
+  },
+  {
+    "id": "p1-q-1",
+    "question": "A retail company's CEO says, \"Our competitors use AI, so we must too. Start an AI project immediately.\" As the AI project manager, what should you do FIRST?",
+    "options": [
+      "Hire data scientists and buy an ML platform",
+      "Collect all available customer data",
+      "Identify a specific business problem and assess whether AI is the right solution",
+      "Build a proof-of-concept using the newest deep learning model"
+    ],
+    "correctIndex": 2,
+    "explanation": "Phase I starts with the business problem , not technology. A and D are \"solution looking for a problem\" traps. B skips business understanding — data comes in Phase II.",
+    "topicId": "p1",
+    "source": "notes"
+  },
+  {
+    "id": "p1-q-2",
+    "question": "A bank wants to automatically copy loan application data from emails into its core banking system. The steps are identical every time. What is the BEST solution?",
+    "options": [
+      "A deep learning model",
+      "Robotic Process Automation (RPA)",
+      "A goal-driven reinforcement learning system",
+      "A conversational AI chatbot"
+    ],
+    "correctIndex": 1,
+    "explanation": "The task is repetitive and rule-based — same steps every time. This does not need AI ; RPA is cheaper and more reliable. A, C, D over-engineer a deterministic task.",
+    "topicId": "p1",
+    "source": "notes"
+  },
+  {
+    "id": "p1-q-3",
+    "question": "A hospital wants a system that examines X-ray images and flags possible tumors for radiologists to review. Which AI pattern does this map to?",
+    "options": [
+      "Hyperpersonalization",
+      "Goal-Driven Systems",
+      "Recognition",
+      "Conversation & Human Interaction"
+    ],
+    "correctIndex": 2,
+    "explanation": "Identifying objects (tumors) in unstructured data (images) is the Recognition pattern. A = individualized treatment offers, B = trial-and-error learning, D = chatbots — none fit.",
+    "topicId": "p1",
+    "source": "notes"
+  },
+  {
+    "id": "p1-q-4",
+    "question": "Your data science team reports the churn model achieved 96% accuracy, and declares the project a success. The business sponsor is unhappy because churn has not decreased. What Phase I failure MOST likely caused this?",
+    "options": [
+      "Wrong algorithm was selected",
+      "Business success criteria (KPIs) were never properly defined and agreed",
+      "The data was not cleaned properly",
+      "The model was not deployed to the cloud"
+    ],
+    "correctIndex": 1,
+    "explanation": "Success was measured by a model metric (accuracy) instead of a business KPI (churn reduction) — a classic Phase I failure. A, C, D are technical issues from later phases and don't explain the business-value gap.",
+    "topicId": "p1",
+    "source": "notes"
+  },
+  {
+    "id": "p1-q-5",
+    "question": "A manufacturing company has a grand vision of a fully AI-driven \"smart factory.\" Following CPMAI principles, what is the BEST approach?",
+    "options": [
+      "Launch a 3-year program to build the complete smart factory at once",
+      "Wait until all factory data is perfectly collected, then start",
+      "Keep the big vision, but start with one small high-value use case (e.g., predictive maintenance on one machine line) and iterate",
+      "Outsource the entire vision to a vendor with a fixed-scope contract"
+    ],
+    "correctIndex": 2,
+    "explanation": "Think Big, Start Small, Iterate Often. A is big-bang waterfall (high failure risk). B delays value indefinitely (data is never perfect). D removes iterative learning and business ownership.",
+    "topicId": "p1",
+    "source": "notes"
+  },
+  {
+    "id": "p2-q-1",
+    "question": "After Phase I approval for a churn-prediction project, what should the team do FIRST in Phase II?",
+    "options": [
+      "Remove duplicate records from the CRM",
+      "Identify what data is required to predict churn and where it resides",
+      "Select a classification algorithm",
+      "Deploy a baseline model"
+    ],
+    "correctIndex": 1,
+    "explanation": "Phase II starts by deriving data requirements from the business problem. A = Phase III activity, C = Phase IV, D = Phase VI.",
+    "topicId": "p2",
+    "source": "notes"
+  },
+  {
+    "id": "p2-q-2",
+    "question": "During assessment, the team finds customer gender recorded as \"M/F\" in one system and \"1/2\" in another. Which data quality dimension is violated?",
+    "options": [
+      "Timeliness",
+      "Uniqueness",
+      "Consistency",
+      "Volume"
+    ],
+    "correctIndex": 2,
+    "explanation": "Same attribute represented differently across systems = consistency problem. Timeliness = freshness, uniqueness = duplicates, volume isn't a quality dimension.",
+    "topicId": "p2",
+    "source": "notes"
+  },
+  {
+    "id": "p2-q-3",
+    "question": "A hospital AI team wants to use patient scans from another hospital found on a shared drive, without any agreement. What is the PM's BEST action?",
+    "options": [
+      "Use the data — it's technically accessible",
+      "Anonymize it quickly and proceed",
+      "Halt use and verify legal rights, consent, and regulatory compliance (e.g., HIPAA) first",
+      "Ask the data scientists to decide"
+    ],
+    "correctIndex": 2,
+    "explanation": "Phase II includes data rights and regulatory verification . A and B risk serious legal/ethical violations; D abdicates PM responsibility.",
+    "topicId": "p2",
+    "source": "notes"
+  },
+  {
+    "id": "p2-q-4",
+    "question": "The team discovers only 200 labeled fraud examples exist, far too few for the planned deep learning approach. What Phase II outcome does this represent?",
+    "options": [
+      "A modeling failure",
+      "A data quantity issue that may trigger descoping or a no-go",
+      "A deployment risk",
+      "An evaluation metric problem"
+    ],
+    "correctIndex": 1,
+    "explanation": "Insufficient data quantity is a classic Phase II finding leading to descope (simpler model, more labeling, synthetic data) or no-go . A, C, D belong to later phases.",
+    "topicId": "p2",
+    "source": "notes"
+  },
+  {
+    "id": "p2-q-5",
+    "question": "Roughly what portion of enterprise data is unstructured, and why does it matter for AI?",
+    "options": [
+      "~20%; it matters little",
+      "~50%; it must all be deleted",
+      "~80%; AI (e.g., Recognition pattern) can unlock value from it",
+      "~80%; it cannot be used by AI"
+    ],
+    "correctIndex": 2,
+    "explanation": "About 80% of enterprise data is unstructured, and AI's ability to process it (images, text, audio) is a major value driver. D is the reverse-logic trap.",
+    "topicId": "p2",
+    "source": "notes"
+  },
+  {
+    "id": "p3-q-1",
+    "question": "The sponsor asks why the project plan allocates 10 of 16 weeks to data work before modeling. Your BEST response?",
+    "options": [
+      "The plan is wrong; modeling should dominate",
+      "Data preparation typically consumes 60–80% of AI project effort and determines model quality",
+      "The data engineers are slow",
+      "We can skip preparation using deep learning"
+    ],
+    "correctIndex": 1,
+    "explanation": "Prep is the largest effort in AI projects, and quality here caps model quality. A and D understate prep; C is unprofessional and false.",
+    "topicId": "p3",
+    "source": "notes"
+  },
+  {
+    "id": "p3-q-2",
+    "question": "In a credit card fraud project, a junior analyst removes all transaction outliers \"to clean the data.\" Why is this a problem?",
+    "options": [
+      "Outliers slow training",
+      "In fraud detection, outliers often ARE the fraud signal being sought",
+      "Outlier removal is a Phase V task",
+      "Outliers must be normalized instead"
+    ],
+    "correctIndex": 1,
+    "explanation": "Anomaly-type use cases depend on unusual points; deleting them removes the target signal. A is irrelevant, C wrong phase, D confuses concepts.",
+    "topicId": "p3",
+    "source": "notes"
+  },
+  {
+    "id": "p3-q-3",
+    "question": "A model shows 99% accuracy in testing but fails badly in production. Investigation shows next-month data was accidentally included in training features. This is an example of:",
+    "options": [
+      "Class imbalance",
+      "Data leakage",
+      "Underfitting",
+      "Concept drift"
+    ],
+    "correctIndex": 1,
+    "explanation": "Future/test information contaminated training → data leakage → inflated lab results. A, C, D are different issues.",
+    "topicId": "p3",
+    "source": "notes"
+  },
+  {
+    "id": "p3-q-4",
+    "question": "Only 300 labeled chest X-rays are available for a pneumonia detector. Which Phase III technique directly helps expand the training set?",
+    "options": [
+      "Data augmentation (rotations, flips, brightness shifts)",
+      "Removing the validation set",
+      "Using test data for training",
+      "Dropping the labeling ste"
+    ],
+    "correctIndex": 0,
+    "explanation": "Augmentation multiplies limited image data legitimately. B and C cause leakage/invalid evaluation; D breaks supervised learning.",
+    "topicId": "p3",
+    "source": "notes"
+  },
+  {
+    "id": "p3-q-5",
+    "question": "Customer \"City\" values must be fed into an ML algorithm that accepts only numbers. The BEST standard technique is:",
+    "options": [
+      "Delete the City column",
+      "One-hot encoding",
+      "Averaging city names",
+      "Storing cities in a data lake"
+    ],
+    "correctIndex": 1,
+    "explanation": "One-hot encoding converts categories into numeric binary columns. A loses information, C is meaningless, D is storage—not encoding.",
+    "topicId": "p3",
+    "source": "notes"
+  },
+  {
+    "id": "p4-q-1",
+    "question": "A retailer has 5 years of transactions but NO labels, and wants to discover natural customer groups for marketing. Which approach fits?",
+    "options": [
+      "Supervised classification",
+      "Unsupervised clustering (e.g., k-Means)",
+      "Reinforcement learning",
+      "Regression"
+    ],
+    "correctIndex": 1,
+    "explanation": "No labels + \"discover groups\" = unsupervised clustering . A and D need labels; C needs a reward/action loop.",
+    "topicId": "p4",
+    "source": "notes"
+  },
+  {
+    "id": "p4-q-2",
+    "question": "A model scores 99% accuracy on training data but 62% on validation data. What is happening and what is a proper fix?",
+    "options": [
+      "Underfitting; use a more complex model",
+      "Overfitting; apply regularization or get more data",
+      "Data leakage; deploy immediately",
+      "Perfect model; ship it"
+    ],
+    "correctIndex": 1,
+    "explanation": "Big train-validation gap = overfitting ; fixes include regularization, simpler models, more data. A reverses it; C/D are nonsense.",
+    "topicId": "p4",
+    "source": "notes"
+  },
+  {
+    "id": "p4-q-3",
+    "question": "A bank regulator requires that every credit decision be explainable to customers. Two candidate models: a black-box neural net (91% accurate) and a decision tree (88% accurate, fully explainable). CPMAI-aligned choice?",
+    "options": [
+      "Neural net — accuracy rules",
+      "Decision tree — meets business/regulatory need with sufficient accuracy",
+      "Deploy both and hide the neural net",
+      "Cancel the project"
+    ],
+    "correctIndex": 1,
+    "explanation": "Business constraints ( explainability ) outrank marginal accuracy; simplest sufficient model wins. A ignores the regulator; C is unethical; D is unnecessary.",
+    "topicId": "p4",
+    "source": "notes"
+  },
+  {
+    "id": "p4-q-4",
+    "question": "A warehouse robot must learn optimal picking routes by trying actions and receiving rewards for speed. This is:",
+    "options": [
+      "Supervised regression",
+      "Unsupervised association",
+      "Reinforcement learning",
+      "Semi-supervised learning"
+    ],
+    "correctIndex": 2,
+    "explanation": "Actions + rewards + trial-and-error toward a goal = RL (Goal-Driven Systems pattern). Others don't involve reward loops.",
+    "topicId": "p4",
+    "source": "notes"
+  },
+  {
+    "id": "p4-q-5",
+    "question": "The data science team wants 6 more weeks to try \"a few more architectures\" though the current model already meets the Phase I KPI. Best PM action?",
+    "options": [
+      "Approve unlimited experimentation",
+      "Move to Phase V evaluation; log further ideas for future iterations",
+      "Skip evaluation and deploy",
+      "Restart Phase I"
+    ],
+    "correctIndex": 1,
+    "explanation": "KPI met → proceed; CPMAI is iterative — improvements can come next cycle. A wastes budget; C skips a mandatory phase; D is unfounded.",
+    "topicId": "p4",
+    "source": "notes"
+  },
+  {
+    "id": "p5-q-1",
+    "question": "A disease affects 2% of patients. A model predicting \"healthy\" for everyone achieves 98% accuracy. What should the PM conclude?",
+    "options": [
+      "Excellent model — deploy",
+      "Accuracy paradox — evaluate recall/F1; the model catches zero cases",
+      "The disease rate is wrong",
+      "Add more layers to the network"
+    ],
+    "correctIndex": 1,
+    "explanation": "Imbalanced data makes accuracy meaningless; recall = 0 exposes uselessness. A deploys harm; C/D miss the point.",
+    "topicId": "p5",
+    "source": "notes"
+  },
+  {
+    "id": "p5-q-2",
+    "question": "For an email spam filter, executives complain genuine client emails are being blocked. Which metric should the team prioritize improving?",
+    "options": [
+      "Recall",
+      "Precision",
+      "Volume",
+      "RMSE"
+    ],
+    "correctIndex": 1,
+    "explanation": "Blocking good email = false positives → improve precision . A would worsen it; D is regression; C isn't a metric.",
+    "topicId": "p5",
+    "source": "notes"
+  },
+  {
+    "id": "p5-q-3",
+    "question": "Confusion matrix: TP=80, FN=20, FP=40, TN=860. What is recall?",
+    "options": [
+      "66.7%",
+      "80%",
+      "94%",
+      "86%"
+    ],
+    "correctIndex": 1,
+    "explanation": "Recall = TP/(TP+FN) = 80/100 = 80% . (A is precision: 80/120≈66.7%. C/D are distractors.)",
+    "topicId": "p5",
+    "source": "notes"
+  },
+  {
+    "id": "p5-q-4",
+    "question": "The model exceeds all technical targets, but a fairness audit shows loan approvals for one demographic group are far lower with no valid basis. Best PM action?",
+    "options": [
+      "Deploy — technical criteria met",
+      "Hide the audit",
+      "Halt deployment; investigate and mitigate bias before any go-live",
+      "Lower the overall threshold"
+    ],
+    "correctIndex": 2,
+    "explanation": "Ethical/fairness evaluation is a mandatory Phase V gate ; disparate impact must be addressed. A/B are unethical and risky; D doesn't fix group-level bias.",
+    "topicId": "p5",
+    "source": "notes"
+  },
+  {
+    "id": "p5-q-5",
+    "question": "After evaluation, the model achieves 88% recall (target 85%) but the pilot shows fraud analysts ignore alerts because no reasons are given, so losses haven't dropped. What does CPMAI say?",
+    "options": [
+      "Success — technical target met",
+      "Failure of business evaluation — add explainability/adoption fixes and iterate",
+      "Replace the analysts",
+      "Raise the recall target"
+    ],
+    "correctIndex": 1,
+    "explanation": "Business evaluation (KPI + adoption) failed despite technical success → iterate with explainability/change-management. A confuses levels; C/D dodge the real gap.",
+    "topicId": "p5",
+    "source": "notes"
+  },
+  {
+    "id": "p6-q-1",
+    "question": "Six months after go-live, a churn model's precision has dropped steadily though the software is bug-free. The MOST likely cause?",
+    "options": [
+      "The model was never accurate",
+      "Model drift — data or concept changes degrading performance",
+      "Server CPU shortage",
+      "The KPI was wrong"
+    ],
+    "correctIndex": 1,
+    "explanation": "Gradual decay of a once-good model = drift ; the fix is monitoring diagnostics and retraining. A contradicts Phase V evidence; C affects latency, not precision; D is unsupported.",
+    "topicId": "p6",
+    "source": "notes"
+  },
+  {
+    "id": "p6-q-2",
+    "question": "A bank needs fraud scoring during card authorization within 50 milliseconds. Which serving approach fits?",
+    "options": [
+      "Nightly batch scoring",
+      "Real-time (online) inference via low-latency API",
+      "Weekly CSV exports",
+      "Manual analyst review of each swipe"
+    ],
+    "correctIndex": 1,
+    "explanation": "Millisecond, per-transaction decisions require real-time inference . A/C are too slow; D cannot scale.",
+    "topicId": "p6",
+    "source": "notes"
+  },
+  {
+    "id": "p6-q-3",
+    "question": "Fraudsters adopt entirely new attack methods, so historical fraud patterns no longer describe current fraud. This is BEST described as:",
+    "options": [
+      "Data leakage",
+      "Concept drift",
+      "Overfitting",
+      "Class imbalance"
+    ],
+    "correctIndex": 1,
+    "explanation": "The relationship between inputs and the fraud label changed = concept drift → relabeling and retraining needed. A/C are development-time issues; D existed all along.",
+    "topicId": "p6",
+    "source": "notes"
+  },
+  {
+    "id": "p6-q-4",
+    "question": "Before fully replacing the current credit model, the team wants to verify the new model on live data with zero customer impact. Best approach?",
+    "options": [
+      "Full immediate rollout",
+      "Shadow deployment — run in parallel, log outputs, act on nothing",
+      "Delete the old model first",
+      "Test only on the training set"
+    ],
+    "correctIndex": 1,
+    "explanation": "Shadow mode validates on live data with no customer impact. A/C are high-risk; D proves nothing new.",
+    "topicId": "p6",
+    "source": "notes"
+  },
+  {
+    "id": "p6-q-5",
+    "question": "The sponsor declares the AI project \"finished\" at go-live and cancels the operations budget. What should the PM explain?",
+    "options": [
+      "Agree — deployment ends the project",
+      "Models require ongoing monitoring, drift management, retraining, and governance; ongoing budget is essential to sustain the KPI",
+      "Only the cloud bill remains",
+      "The team will fix issues for free later"
+    ],
+    "correctIndex": 1,
+    "explanation": "Phase VI is continuous ; without operations funding, drift silently destroys the business value. A/C/D ignore model lifecycle reality.",
+    "topicId": "p6",
+    "source": "notes"
+  },
+  {
+    "id": "pat-q-1",
+    "question": "A streaming service shows every subscriber a different homepage based on their viewing history. Which pattern?",
+    "options": [
+      "Recognition",
+      "Hyperpersonalization",
+      "Goal-Driven Systems",
+      "Patterns & Anomalies"
+    ],
+    "correctIndex": 1,
+    "explanation": "Individual-level tailoring from behavior = Hyperpersonalization . A identifies media content; C learns actions via rewards; D finds oddities.",
+    "topicId": "pat",
+    "source": "notes"
+  },
+  {
+    "id": "pat-q-2",
+    "question": "A utility company deploys AI that reads photos of electricity meters and extracts the numeric reading. Which pattern?",
+    "options": [
+      "Predictive Analytics",
+      "Conversation",
+      "Recognition",
+      "Autonomous Systems"
+    ],
+    "correctIndex": 2,
+    "explanation": "Extracting information from images (OCR) = Recognition . No forecasting (A), language (B), or independent world-acting (D).",
+    "topicId": "pat",
+    "source": "notes"
+  },
+  {
+    "id": "pat-q-3",
+    "question": "A logistics firm wants software that learns, through simulated trial and error with rewards for faster deliveries, the best van routing policy. Which pattern?",
+    "options": [
+      "Goal-Driven Systems",
+      "Patterns & Anomalies",
+      "Hyperpersonalization",
+      "Predictive Analytics"
+    ],
+    "correctIndex": 0,
+    "explanation": "Trial-and-error + rewards + optimal strategy = Goal-Driven (reinforcement learning). D would only forecast (e.g., delivery time), not learn actions.",
+    "topicId": "pat",
+    "source": "notes"
+  },
+  {
+    "id": "pat-q-4",
+    "question": "A telecom's system watches network traffic and alerts when behavior deviates from normal baselines, indicating possible cyber intrusion. Which pattern?",
+    "options": [
+      "Recognition",
+      "Autonomous Systems",
+      "Patterns & Anomalies",
+      "Conversation"
+    ],
+    "correctIndex": 2,
+    "explanation": "Detecting deviation from normal = anomaly detection . Not media identification (A), not independent action (B), not language (D).",
+    "topicId": "pat",
+    "source": "notes"
+  },
+  {
+    "id": "pat-q-5",
+    "question": "A hospital's triage assistant chats with patients in natural language, AND tailors follow-up questions to each patient's history, AND predicts urgency scores for nurses. How should the PM view this in Phase I?",
+    "options": [
+      "It's one pattern: Conversation",
+      "It combines Conversation + Hyperpersonalization + Predictive; scope the first iteration around one pattern",
+      "It maps to no pattern; reject it",
+      "It's Autonomous Systems only"
+    ],
+    "correctIndex": 1,
+    "explanation": "Real systems combine patterns ; CPMAI says decompose and start small with one. A/D undercount; C is wrong since multiple patterns clearly apply.",
+    "topicId": "pat",
+    "source": "notes"
+  },
+  {
+    "topicId": "core",
+    "id": "extra-core-1",
+    "question": "A stakeholder says 'AI always gives the correct answer if the data is large enough.' What is the best CPMAI-aligned response?",
+    "options": [
+      "Agree — more data eliminates error",
+      "AI is probabilistic; outputs are predictions with uncertainty, not guarantees",
+      "Switch to deep learning so answers become deterministic",
+      "Skip Phase I because the data volume already proves feasibility"
+    ],
+    "correctIndex": 1,
+    "explanation": "Cognitive systems are probabilistic. Volume of data does not make predictions certain. CPMAI expects realistic expectations in Phase I.",
+    "source": "extra"
+  },
+  {
+    "topicId": "core",
+    "id": "extra-core-2",
+    "question": "Which statement best captures the CPMAI worldview?",
+    "options": [
+      "AI projects are primarily algorithm contests",
+      "AI projects are data projects",
+      "AI projects succeed when you hire more data scientists",
+      "AI projects should skip CRISP-DM because it is outdated"
+    ],
+    "correctIndex": 1,
+    "explanation": "The exam's most repeated worldview: AI projects are data projects. CPMAI is built on CRISP-DM plus AI-specific and agile practices.",
+    "source": "extra"
+  },
+  {
+    "topicId": "core",
+    "id": "extra-core-3",
+    "question": "On the DIKUW pyramid, which layer is 'patterns that let you act with insight'?",
+    "options": [
+      "Data",
+      "Information",
+      "Knowledge",
+      "Wisdom"
+    ],
+    "correctIndex": 2,
+    "explanation": "Data → Information → Knowledge → Understanding → Wisdom. Knowledge is structured insight you can act on; wisdom is applying it with judgment.",
+    "source": "extra"
+  },
+  {
+    "topicId": "core",
+    "id": "extra-core-4",
+    "question": "Today's production AI is best described as:",
+    "options": [
+      "General (strong) AI / AGI",
+      "Narrow (weak) AI that is good at one task",
+      "Conscious cognitive agents",
+      "Rule engines that never fail"
+    ],
+    "correctIndex": 1,
+    "explanation": "The exam expects realistic framing: all current AI is narrow. AGI does not exist.",
+    "source": "extra"
+  },
+  {
+    "topicId": "p1",
+    "id": "extra-p1-1",
+    "question": "A sponsor wants 'an AI' because competitors have one. No business KPI is defined. What should the PM do first?",
+    "options": [
+      "Hire a vendor and start model training",
+      "Map the use case to a pattern and define a measurable business outcome before any modeling",
+      "Collect all available data in a lake",
+      "Skip to Phase VI so value arrives faster"
+    ],
+    "correctIndex": 1,
+    "explanation": "Phase I is Business Understanding: is it AI, which pattern, what success looks like, ethics, and ROI. Technology first is a classic failure mode.",
+    "source": "extra"
+  },
+  {
+    "topicId": "p1",
+    "id": "extra-p1-2",
+    "question": "A process can be fully solved with deterministic if-then rules and RPA. CPMAI guidance is to:",
+    "options": [
+      "Still use ML so the team builds AI skills",
+      "Treat it as Autonomous Systems because RPA acts without humans",
+      "Do not force AI; recommend rules/RPA/BI if no pattern truly fits",
+      "Start with deep learning then fall back to rules"
+    ],
+    "correctIndex": 2,
+    "explanation": "If a use case matches no AI pattern, it is probably not an AI problem. RPA is not the Autonomous pattern.",
+    "source": "extra"
+  },
+  {
+    "topicId": "p2",
+    "id": "extra-p2-1",
+    "question": "During Data Understanding you discover labels exist for only 8% of records and they were entered by interns without a rubric. Best next step?",
+    "options": [
+      "Train anyway; the model will fix noisy labels",
+      "Treat this as a Go and jump to Phase IV",
+      "Flag label scarcity and quality as a feasibility risk; iterate on sourcing/labeling before modeling",
+      "Drop the business objective to match the labels you have"
+    ],
+    "correctIndex": 2,
+    "explanation": "Phase II is about whether the data can support the question. Label quality and coverage are first-class feasibility issues in a data-centric approach.",
+    "source": "extra"
+  },
+  {
+    "topicId": "p2",
+    "id": "extra-p2-2",
+    "question": "Historical loan data under-represents a protected group. This is primarily a risk of:",
+    "options": [
+      "Concept drift after deployment",
+      "Bias inherited from the data-generating process",
+      "Overfitting from too many epochs",
+      "Using the wrong AI pattern"
+    ],
+    "correctIndex": 1,
+    "explanation": "Bias often lives in the data. CPMAI expects PMs to surface fairness and representativeness in Data Understanding, not after a biased model ships.",
+    "source": "extra"
+  },
+  {
+    "topicId": "p3",
+    "id": "extra-p3-1",
+    "question": "You compute the mean and standard deviation of a numeric feature using the full dataset, then split train/test. What happened?",
+    "options": [
+      "Correct data-centric practice",
+      "Leakage — test information leaked into training transforms",
+      "Stratified sampling",
+      "Feature selection"
+    ],
+    "correctIndex": 1,
+    "explanation": "Fit scalers and encoders on training data only. Using the full set (or test set) leaks information and inflates Phase V metrics.",
+    "source": "extra"
+  },
+  {
+    "topicId": "p3",
+    "id": "extra-p3-2",
+    "question": "Why does CPMAI emphasize that most of the work is in data preparation?",
+    "options": [
+      "Because GPU rental is cheap",
+      "Because models cannot outperform the quality and structure of the data they are given",
+      "Because Phase IV is optional",
+      "Because CRISP-DM skipped this phase"
+    ],
+    "correctIndex": 1,
+    "explanation": "Data-centric AI: improving labels, coverage, and features usually beats chasing exotic algorithms. 60–80% of effort is typical in Phases II–III.",
+    "source": "extra"
+  },
+  {
+    "topicId": "p4",
+    "id": "extra-p4-1",
+    "question": "A data scientist wants to report test-set accuracy after every hyperparameter try, then pick the best. The PM should:",
+    "options": [
+      "Approve — that is honest evaluation",
+      "Require a held-out validation (or nested) process; the test set is for final confirmation",
+      "Use training accuracy instead because it is higher",
+      "Skip evaluation and go live"
+    ],
+    "correctIndex": 1,
+    "explanation": "Repeated peeking at the test set turns it into a tuning set. Validation is for iteration; test is for an honest last look before Phase V business evaluation.",
+    "source": "extra"
+  },
+  {
+    "topicId": "p4",
+    "id": "extra-p4-2",
+    "question": "The CPMAI project manager's primary job in Model Development is to:",
+    "options": [
+      "Personally select the neural architecture",
+      "Govern iteration, prevent leakage, keep the model aligned to the Phase I objective and constraints",
+      "Maximize leaderboard accuracy regardless of cost",
+      "Replace data scientists with AutoML"
+    ],
+    "correctIndex": 1,
+    "explanation": "The PM is not the tuner. They keep the team iterating against the business problem, ethics, and data constraints.",
+    "source": "extra"
+  },
+  {
+    "topicId": "p5",
+    "id": "extra-p5-1",
+    "question": "A fraud model has 99.7% accuracy. Why might it still be a No-Go?",
+    "options": [
+      "Accuracy is never used in banking",
+      "If fraud is 0.3% of transactions, a model that always says 'not fraud' is 99.7% accurate and useless",
+      "Accuracy above 99% is illegal",
+      "Phase V only uses RMSE"
+    ],
+    "correctIndex": 1,
+    "explanation": "Class imbalance makes accuracy misleading. Precision/recall, cost of errors, and business value decide Go/No-Go.",
+    "source": "extra"
+  },
+  {
+    "topicId": "p5",
+    "id": "extra-p5-2",
+    "question": "Phase V evaluation must include:",
+    "options": [
+      "Only AUC because it is threshold-free",
+      "Technical metrics AND business/ethical fitness against Phase I success criteria",
+      "Only user interface polish",
+      "Only training loss"
+    ],
+    "correctIndex": 1,
+    "explanation": "A model can be statistically fine and still fail the business case, latency, fairness, or operational constraints defined in Phase I.",
+    "source": "extra"
+  },
+  {
+    "topicId": "p6",
+    "id": "extra-p6-1",
+    "question": "Six months after go-live, precision collapses though the pipeline is healthy. Most likely?",
+    "options": [
+      "The GPU overheated",
+      "Data or concept drift — the world changed relative to training data",
+      "CRISP-DM expired",
+      "The 7 Patterns were applied twice"
+    ],
+    "correctIndex": 1,
+    "explanation": "Operationalization includes monitoring for drift and triggering retraining. Models decay because reality moves.",
+    "source": "extra"
+  },
+  {
+    "topicId": "p6",
+    "id": "extra-p6-2",
+    "question": "Human-in-the-loop after deployment is best described as:",
+    "options": [
+      "A sign the model failed Phase V",
+      "A valid operational pattern for high-stakes decisions, with monitoring and feedback into retraining",
+      "Forbidden by CPMAI",
+      "Only used in Phase I"
+    ],
+    "correctIndex": 1,
+    "explanation": "Many AI systems are decision-support. HITL, override paths, and feedback loops are core to responsible operationalization.",
+    "source": "extra"
+  },
+  {
+    "topicId": "pat",
+    "id": "extra-pat-1",
+    "question": "A warehouse robot navigates aisles, avoids people, and chooses pick paths to maximize throughput via trial-and-error rewards. Dominant patterns?",
+    "options": [
+      "Conversation only",
+      "Autonomous Systems + Goal-Driven Systems (plus likely Recognition)",
+      "Predictive Analytics only",
+      "Hyperpersonalization"
+    ],
+    "correctIndex": 1,
+    "explanation": "It acts in the world (Autonomous), learns policy from rewards (Goal-Driven), and typically recognizes shelves/objects (Recognition).",
+    "source": "extra"
+  },
+  {
+    "topicId": "pat",
+    "id": "extra-pat-2",
+    "question": "Market-basket 'people who buy bread also buy butter' is classified as:",
+    "options": [
+      "Recognition",
+      "Hyperpersonalization",
+      "Patterns & Anomalies (association)",
+      "Goal-Driven Systems"
+    ],
+    "correctIndex": 2,
+    "explanation": "Association mining is a Patterns & Anomalies family. Hyperpersonalization would tailor the next offer to one person.",
+    "source": "extra"
+  },
+  {
+    "topicId": "core",
+    "id": "extra-core-5",
+    "question": "Data-centric vs model-centric: which action is data-centric?",
+    "options": [
+      "Try a deeper network with the same noisy labels",
+      "Relabel ambiguous examples and add missing rare classes",
+      "Increase learning rate only",
+      "Switch from Python to R"
+    ],
+    "correctIndex": 1,
+    "explanation": "Data-centric AI improves the dataset. Model-centric AI mainly swaps algorithms while holding data fixed.",
+    "source": "extra"
+  },
+  {
+    "topicId": "p1",
+    "id": "extra-p1-3",
+    "question": "CPMAI is described as:",
+    "options": [
+      "A replacement for all project management",
+      "CRISP-DM upgraded with AI-specific practices (patterns, ethics, drift, MLOps) and agile iteration",
+      "A programming language",
+      "A neural network architecture"
+    ],
+    "correctIndex": 1,
+    "explanation": "Heritage question: CPMAI builds on CRISP-DM rather than throwing it away.",
+    "source": "extra"
+  },
+  {
+    "topicId": "p3",
+    "id": "extra-p3-3",
+    "question": "Time-series forecasting for next week's demand. How should you split?",
+    "options": [
+      "Random shuffle of all weeks into train/test",
+      "Respect time order — train on past, validate on later periods",
+      "Put the most recent week only in train so the model is 'current'",
+      "Use the same rows in train and test to maximize accuracy"
+    ],
+    "correctIndex": 1,
+    "explanation": "Random splits leak the future into the past. Temporal order is a classic exam trap.",
+    "source": "extra"
+  },
+  {
+    "topicId": "p5",
+    "id": "extra-p5-3",
+    "question": "High recall and low precision on a cancer screening model means:",
+    "options": [
+      "Almost no cancers missed, but many false alarms",
+      "Almost no false alarms, but many cancers missed",
+      "Perfect calibration",
+      "The model is unsupervised"
+    ],
+    "correctIndex": 0,
+    "explanation": "Recall = catch actual positives. Precision = when you flag positive, how often you are right. Screening often prefers high recall.",
+    "source": "extra"
+  },
+  {
+    "topicId": "p6",
+    "id": "extra-p6-3",
+    "question": "Champion-challenger in operations means:",
+    "options": [
+      "Firing the data science team",
+      "Running a new model against the current production model under controlled traffic before full cutover",
+      "Training 100 models and picking randomly",
+      "Never updating the model"
+    ],
+    "correctIndex": 1,
+    "explanation": "Safe operationalization: compare a challenger to the champion with monitoring, then promote if it wins on agreed metrics.",
+    "source": "extra"
+  },
+  {
+    "topicId": "pat",
+    "id": "extra-pat-3",
+    "question": "Sentiment analysis of support tickets maps primarily to:",
+    "options": [
+      "Recognition",
+      "Conversation & Human Interaction",
+      "Autonomous Systems",
+      "Goal-Driven Systems"
+    ],
+    "correctIndex": 1,
+    "explanation": "NLP / language understanding sits in Conversation & Human Interaction, even when there is no chatbot UI.",
+    "source": "extra"
+  }
+]

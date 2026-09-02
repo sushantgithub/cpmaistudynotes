@@ -1,0 +1,81 @@
+[
+  {
+    "id": "p1",
+    "number": 1,
+    "name": "Business Understanding",
+    "goal": "Decide if this is an AI problem, which pattern(s), success metrics, ethics, and ROI.",
+    "pmMoves": [
+      "Translate a fuzzy 'we need AI' into a measurable outcome",
+      "Map use cases to the 7 Patterns",
+      "Reject non-AI work (rules, RPA, BI) when patterns don't fit",
+      "Set ethical constraints and human-in-the-loop expectations early"
+    ],
+    "exitCriteria": "A scoped iteration with a pattern, KPI, data hypothesis, and go/no-go questions.",
+    "failsWhen": "Starting with a model because a vendor demo looked impressive."
+  },
+  {
+    "id": "p2",
+    "number": 2,
+    "name": "Data Understanding",
+    "goal": "Learn whether available data can actually support the question.",
+    "pmMoves": [
+      "Inventory sources, owners, quality, and access",
+      "Hunt bias, leakage risks, and label coverage",
+      "Decide if you must collect or label more before modeling"
+    ],
+    "exitCriteria": "A data assessment: what exists, what's missing, what's risky.",
+    "failsWhen": "Assuming 'we have a data lake' equals 'we have training data'."
+  },
+  {
+    "id": "p3",
+    "number": 3,
+    "name": "Data Preparation",
+    "goal": "Create trustworthy training material: clean, label, split, engineer.",
+    "pmMoves": [
+      "Protect against leakage in splits and transforms",
+      "Invest in labels and rare-class coverage",
+      "Budget 60–80% of effort here without apology"
+    ],
+    "exitCriteria": "Reproducible datasets with documented lineage and a leakage-safe split.",
+    "failsWhen": "Scaling on the full dataset then splitting, or shuffling time series."
+  },
+  {
+    "id": "p4",
+    "number": 4,
+    "name": "Model Development",
+    "goal": "Iterate models against the Phase I objective, not a Kaggle score.",
+    "pmMoves": [
+      "Keep scientists from overfitting the test set",
+      "Prefer simpler models when they meet the need (explainability)",
+      "Track experiments; don't worship a single algorithm"
+    ],
+    "exitCriteria": "Candidate model(s) ready for honest evaluation.",
+    "failsWhen": "Tuning until the test set looks perfect."
+  },
+  {
+    "id": "p5",
+    "number": 5,
+    "name": "Model Evaluation",
+    "goal": "Judge technical AND business/ethical fitness. Go, iterate, or stop.",
+    "pmMoves": [
+      "Pick metrics that match costs of errors (not vanity accuracy)",
+      "Compare against a simple baseline",
+      "Include fairness, latency, and operability"
+    ],
+    "exitCriteria": "A documented Go / Iterate / No-Go with evidence.",
+    "failsWhen": "Shipping because accuracy is 'high' on an imbalanced set."
+  },
+  {
+    "id": "p6",
+    "number": 6,
+    "name": "Operationalization",
+    "goal": "Put the model into a living system: deploy, monitor, retrain, govern.",
+    "pmMoves": [
+      "Plan drift detection and retraining cadence",
+      "Define HITL, rollback, and champion-challenger",
+      "Treat MLOps as project work, not an afterthought"
+    ],
+    "exitCriteria": "Production path with monitoring, ownership, and feedback loops.",
+    "failsWhen": "Calling the project done when a notebook reaches 0.92 AUC."
+  }
+]

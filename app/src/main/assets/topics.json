@@ -1,0 +1,662 @@
+[
+  {
+    "id": "core",
+    "title": "Core Concepts",
+    "subtitle": "Foundations of AI, ML & CPMAI",
+    "shortTitle": "Core",
+    "phase": null,
+    "color": "#16305C",
+    "accent": "#E8930C",
+    "icon": "foundation",
+    "examWeightHint": "Appears inside every scenario, every phase.",
+    "top10": [
+      "AI ⊃ ML ⊃ DL ; today's AI is narrow and probabilistic .",
+      "AI projects are data projects — data-centric beats model-centric.",
+      "DIKUW — climb from raw data toward (human-held) wisdom.",
+      "Labels→Supervised, none→Unsupervised, rewards→Reinforcement.",
+      "~80%+ failure rate , driven by business/data/management causes.",
+      "Each failure cause has a CPMAI phase antidote — know the mapping.",
+      "CPMAI = CRISP-DM + agile + AI-specific , six phases, iterative .",
+      "Think Big, Start Small, Iterate Often — reject big-bang answers.",
+      "Responsible AI in every phase — fairness, explainability, privacy, oversight.",
+      "Proxy variables smuggle bias — audit features and subgroups."
+    ],
+    "revision": [
+      "AI ⊃ ML ⊃ Deep Learning ; all current AI = narrow ; AI is probabilistic .",
+      "DIKUW: Data → Information → Knowledge → Understanding → Wisdom; wisdom stays human.",
+      "ML types: Supervised (labels) / Unsupervised (none) / Semi-supervised / Reinforcement (rewards) .",
+      "Data-centric > model-centric : fix data before chasing algorithms (GIGO).",
+      "~80%+ AI projects fail — for business/data/management reasons, not tech.",
+      "Failure causes ↔ CPMAI phase shields (no KPI→I, data surprise→II, prep underrated→III, wrong metric→V, decay→VI, big-bang→iterate).",
+      "CPMAI = CRISP-DM + AI-specific + agile ; six phases; iterative ; vendor-neutral.",
+      "Think Big, Start Small, Iterate Often.",
+      "Responsible AI (fairness, explainability, accountability, privacy, safety, human oversight) runs through every phase ; watch proxy variables ."
+    ],
+    "knowledgeCheck": [
+      "Explain AI vs ML vs deep learning with one example of each.",
+      "Why does the probabilistic nature of AI change stakeholder management?",
+      "Walk a fraud-alert scenario up all five DIKUW levels.",
+      "Classify these into ML types: churn labels model; customer clusters; warehouse-robot reward learning; 100 labeled + 100,000 unlabeled documents.",
+      "Argue for data-centric AI using the GIGO principle.",
+      "List five common AI failure causes and the CPMAI phase that guards each.",
+      "How does CPMAI extend CRISP-DM?",
+      "Why is agile alone insufficient for AI projects?",
+      "Name the responsible-AI principles and one practice for each of any three.",
+      "Define proxy-variable bias and one detection method."
+    ],
+    "examTips": [
+      {
+        "heading": "Memory Tricks",
+        "bullets": [
+          "Nesting dolls: AI (biggest) → ML → DL (smallest).",
+          "DIKUW ladder story: numbers → report → pattern → why → best action.",
+          "\"Fix the data first\" — when a scenario shows messy data + algorithm-hopping, the data-centric answer wins.",
+          "Failure question reflex: the cause is business/data/management ~always — never \"the algorithm was unlucky.\""
+        ]
+      },
+      {
+        "heading": "Keywords",
+        "bullets": [
+          "\" AI projects are data projects \"",
+          "\" Narrow AI \", \" probabilistic \"",
+          "\" Iterative , built on CRISP-DM \"",
+          "\" Responsible/trustworthy AI \", \" bias \", \" explainability \""
+        ]
+      },
+      {
+        "heading": "Differentiators",
+        "bullets": []
+      },
+      {
+        "heading": "Traps",
+        "bullets": [
+          "\"Buy a better algorithm to fix bad data\" → wrong.",
+          "\"AI will fully replace human wisdom/judgment\" → wrong (top of DIKUW stays human).",
+          "\"Run CPMAI phases once, sequentially, then done\" → wrong (iterate).",
+          "\"Ethics review only before launch\" → wrong (every phase)."
+        ]
+      }
+    ],
+    "quizCount": 5,
+    "flashcardCount": 15
+  },
+  {
+    "id": "p1",
+    "title": "Phase I — Business Understanding",
+    "subtitle": "Is this AI? Scope, ROI, patterns, ethics",
+    "shortTitle": "Phase I",
+    "phase": 1,
+    "color": "#0E2144",
+    "accent": "#3B82F6",
+    "icon": "business",
+    "examWeightHint": "Most scenario questions start here.",
+    "top10": [
+      "Phase I comes FIRST — every scenario asking \"what should the PM do first?\" → understand the business problem .",
+      "\"Do we even need AI?\" — rules/RPA beat AI for deterministic, repetitive tasks.",
+      "Every valid AI use case maps to one of the 7 Patterns of AI — memorize all seven with examples.",
+      "Success = business KPIs and ROI , never accuracy alone.",
+      "The Go/No-Go decision is a Phase I output (P-P-K-F: Problem, Pattern, KPI, Feasibility).",
+      "Think Big, Start Small, Iterate Often — reject big-bang answers.",
+      "CPMAI = CRISP-DM + AI-specific + agile/iterative enhancements.",
+      "Phase I repeats in every iteration — it is not one-time.",
+      "Ethics, bias, and regulation are assessed in Phase I, not left for the end.",
+      "1 cause of AI project failure = poor business understanding (\"solution looking for a problem\")."
+    ],
+    "revision": [
+      "Phase I = Business Understanding = the WHY phase = FIRST phase , repeated every iteration .",
+      "Built on CRISP-DM , enhanced with AI-specific + agile practices.",
+      "Core question: \"Do we even need AI?\" → If rules/RPA can solve it, don't use AI .",
+      "Map every use case to the 7 Patterns of AI : Hyperpersonalization, Autonomous Systems, Predictive Analytics, Conversation, Patterns & Anomalies, Recognition, Goal-Driven Systems.",
+      "Define business KPIs + ROI — accuracy alone ≠ success.",
+      "Go/No-Go decision happens in Phase I (P-P-K-F checklist).",
+      "Mantra: Think Big, Start Small, Iterate Often.",
+      "1 reason AI projects fail: poor business understanding / no clear business problem .",
+      "Feasibility check: business, data, tech/skills, ethics/regulatory , operational.",
+      "Stakeholders aligned early; expectations set that AI is probabilistic , not perfect.",
+      "Output of Phase I: problem statement, pattern mapping, business case (KPI+ROI), constraints, go/no-go, first-iteration scope .",
+      "Next phase: Phase II — Data Understanding ."
+    ],
+    "knowledgeCheck": [
+      "Why should an AI project never begin with data collection?",
+      "List the five types of feasibility assessed in Phase I.",
+      "Give one banking and one healthcare example of the Recognition pattern.",
+      "What is the difference between RPA and AI, and why does it matter in Phase I?",
+      "Write a well-formed business KPI for a customer churn project.",
+      "Explain \"Think Big, Start Small, Iterate Often\" in your own words.",
+      "What deliverables (outputs) should exist at the end of Phase I?",
+      "Why is stakeholder expectation-setting about \"probabilistic behavior\" important?",
+      "A use case maps to none of the 7 Patterns. What does this suggest?",
+      "How does CPMAI differ from classic waterfall project management?"
+    ],
+    "examTips": [
+      {
+        "heading": "Memory Tricks",
+        "bullets": [
+          "Phase I = WHY? (Phase II = WHAT data? Phase III = HOW to prepare?)",
+          "7 Patterns mnemonic: \"HAPPY CPR Goals\" → H yperpersonalization, A utonomous, P redictive, P atterns & Anomalies, Con v ersational, R ecognition, G oal-driven. (Or make your own — e.g., \"HAP-CPRG\" .)",
+          "Go/No-Go checklist: P-P-K-F (Problem, Pattern, KPI, Feasibility).",
+          "Mantra: \"Think Big, Start Small, Iterate Often.\""
+        ]
+      },
+      {
+        "heading": "Keywords That Signal the Right Answer",
+        "bullets": [
+          "\" First understand the business problem \"",
+          "\" Do we even need AI? \"",
+          "\"Map to one of the 7 Patterns \"",
+          "\"Define measurable KPIs and ROI \"",
+          "\" Start small with a pilot\""
+        ]
+      },
+      {
+        "heading": "Differentiating Similar Concepts",
+        "bullets": []
+      },
+      {
+        "heading": "Common Exam Traps to Avoid",
+        "bullets": [
+          "Any answer that says \" start by collecting data \" or \" start by selecting an algorithm \" in a new-project scenario → WRONG . Business understanding comes first.",
+          "Any answer implying AI should be used for simple rule-based tasks → WRONG (use RPA).",
+          "Any answer defining success only by accuracy → WRONG (need business KPI).",
+          "\"Complete all requirements upfront, then build\" (waterfall thinking) → WRONG (CPMAI is iterative)."
+        ]
+      }
+    ],
+    "quizCount": 5,
+    "flashcardCount": 15
+  },
+  {
+    "id": "p2",
+    "title": "Phase II — Data Understanding",
+    "subtitle": "Sources, quality, bias, feasibility",
+    "shortTitle": "Phase II",
+    "phase": 2,
+    "color": "#134E4A",
+    "accent": "#14B8A6",
+    "icon": "data",
+    "examWeightHint": "Data-centric thinking is the CPMAI worldview.",
+    "top10": [
+      "Phase II = WHAT data — assessment only; cleaning is Phase III.",
+      "Data requirements flow from the Phase I business problem .",
+      "GIGO — quality beats quantity.",
+      "~ 80% of enterprise data is unstructured .",
+      "Big Data V's: Volume, Variety, Velocity, Veracity .",
+      "Quality dimensions: Accuracy, Completeness, Consistency, Timeliness, Validity, Uniqueness .",
+      "Verify privacy/legal rights (GDPR, HIPAA, DPDP) before using data.",
+      "Check quantity and representativeness (bias prevention).",
+      "Phase II ends with a data go/no-go decision.",
+      "Phase II repeats every iteration ."
+    ],
+    "revision": [
+      "Phase II = WHAT data — after Phase I, before Phase III, every iteration.",
+      "Derive data requirements from the business problem (never data-first).",
+      "Data types: structured / semi-structured / unstructured (~ 80% unstructured ).",
+      "Sources: internal, external, generated .",
+      "Big Data V's: Volume, Variety, Velocity, Veracity (+Value) .",
+      "Quality dimensions ( A-CC-TVU ): Accuracy, Completeness, Consistency, Timeliness, Validity, Uniqueness.",
+      "GIGO — data quality decides model quality.",
+      "Perform EDA ; check quantity sufficiency ; check bias/representativeness .",
+      "Verify privacy, consent, regulations (GDPR/HIPAA/DPDP).",
+      "Ends with data go/no-go .",
+      "Assess in II, fix in III."
+    ],
+    "knowledgeCheck": [
+      "Why must data requirements come from the business problem instead of available data?",
+      "Explain GIGO with a banking example.",
+      "Give one example each of structured, semi-structured, and unstructured data in healthcare.",
+      "Differentiate accuracy and validity with examples.",
+      "List three internal and three external data sources for a retail demand forecast.",
+      "What is EDA and why is it done before data preparation?",
+      "What legal checks belong in Phase II?",
+      "How can unrepresentative data cause model bias? Give an example.",
+      "Name three possible responses to insufficient data quantity.",
+      "What are the deliverables at the end of Phase II?"
+    ],
+    "examTips": [
+      {
+        "heading": "Memory Tricks",
+        "bullets": [
+          "Phase II = WHAT data (I=WHY, III=HOW to prepare).",
+          "Quality dimensions: A-CC-TVU .",
+          "GIGO — quality first, always.",
+          "\" Assess in II, Fix in III \" — understanding vs preparation."
+        ]
+      },
+      {
+        "heading": "Keywords Signaling Right Answers",
+        "bullets": [
+          "\"Identify data requirements from the business problem \"",
+          "\" Assess data quality and quantity\"",
+          "\"Verify data rights/privacy \"",
+          "\" Data feasibility / data go/no-go\""
+        ]
+      },
+      {
+        "heading": "Differentiators",
+        "bullets": []
+      },
+      {
+        "heading": "Traps",
+        "bullets": [
+          "Options that clean/transform data in Phase II → wrong phase.",
+          "\"Use whatever data we already have\" without business mapping → wrong.",
+          "Ignoring legal/privacy review → wrong."
+        ]
+      }
+    ],
+    "quizCount": 5,
+    "flashcardCount": 15
+  },
+  {
+    "id": "p3",
+    "title": "Phase III — Data Preparation",
+    "subtitle": "Clean, label, split, engineer features",
+    "shortTitle": "Phase III",
+    "phase": 3,
+    "color": "#422006",
+    "accent": "#F59E0B",
+    "icon": "prepare",
+    "examWeightHint": "Most project time is spent here — 60–80%.",
+    "top10": [
+      "Phase III = biggest effort: 60–80% of the project.",
+      "Assess in II, fix in III — cleaning belongs here.",
+      "Median imputation beats mean when outliers exist.",
+      "Keep outliers in fraud/anomaly use cases.",
+      "Feature engineering with domain experts drives performance.",
+      "Labeling is costly — plan budget, guidelines, quality checks.",
+      "Train/Validation/Test — lock the test set.",
+      "Data leakage = inflated lab results, production failure.",
+      "Augmentation & synthetic data solve scarcity and privacy limits.",
+      "Build automated pipelines — CPMAI iterates."
+    ],
+    "revision": [
+      "Phase III = HOW to prepare data — cleaning, transformation, features, labels, splits.",
+      "Consumes 60–80% of total project effort — the biggest phase.",
+      "Cleaning: missing (impute), duplicates, errors, outliers, standardize .",
+      "Don't remove outliers in anomaly/fraud use cases.",
+      "Transformation: normalize, standardize, encode (one-hot), bin, aggregate .",
+      "Feature engineering (domain-driven new inputs) is a top performance driver.",
+      "Labeling enables supervised learning — plan cost, guidelines, quality checks.",
+      "Augmentation/synthetic data expand scarce datasets.",
+      "Split train/validation/test ; test set stays locked → avoid data leakage .",
+      "Fix class imbalance (oversample/undersample/weights).",
+      "Automate via pipelines (ETL/ELT) ; version and document everything."
+    ],
+    "knowledgeCheck": [
+      "Why does data preparation consume the majority of AI project effort?",
+      "List three ways to handle missing values and when each fits.",
+      "Explain the difference between normalization and standardization.",
+      "Give two feature engineering examples for a loan default model.",
+      "Why are labeling guidelines and quality checks necessary?",
+      "When would you choose synthetic data over real data?",
+      "Explain data leakage and one way to prevent it.",
+      "How would you handle a dataset with 0.5% fraud cases?",
+      "Why must the test set remain unseen during development?",
+      "What is the difference between a data warehouse and a data lake?"
+    ],
+    "examTips": [
+      {
+        "heading": "Memory Tricks",
+        "bullets": [
+          "\"80/80 rule\": ~80% of data is unstructured (Phase II) and up to ~80% of effort is data prep (Phase III).",
+          "Leakage = lying to yourself — great lab scores, dead in production.",
+          "Fraud/anomaly projects: outliers are gold , don't delete.",
+          "\"Assess in II, Fix in III.\""
+        ]
+      },
+      {
+        "heading": "Keywords",
+        "bullets": [
+          "\" Clean, transform, feature engineering, labeling \"",
+          "\" Most time-consuming phase \"",
+          "\" Train/validation/test split \", \" hold-out test set \"",
+          "\" Data leakage \", \" imputation \", \" augmentation \""
+        ]
+      },
+      {
+        "heading": "Differentiators",
+        "bullets": []
+      },
+      {
+        "heading": "Traps",
+        "bullets": [
+          "\"Spend most time on modeling\" → wrong; prep dominates.",
+          "\"Use the test set to improve the model\" → leakage , wrong.",
+          "\"Delete all outliers\" in a fraud scenario → wrong.",
+          "Doing prep manually with no pipeline → unsustainable for iterations."
+        ]
+      }
+    ],
+    "quizCount": 5,
+    "flashcardCount": 15
+  },
+  {
+    "id": "p4",
+    "title": "Phase IV — Model Development",
+    "subtitle": "Train, iterate, avoid leakage",
+    "shortTitle": "Phase IV",
+    "phase": 4,
+    "color": "#312E81",
+    "accent": "#818CF8",
+    "icon": "model",
+    "examWeightHint": "PM role is governance, not tuning hyperparameters.",
+    "top10": [
+      "Labels → Supervised; No labels → Unsupervised; Rewards → RL.",
+      "Classification = category; Regression = number.",
+      "Overfitting: train↑ test↓ → regularization/more data/simpler model.",
+      "Underfitting: both↓ → more complexity/better features.",
+      "Hyperparameters = human-set , tuned on the validation set only.",
+      "Baseline first , then iterate — timebox experiments.",
+      "Simplest sufficient model wins ; explainability can beat accuracy.",
+      "Phase IV ≈ 10–15% of effort — data prep still dominates.",
+      "Cross-validation = reliable performance estimates.",
+      "Transfer learning = practical shortcut using pre-trained models."
+    ],
+    "revision": [
+      "Phase IV = build & train — only ~ 10–15% of effort .",
+      "ML types: Supervised (labeled) / Unsupervised (unlabeled) / Reinforcement (rewards) .",
+      "Supervised outputs: Classification = category, Regression = number .",
+      "Parameters learned; hyperparameters human-set, tuned on validation set .",
+      "Overfitting = memorize (train↑ test↓); fix: regularization, simpler model, more data, early stopping, cross-validation.",
+      "Underfitting = too simple (both↓); fix: complexity, better features.",
+      "k-fold cross-validation → reliable estimates.",
+      "Baseline first → simplest sufficient model → timeboxed iteration.",
+      "Explainability can outrank accuracy (regulated industries).",
+      "Options: build vs buy/API vs pre-trained fine-tune (transfer learning) .",
+      "Version code+data+models for reproducibility ."
+    ],
+    "knowledgeCheck": [
+      "Classify: predicting tomorrow's electricity demand; grouping news articles by theme; teaching a drone to land via rewards.",
+      "Explain parameters vs hyperparameters with one example each.",
+      "Describe overfitting using a student analogy and list three remedies.",
+      "Why is a baseline model valuable?",
+      "When would a decision tree beat a neural network despite lower accuracy?",
+      "What is cross-validation and what problem does it solve?",
+      "Compare build vs buy vs transfer learning for an image recognition need.",
+      "Why must the test set not be used for tuning?",
+      "What is an ensemble model? Give an example.",
+      "How does the PM prevent \"endless experimentation\"?"
+    ],
+    "examTips": [
+      {
+        "heading": "Memory Tricks",
+        "bullets": [
+          "\"Labels = Supervised\" — the word to hunt in every scenario.",
+          "Class = Category, Regress = Real number (both start matching letters).",
+          "Overfit = Over-memorized (great at home, fails in exam hall).",
+          "Hyper = Human — hyperparameters are human-set.",
+          "RL keyword scan: reward, agent, environment, trial-and-error, goal ."
+        ]
+      },
+      {
+        "heading": "Keywords",
+        "bullets": [
+          "\" Simplest model that meets the need \"",
+          "\" Baseline first, iterate \"",
+          "\" Explainability for regulators\"",
+          "\" Validation set for tuning \""
+        ]
+      },
+      {
+        "heading": "Differentiators",
+        "bullets": []
+      },
+      {
+        "heading": "Traps",
+        "bullets": [
+          "\"Choose deep learning because it's advanced\" → wrong; match to need.",
+          "\"Tune hyperparameters on the test set\" → leakage, wrong.",
+          "\"Training accuracy 99% proves success\" → overfitting suspicion.",
+          "\"Spend most project time perfecting models\" → wrong effort model."
+        ]
+      }
+    ],
+    "quizCount": 5,
+    "flashcardCount": 15
+  },
+  {
+    "id": "p5",
+    "title": "Phase V — Model Evaluation",
+    "subtitle": "Metrics, business value, go/no-go",
+    "shortTitle": "Phase V",
+    "phase": 5,
+    "color": "#4C1D95",
+    "accent": "#A78BFA",
+    "icon": "evaluate",
+    "examWeightHint": "Accuracy is rarely the right single metric.",
+    "top10": [
+      "Evaluation = technical + business + ethical — all gates must pass.",
+      "Precision = TP/(TP+FP); Recall = TP/(TP+FN); F1 = harmonic mean.",
+      "Accuracy paradox — never trust accuracy on imbalanced data.",
+      "Missing is worse → Recall; False alarm is worse → Precision.",
+      "Type I = FP; Type II = FN.",
+      "Final metrics come from the locked, untouched test set .",
+      "Threshold tradeoffs are business decisions.",
+      "Fairness/bias audits are mandatory before deployment.",
+      "Validate against Phase I KPIs — lab success ≠ business success.",
+      "Deploy / Iterate / Stop — stopping a bad model is good governance."
+    ],
+    "revision": [
+      "Phase V = \"Good enough?\" — technical + business + ethical evaluation.",
+      "Use the locked test set for final metrics (first touch!).",
+      "Confusion matrix: TP/TN/FP/FN ; Type I = FP, Type II = FN.",
+      "Precision = TP/(TP+FP) (predicted); Recall = TP/(TP+FN) (reality); F1 balances both.",
+      "Accuracy paradox: imbalanced data → accuracy misleads → use P/R/F1/AUC.",
+      "FN-costly (cancer/fraud) → Recall. FP-costly (spam) → Precision.",
+      "Regression: MAE, RMSE, R² .",
+      "Threshold tradeoff is a business decision (₹ cost of FP vs FN).",
+      "Fairness/bias audit + explainability are required gates.",
+      "Validate against Phase I business KPIs — technical success alone ≠ success.",
+      "Outcomes: Deploy / Iterate / Stop (stop is legitimate!)."
+    ],
+    "knowledgeCheck": [
+      "Why are two evaluation levels (technical + business) both mandatory?",
+      "Given TP=45, FP=15, FN=5, TN=935 — compute accuracy, precision, recall, F1.",
+      "Explain the accuracy paradox with a fraud example.",
+      "When would you prefer F1 over accuracy?",
+      "Describe the precision-recall tradeoff and who owns the threshold decision.",
+      "What is disparate impact and why must it be tested?",
+      "Difference between shadow testing and A/B testing?",
+      "Why is \"stop\" a legitimate Phase V outcome?",
+      "Which regression metric punishes large errors more — MAE or RMSE? Why?",
+      "How does Phase V connect back to Phase I?"
+    ],
+    "examTips": [
+      {
+        "heading": "Memory Tricks",
+        "bullets": [
+          "Precision = Predicted; Recall = Reality.",
+          "\"Cancer & Crime → Recall\" (never miss). \"Spam → Precision\" (never block good mail).",
+          "Accuracy + imbalanced data mentioned together = paradox trap → answer uses P/R/F1.",
+          "Phase V motto: \"Technically good AND business good.\""
+        ]
+      },
+      {
+        "heading": "Keywords",
+        "bullets": [
+          "\" Untouched/held-out test set \"",
+          "\" Business KPI validation \" against Phase I",
+          "\" Fairness/bias evaluation \"",
+          "\" Deploy / iterate / stop \""
+        ]
+      },
+      {
+        "heading": "Differentiators",
+        "bullets": []
+      },
+      {
+        "heading": "Traps",
+        "bullets": [
+          "Choosing accuracy for imbalanced scenarios → wrong.",
+          "\"Model passed metrics, deploy without business review\" → wrong.",
+          "\"Adjust the model using test results repeatedly\" → test set contamination.",
+          "Sunk-cost reasoning (\"we invested too much to stop\") → wrong; stop is valid ."
+        ]
+      }
+    ],
+    "quizCount": 5,
+    "flashcardCount": 15
+  },
+  {
+    "id": "p6",
+    "title": "Phase VI — Operationalization",
+    "subtitle": "Deploy, monitor, drift, MLOps",
+    "shortTitle": "Phase VI",
+    "phase": 6,
+    "color": "#7F1D1D",
+    "accent": "#F87171",
+    "icon": "ops",
+    "examWeightHint": "The model is not done until it is in production.",
+    "top10": [
+      "Value begins at deployment — Phase VI is continuous, never \"done.\"",
+      "Data drift = inputs shift; Concept drift = meaning shifts.",
+      "Monitor performance + drift + business KPI + ops + fairness.",
+      "Retrain on schedule or on drift triggers — models decay.",
+      "Serving fit: real-time (ms), batch (bulk), edge (on-device) .",
+      "Roll out safely: shadow → canary → full , rollback ready.",
+      "MLOps = DevOps + data & model versioning + drift management.",
+      "Model registry + audit trails + explainability = governance.",
+      "Human-in-the-loop for high-stakes decisions.",
+      "Learnings loop to Phase I — Iterate Often ."
+    ],
+    "revision": [
+      "Phase VI = deploy + monitor + maintain — value starts (not ends) at go-live.",
+      "Serving modes: batch / real-time / edge (+cloud/on-prem/hybrid).",
+      "Rollout ladder: shadow → canary → A/B → full , with rollback ready.",
+      "Data drift = input distribution changes; concept drift = X→Y meaning changes.",
+      "Monitor: performance, drift, business KPI, operational, fairness — with alert thresholds.",
+      "Retraining: scheduled / trigger-based / continuous → mini-cycle through Phases III–V.",
+      "MLOps: versioning (code+data+model), CI/CD, model registry , feature store , automation.",
+      "Governance: audit trails, explainability, human-in-the-loop, security .",
+      "Drive user adoption — unused models earn zero ROI.",
+      "Plan operations budget and eventual model retirement .",
+      "Learnings feed the next iteration → back to Phase I ."
+    ],
+    "knowledgeCheck": [
+      "Why is \"deploy and forget\" fatal for AI systems but merely risky for ordinary software?",
+      "Give a banking example of data drift and one of concept drift.",
+      "Match use cases to batch, real-time, and edge serving.",
+      "Describe the shadow → canary → full rollout ladder and its purpose.",
+      "What belongs in a production monitoring plan for a loan model?",
+      "How does MLOps extend DevOps?",
+      "Why must data and model versions be tracked alongside code?",
+      "What processes support user adoption of an AI system?",
+      "When should a model be retired?",
+      "How does Phase VI complete the CPMAI iteration loop?"
+    ],
+    "examTips": [
+      {
+        "heading": "Memory Tricks",
+        "bullets": [
+          "\"Deployment is a birthday, not a funeral\" — the model's life starts at go-live.",
+          "Drift memory: Data drift = inputs; Concept drift = meaning (X→Y) .",
+          "Speed test: milliseconds → real-time; nightly → batch; offline device → edge .",
+          "MLOps = DevOps + Data + Drift ."
+        ]
+      },
+      {
+        "heading": "Keywords",
+        "bullets": [
+          "\" Monitor for drift and retrain \"",
+          "\" Model registry , versioning , audit trail \"",
+          "\" Shadow/canary rollout\", \" rollback plan \"",
+          "\" Business KPI review post-deployment\""
+        ]
+      },
+      {
+        "heading": "Differentiators",
+        "bullets": []
+      },
+      {
+        "heading": "Traps",
+        "bullets": [
+          "Any \" deploy and the project is complete \" option → wrong.",
+          "\"Models don't need retraining\" → wrong (drift!).",
+          "\"Roll out to 100% immediately\" in high-stakes cases → prefer staged rollout.",
+          "\"Monitoring = server uptime\" → incomplete; include performance/drift/KPI/fairness."
+        ]
+      }
+    ],
+    "quizCount": 5,
+    "flashcardCount": 15
+  },
+  {
+    "id": "pat",
+    "title": "The 7 Patterns of AI",
+    "subtitle": "Universal classification of AI use cases",
+    "shortTitle": "7 Patterns",
+    "phase": null,
+    "color": "#14532D",
+    "accent": "#34D399",
+    "icon": "patterns",
+    "examWeightHint": "No pattern match ⇒ probably not an AI problem.",
+    "top10": [
+      "Every AI use case maps to one or more of the 7 patterns — no match ⇒ not AI.",
+      "Hyperpersonalization = segment of one (recommendations, offers).",
+      "Autonomous = acts with minimal human involvement (not scripted RPA).",
+      "Predictive = forecast + decision support (human decides).",
+      "Conversation = NLP/chat/voice/sentiment/translation.",
+      "Patterns & Anomalies = fraud, intrusion, odd-one-out ← fraud lives HERE.",
+      "Recognition = identify things in unstructured media (OCR, vision, speech-to-text).",
+      "Goal-Driven = reinforcement learning, rewards, optimal strategy.",
+      "Patterns combine — scope iteration 1 around one pattern (start small).",
+      "Patterns are technology-independent problem shapes, mapped in Phase I ."
+    ],
+    "revision": [
+      "7 Patterns = universal classification of AI use cases ; no pattern match → probably not AI.",
+      "1 Hyperpersonalization — segment of one; recommendations, tailored offers.",
+      "2 Autonomous Systems — acts with minimal human help; vehicles, robots, agents.",
+      "3 Predictive Analytics — forecast outcomes, decision support; churn, default, demand.",
+      "4 Conversation & Human Interaction — chatbots, voice, NLP, sentiment, translation.",
+      "5 Patterns & Anomalies — fraud, intrusion, odd-one-out, associations.",
+      "6 Recognition — identify things in images/audio/video/docs; OCR, face, tumor.",
+      "7 Goal-Driven Systems — reinforcement learning; optimize via rewards.",
+      "Patterns are technology-independent and combine in real systems.",
+      "Used in Phase I for AI validation; imply data/skill needs for later phases.",
+      "Fraud ≠ Recognition — it's Patterns & Anomalies (classic trap)."
+    ],
+    "knowledgeCheck": [
+      "Why do the 7 Patterns matter in Phase I decision-making?",
+      "Distinguish Recognition from Patterns & Anomalies with examples.",
+      "Distinguish Predictive Analytics from Goal-Driven Systems.",
+      "Give one healthcare example for each of any four patterns.",
+      "Which patterns dominate a self-driving car, and what does each contribute?",
+      "Why is a scripted RPA bot NOT the Autonomous Systems pattern?",
+      "What data types does each pattern typically require? (any four)",
+      "Give a retail example combining Hyperpersonalization and Predictive.",
+      "What risks are characteristic of the Conversation pattern?",
+      "A use case fits no pattern — what should the PM recommend?"
+    ],
+    "examTips": [
+      {
+        "heading": "Memory Tricks",
+        "bullets": [
+          "Mnemonic sentence: \" H appy A unts P repare C hai, P akode R oz G arma-garam\" → H yperpersonalization, A utonomous, P redictive, C onversation, P atterns&Anomalies, R ecognition, G oal-driven. 🍵",
+          "Core-question flash: personalize? act alone? predict? talk? odd-one-out? what-is-this? best-move?"
+        ]
+      },
+      {
+        "heading": "Keyword → Pattern Reflexes",
+        "bullets": [
+          "recommend/tailor → 1 | self-driving/robot → 2 | forecast/risk score → 3",
+          "chatbot/voice/translate → 4 | fraud/intrusion/unusual → 5",
+          "image/OCR/speech-to-text → 6 | optimize via reward/game → 7"
+        ]
+      },
+      {
+        "heading": "Confusion Killers",
+        "bullets": []
+      },
+      {
+        "heading": "Traps",
+        "bullets": [
+          "Fraud labeled \"Recognition\" → wrong (it's Patterns & Anomalies).",
+          "Assuming a use case can only have one pattern → combinations exist.",
+          "Treating RPA/rule automation as the Autonomous pattern → wrong."
+        ]
+      }
+    ],
+    "quizCount": 5,
+    "flashcardCount": 15
+  }
+]
