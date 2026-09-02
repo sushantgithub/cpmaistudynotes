@@ -58,9 +58,9 @@ fun HomeScreen(repo: ContentRepository, progress: UserProgress, nav: NavControll
                 .padding(20.dp)
         ) {
             Text("UNOFFICIAL", color = Saffron, fontWeight = FontWeight.Bold, letterSpacing = 2.sp, fontSize = 12.sp)
-            Text("AI PM Prep", color = Color.White, fontWeight = FontWeight.ExtraBold, fontSize = 32.sp)
+            Text("CPMAI Prep App", color = Color.White, fontWeight = FontWeight.ExtraBold, fontSize = 30.sp)
             Text(
-                "Independent study aid for the PMI-CPMAI™ certification. Not affiliated with PMI.",
+                "Independent study aid. Not affiliated with, endorsed by, or sponsored by PMI.",
                 color = Color(0xFFC6D4EC),
                 modifier = Modifier.padding(top = 6.dp)
             )

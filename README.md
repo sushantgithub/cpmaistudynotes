@@ -1,4 +1,4 @@
-# Unofficial AI PM Prep (Android)
+# CPMAI Prep App (Unofficial)
 
 Independent, **unofficial** study aid related to the PMI-CPMAI™ certification.
 
