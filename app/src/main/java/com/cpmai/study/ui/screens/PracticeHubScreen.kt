@@ -32,7 +32,10 @@ fun PracticeHubScreen(repo: ContentRepository, progress: UserProgress, nav: NavC
         item {
             Text("Practice", style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.ExtraBold)
             Text(
-                "Free quizzes: Core Concepts and Phase I. Exam simulator and other modules are full version (${Entitlement.priceLabel}).",
+                if (progress.fullUnlocked)
+                    "All modules are unlocked. Run a topic quiz, daily drill, or the exam simulator."
+                else
+                    "Free quizzes: Core Concepts and Phase I. Exam simulator and other modules are full version (${Entitlement.priceLabel}).",
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.padding(top = 6.dp, bottom = 8.dp)
             )
@@ -44,7 +47,7 @@ fun PracticeHubScreen(repo: ContentRepository, progress: UserProgress, nav: NavC
             ) { nav.navigate(if (progress.fullUnlocked) "exam" else "unlock") }
         }
         item {
-            PracticeRow("Daily drill", "5 questions (free pool until you unlock)") { nav.navigate("quiz/daily") }
+            PracticeRow("Daily drill", if (progress.fullUnlocked) "5 mixed questions" else "5 questions from the free modules") { nav.navigate("quiz/daily") }
         }
         items(repo.topics) { topic ->
             val qs = repo.quizzesFor(topic.id)

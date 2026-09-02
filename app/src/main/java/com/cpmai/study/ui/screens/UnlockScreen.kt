@@ -55,22 +55,24 @@ fun UnlockScreen(store: ProgressStore, progress: UserProgress, onBack: () -> Uni
                 .verticalScroll(rememberScrollState())
                 .padding(16.dp)
         ) {
-            Text("Free vs full", fontWeight = FontWeight.ExtraBold, fontSize = 24.sp, color = Navy)
-            Spacer(Modifier.height(8.dp))
-            Text(
-                "Free: Core Concepts and Phase I (Business Understanding), including those notes, cards, and quizzes.\n\n" +
-                    "Full (${Entitlement.priceLabel}): Phases II–VI, 7 Patterns, exam simulator, daily drill across the whole syllabus, and all flashcards.",
-                color = MaterialTheme.colorScheme.onSurfaceVariant
-            )
-            Spacer(Modifier.height(16.dp))
-            Text(
-                "This sideloaded app cannot use Google Play Billing yet. After you pay (Gumroad, UPI, bank transfer, etc.), you receive a license code like PREP-AB12CD-E9F0. Enter it below. When you later publish on Play Store, this screen can switch to one-tap in-app purchase.",
-                fontSize = 14.sp
-            )
-            Spacer(Modifier.height(20.dp))
             if (ok) {
-                Text("Full version is unlocked on this device.", fontWeight = FontWeight.Bold, color = androidx.compose.ui.graphics.Color(0xFF059669))
+                Text("Full version unlocked", fontWeight = FontWeight.ExtraBold, fontSize = 24.sp, color = Navy)
+                Spacer(Modifier.height(8.dp))
+                Text("All modules, the exam simulator, and the full card deck are available on this device.")
             } else {
+                Text("Free vs full", fontWeight = FontWeight.ExtraBold, fontSize = 24.sp, color = Navy)
+                Spacer(Modifier.height(8.dp))
+                Text(
+                    "Free: Core Concepts and Phase I (Business Understanding), including those notes, cards, and quizzes.\n\n" +
+                        "Full (${Entitlement.priceLabel}): Phases II–VI, 7 Patterns, exam simulator, daily drill across the whole syllabus, and all flashcards.",
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+                Spacer(Modifier.height(16.dp))
+                Text(
+                    "This sideloaded app cannot use Google Play Billing yet. After you pay, you receive a license code like PREP-AB12CD-E9F0. Enter it below.",
+                    fontSize = 14.sp
+                )
+                Spacer(Modifier.height(20.dp))
                 OutlinedTextField(
                     value = code,
                     onValueChange = { code = it; message = null },
@@ -93,7 +95,7 @@ fun UnlockScreen(store: ProgressStore, progress: UserProgress, onBack: () -> Uni
                     modifier = Modifier.fillMaxWidth()
                 ) { Text("Unlock for ${Entitlement.priceLabel}") }
                 message?.let {
-                    Text(it, color = if (ok) androidx.compose.ui.graphics.Color(0xFF059669) else MaterialTheme.colorScheme.error, modifier = Modifier.padding(top = 8.dp))
+                    Text(it, color = MaterialTheme.colorScheme.error, modifier = Modifier.padding(top = 8.dp))
                 }
             }
         }

@@ -32,7 +32,10 @@ fun LearnScreen(
         item {
             Text("Syllabus", style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.ExtraBold)
             Text(
-                "Free: Core Concepts and Phase I. Unlock the rest for ${com.cpmai.study.data.Entitlement.priceLabel}.",
+                if (progress.fullUnlocked)
+                    "All 8 modules are unlocked. Study in order: foundations, Phases I–VI, then the 7 Patterns."
+                else
+                    "Free: Core Concepts and Phase I. Unlock the rest for ${com.cpmai.study.data.Entitlement.priceLabel}.",
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.padding(top = 6.dp, bottom = 8.dp)
             )
