@@ -1,93 +1,82 @@
 package com.cpmai.study.data
 
 import android.content.Context
-import androidx.datastore.preferences.core.edit
-import androidx.datastore.preferences.core.intPreferencesKey
-import androidx.datastore.preferences.core.longPreferencesKey
-import androidx.datastore.preferences.core.stringSetPreferencesKey
-import androidx.datastore.preferences.core.stringPreferencesKey
-import androidx.datastore.preferences.preferencesDataStore
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import java.time.LocalDate
 import java.time.ZoneOffset
 
-private val Context.dataStore by preferencesDataStore("cpmai_progress")
-
-class ProgressStore(private val context: Context) {
-    private val mastered = stringSetPreferencesKey("mastered_cards")
-    private val bookmarks = stringSetPreferencesKey("bookmarked_cards")
-    private val quizCsv = stringPreferencesKey("quiz_attempts")
-    private val examsCsv = stringPreferencesKey("exam_scores")
-    private val lastDay = longPreferencesKey("last_study_day")
-    private val streakKey = intPreferencesKey("streak")
-    private val minutesKey = intPreferencesKey("study_minutes")
-
-    val progress: Flow<UserProgress> = context.dataStore.data.map { prefs ->
-        UserProgress(
-            masteredCards = prefs[mastered] ?: emptySet(),
-            bookmarkedCards = prefs[bookmarks] ?: emptySet(),
-            quizAttempts = parseMap(prefs[quizCsv] ?: ""),
-            examScores = (prefs[examsCsv] ?: "").split(",").mapNotNull { it.toIntOrNull() },
-            lastStudyEpochDay = prefs[lastDay] ?: 0L,
-            streak = prefs[streakKey] ?: 0,
-            studyMinutes = prefs[minutesKey] ?: 0
-        )
-    }
+class ProgressStore(context: Context) {
+    private val prefs = context.getSharedPreferences("cpmai_progress", Context.MODE_PRIVATE)
+    private val _progress = MutableStateFlow(read())
+    val progress: StateFlow<UserProgress> = _progress.asStateFlow()
 
     suspend fun toggleMastered(id: String) {
-        context.dataStore.edit { prefs ->
-            val set = (prefs[mastered] ?: emptySet()).toMutableSet()
-            if (!set.add(id)) set.remove(id)
-            prefs[mastered] = set
-        }
+        val set = _progress.value.masteredCards.toMutableSet()
+        if (!set.add(id)) set.remove(id)
+        write(_progress.value.copy(masteredCards = set))
         touchStudy()
     }
 
     suspend fun toggleBookmark(id: String) {
-        context.dataStore.edit { prefs ->
-            val set = (prefs[bookmarks] ?: emptySet()).toMutableSet()
-            if (!set.add(id)) set.remove(id)
-            prefs[bookmarks] = set
-        }
+        val set = _progress.value.bookmarkedCards.toMutableSet()
+        if (!set.add(id)) set.remove(id)
+        write(_progress.value.copy(bookmarkedCards = set))
     }
 
     suspend fun recordQuiz(questionId: String, correct: Boolean) {
-        context.dataStore.edit { prefs ->
-            val map = parseMap(prefs[quizCsv] ?: "").toMutableMap()
-            map[questionId] = if (correct) 1 else 0
-            prefs[quizCsv] = map.entries.joinToString(";") { "${it.key}=${it.value}" }
-        }
+        val map = _progress.value.quizAttempts.toMutableMap()
+        map[questionId] = if (correct) 1 else 0
+        write(_progress.value.copy(quizAttempts = map))
         touchStudy()
     }
 
     suspend fun recordExam(percent: Int) {
-        context.dataStore.edit { prefs ->
-            val list = ((prefs[examsCsv] ?: "").split(",").mapNotNull { it.toIntOrNull() } + percent).takeLast(20)
-            prefs[examsCsv] = list.joinToString(",")
-        }
+        val list = (_progress.value.examScores + percent).takeLast(20)
+        write(_progress.value.copy(examScores = list))
         touchStudy()
     }
 
     suspend fun addStudyMinutes(mins: Int) {
-        context.dataStore.edit { prefs ->
-            prefs[minutesKey] = (prefs[minutesKey] ?: 0) + mins
-        }
+        write(_progress.value.copy(studyMinutes = _progress.value.studyMinutes + mins))
         touchStudy()
     }
 
-    private suspend fun touchStudy() {
+    private fun touchStudy() {
         val today = LocalDate.now(ZoneOffset.UTC).toEpochDay()
-        context.dataStore.edit { prefs ->
-            val last = prefs[lastDay] ?: 0L
-            val streak = prefs[streakKey] ?: 0
-            prefs[streakKey] = when {
-                last == today -> streak.coerceAtLeast(1)
-                last == today - 1 -> streak + 1
-                else -> 1
-            }
-            prefs[lastDay] = today
+        val cur = _progress.value
+        val streak = when {
+            cur.lastStudyEpochDay == today -> cur.streak.coerceAtLeast(1)
+            cur.lastStudyEpochDay == today - 1 -> cur.streak + 1
+            else -> 1
         }
+        write(cur.copy(lastStudyEpochDay = today, streak = streak))
+    }
+
+    private fun read(): UserProgress {
+        return UserProgress(
+            masteredCards = prefs.getStringSet("mastered", emptySet()) ?: emptySet(),
+            bookmarkedCards = prefs.getStringSet("bookmarks", emptySet()) ?: emptySet(),
+            quizAttempts = parseMap(prefs.getString("quiz", "") ?: ""),
+            examScores = (prefs.getString("exams", "") ?: "").split(",").mapNotNull { it.toIntOrNull() },
+            lastStudyEpochDay = prefs.getLong("last_day", 0L),
+            streak = prefs.getInt("streak", 0),
+            studyMinutes = prefs.getInt("minutes", 0)
+        )
+    }
+
+    private fun write(value: UserProgress) {
+        prefs.edit()
+            .putStringSet("mastered", value.masteredCards)
+            .putStringSet("bookmarks", value.bookmarkedCards)
+            .putString("quiz", value.quizAttempts.entries.joinToString(";") { "${it.key}=${it.value}" })
+            .putString("exams", value.examScores.joinToString(","))
+            .putLong("last_day", value.lastStudyEpochDay)
+            .putInt("streak", value.streak)
+            .putInt("minutes", value.studyMinutes)
+            .apply()
+        _progress.value = value
     }
 
     private fun parseMap(raw: String): Map<String, Int> {
