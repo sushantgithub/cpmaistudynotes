@@ -62,8 +62,13 @@ class ProgressStore(context: Context) {
             examScores = (prefs.getString("exams", "") ?: "").split(",").mapNotNull { it.toIntOrNull() },
             lastStudyEpochDay = prefs.getLong("last_day", 0L),
             streak = prefs.getInt("streak", 0),
-            studyMinutes = prefs.getInt("minutes", 0)
+            studyMinutes = prefs.getInt("minutes", 0),
+            disclaimerAccepted = prefs.getBoolean("disclaimer", false)
         )
+    }
+
+    fun acceptDisclaimer() {
+        write(_progress.value.copy(disclaimerAccepted = true))
     }
 
     private fun write(value: UserProgress) {
@@ -75,6 +80,7 @@ class ProgressStore(context: Context) {
             .putLong("last_day", value.lastStudyEpochDay)
             .putInt("streak", value.streak)
             .putInt("minutes", value.studyMinutes)
+            .putBoolean("disclaimer", value.disclaimerAccepted)
             .apply()
         _progress.value = value
     }

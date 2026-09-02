@@ -95,5 +95,6 @@ data class UserProgress(
     val examScores: List<Int> = emptyList(),
     val lastStudyEpochDay: Long = 0,
     val streak: Int = 0,
-    val studyMinutes: Int = 0
+    val studyMinutes: Int = 0,
+    val disclaimerAccepted: Boolean = false
 )

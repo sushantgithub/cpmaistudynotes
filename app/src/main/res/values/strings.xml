@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">CPMAI Study Lab</string>
+    <string name="app_name">Unofficial AI PM Prep</string>
+    <string name="disclaimer_title">Unofficial study aid</string>
+    <string name="disclaimer_body">This app is an independent, unofficial study aid. It is not affiliated with, endorsed by, sponsored by, or approved by Project Management Institute, Inc. (PMI).\n\nPMI, PMI-CPMAI, and PMI Certified Professional in Managing AI are marks of Project Management Institute, Inc. They are used here only to identify the certification this material may help you prepare for.\n\nThis is not official PMI training, not an Authorized Training Partner course, and not a substitute for PMI’s exam content outline, handbook, or paid education.\n\nPractice questions in this app are original study items. They are not PMI exam questions. PMI exams are confidential. Do not add, share, or study recalled live-exam items in this app.\n\nBy continuing you confirm you understand the above.</string>
+    <string name="disclaimer_accept">I understand — continue</string>
+    <string name="legal_attribution">PMI®, PMI-CPMAI™, and PMI Certified Professional in Managing AI™ are marks of Project Management Institute, Inc. This app is unofficial and not affiliated with PMI.</string>
 </resources>

@@ -1,6 +1,10 @@
-# CPMAI Study Lab (Android)
+# Unofficial AI PM Prep (Android)
 
-Offline Android app for **PMI CPMAI** exam prep, built from the complete study notes (6 phases, 7 Patterns of AI, core concepts).
+Independent, **unofficial** study aid related to the PMI-CPMAI™ certification.
+
+**Not affiliated with, endorsed by, or sponsored by Project Management Institute, Inc.** PMI® and PMI-CPMAI™ are marks of PMI.
+
+Practice questions are original study items, not PMI exam questions.
 
 ## Features
 

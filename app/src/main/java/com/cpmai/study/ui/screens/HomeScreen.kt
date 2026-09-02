@@ -14,6 +14,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
@@ -21,10 +22,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.cpmai.study.R
 import com.cpmai.study.data.ContentRepository
 import com.cpmai.study.data.UserProgress
 import com.cpmai.study.ui.components.HomeQuickAction
@@ -54,10 +57,10 @@ fun HomeScreen(repo: ContentRepository, progress: UserProgress, nav: NavControll
                 .background(Brush.verticalGradient(listOf(Navy, NavyMid)))
                 .padding(20.dp)
         ) {
-            Text("PMI CPMAI", color = Saffron, fontWeight = FontWeight.Bold, letterSpacing = 2.sp, fontSize = 12.sp)
-            Text("Study Lab", color = Color.White, fontWeight = FontWeight.ExtraBold, fontSize = 32.sp)
+            Text("UNOFFICIAL", color = Saffron, fontWeight = FontWeight.Bold, letterSpacing = 2.sp, fontSize = 12.sp)
+            Text("AI PM Prep", color = Color.White, fontWeight = FontWeight.ExtraBold, fontSize = 32.sp)
             Text(
-                "Six phases · 7 patterns · notes, cards, and scenario drills",
+                "Independent study aid for the PMI-CPMAI™ certification. Not affiliated with PMI.",
                 color = Color(0xFFC6D4EC),
                 modifier = Modifier.padding(top = 6.dp)
             )
@@ -101,6 +104,15 @@ fun HomeScreen(repo: ContentRepository, progress: UserProgress, nav: NavControll
             }
             TextButton(onClick = { nav.navigate("glossary") }, modifier = Modifier.fillMaxWidth()) {
                 Text("Open full glossary (${repo.glossary.size} terms)")
+            }
+            Text(
+                stringResource(R.string.legal_attribution),
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                fontSize = 12.sp,
+                modifier = Modifier.padding(top = 8.dp)
+            )
+            TextButton(onClick = { nav.navigate("legal") }, modifier = Modifier.fillMaxWidth()) {
+                Text("Legal & unofficial notice")
             }
             Spacer(Modifier.height(12.dp))
         }

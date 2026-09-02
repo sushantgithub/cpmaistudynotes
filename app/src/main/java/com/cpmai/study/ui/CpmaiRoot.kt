@@ -25,11 +25,13 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.cpmai.study.data.ContentRepository
 import com.cpmai.study.data.ProgressStore
+import com.cpmai.study.ui.screens.DisclaimerGate
 import com.cpmai.study.ui.screens.ExamScreen
 import com.cpmai.study.ui.screens.FlashcardScreen
 import com.cpmai.study.ui.screens.GlossaryScreen
 import com.cpmai.study.ui.screens.HomeScreen
 import com.cpmai.study.ui.screens.LearnScreen
+import com.cpmai.study.ui.screens.LegalScreen
 import com.cpmai.study.ui.screens.PatternLabScreen
 import com.cpmai.study.ui.screens.PhaseMapScreen
 import com.cpmai.study.ui.screens.PracticeHubScreen
@@ -44,6 +46,10 @@ private data class Tab(val route: String, val label: String, val icon: androidx.
 fun CpmaiRoot(repo: ContentRepository, store: ProgressStore) {
     val nav = rememberNavController()
     val progress by store.progress.collectAsState(initial = com.cpmai.study.data.UserProgress())
+    if (!progress.disclaimerAccepted) {
+        DisclaimerGate(onAccept = { store.acceptDisclaimer() })
+        return
+    }
     val tabs = listOf(
         Tab("home", "Home", Icons.Outlined.Home),
         Tab("learn", "Learn", Icons.Outlined.MenuBook),
@@ -55,7 +61,7 @@ fun CpmaiRoot(repo: ContentRepository, store: ProgressStore) {
     val route = back?.destination?.route ?: "home"
     val hideBar = route.startsWith("quiz") || route.startsWith("exam") || route.startsWith("topic/") ||
         route.startsWith("notes") || route == "search" || route == "glossary" || route == "phases" ||
-        route == "progress"
+        route == "progress" || route == "legal"
 
     Scaffold(
         bottomBar = {
@@ -105,6 +111,7 @@ fun CpmaiRoot(repo: ContentRepository, store: ProgressStore) {
             composable("search") { SearchScreen(repo, onBack = { nav.popBackStack() }, onTopic = { nav.navigate("topic/$it") }) }
             composable("glossary") { GlossaryScreen(repo, onBack = { nav.popBackStack() }) }
             composable("phases") { PhaseMapScreen(repo, store, onBack = { nav.popBackStack() }) }
+            composable("legal") { LegalScreen(onBack = { nav.popBackStack() }) }
             composable(
                 "topic/{id}",
                 arguments = listOf(navArgument("id") { type = NavType.StringType })

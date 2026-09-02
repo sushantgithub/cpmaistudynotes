@@ -27,7 +27,7 @@ fun LearnScreen(repo: ContentRepository, progress: UserProgress, onOpen: (String
         item {
             Text("Syllabus", style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.ExtraBold)
             Text(
-                "Study in order: foundations, then Phases I–VI, then the 7 Patterns. Each module has notes, Top 10, glossary, flashcards, and scenario MCQs.",
+                "Unofficial independent notes. Study foundations, then Phases I–VI, then the 7 Patterns. Not PMI training.",
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.padding(top = 6.dp, bottom = 8.dp)
             )
