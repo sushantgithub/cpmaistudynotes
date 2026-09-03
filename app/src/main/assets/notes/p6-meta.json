@@ -1,0 +1,72 @@
+{
+  "top10": [
+    "Value begins at deployment — Phase VI is continuous, never \"done.\"",
+    "Data drift = inputs shift; Concept drift = meaning shifts.",
+    "Monitor performance + drift + business KPI + ops + fairness.",
+    "Retrain on schedule or on drift triggers — models decay.",
+    "Serving fit: real-time (ms), batch (bulk), edge (on-device) .",
+    "Roll out safely: shadow → canary → full , rollback ready.",
+    "MLOps = DevOps + data & model versioning + drift management.",
+    "Model registry + audit trails + explainability = governance.",
+    "Human-in-the-loop for high-stakes decisions.",
+    "Learnings loop to Phase I — Iterate Often ."
+  ],
+  "revision": [
+    "Phase VI = deploy + monitor + maintain — value starts (not ends) at go-live.",
+    "Serving modes: batch / real-time / edge (+cloud/on-prem/hybrid).",
+    "Rollout ladder: shadow → canary → A/B → full , with rollback ready.",
+    "Data drift = input distribution changes; concept drift = X→Y meaning changes.",
+    "Monitor: performance, drift, business KPI, operational, fairness — with alert thresholds.",
+    "Retraining: scheduled / trigger-based / continuous → mini-cycle through Phases III–V.",
+    "MLOps: versioning (code+data+model), CI/CD, model registry , feature store , automation.",
+    "Governance: audit trails, explainability, human-in-the-loop, security .",
+    "Drive user adoption — unused models earn zero ROI.",
+    "Plan operations budget and eventual model retirement .",
+    "Learnings feed the next iteration → back to Phase I ."
+  ],
+  "knowledgeCheck": [
+    "Why is \"deploy and forget\" fatal for AI systems but merely risky for ordinary software?",
+    "Give a banking example of data drift and one of concept drift.",
+    "Match use cases to batch, real-time, and edge serving.",
+    "Describe the shadow → canary → full rollout ladder and its purpose.",
+    "What belongs in a production monitoring plan for a loan model?",
+    "How does MLOps extend DevOps?",
+    "Why must data and model versions be tracked alongside code?",
+    "What processes support user adoption of an AI system?",
+    "When should a model be retired?",
+    "How does Phase VI complete the CPMAI iteration loop?"
+  ],
+  "examTips": [
+    {
+      "heading": "Memory Tricks",
+      "bullets": [
+        "\"Deployment is a birthday, not a funeral\" — the model's life starts at go-live.",
+        "Drift memory: Data drift = inputs; Concept drift = meaning (X→Y) .",
+        "Speed test: milliseconds → real-time; nightly → batch; offline device → edge .",
+        "MLOps = DevOps + Data + Drift ."
+      ]
+    },
+    {
+      "heading": "Keywords",
+      "bullets": [
+        "\" Monitor for drift and retrain \"",
+        "\" Model registry , versioning , audit trail \"",
+        "\" Shadow/canary rollout\", \" rollback plan \"",
+        "\" Business KPI review post-deployment\""
+      ]
+    },
+    {
+      "heading": "Differentiators",
+      "bullets": []
+    },
+    {
+      "heading": "Traps",
+      "bullets": [
+        "Any \" deploy and the project is complete \" option → wrong.",
+        "\"Models don't need retraining\" → wrong (drift!).",
+        "\"Roll out to 100% immediately\" in high-stakes cases → prefer staged rollout.",
+        "\"Monitoring = server uptime\" → incomplete; include performance/drift/KPI/fairness."
+      ]
+    }
+  ]
+}

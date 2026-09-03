@@ -1,0 +1,68 @@
+{
+  "top10": [
+    "Every AI use case maps to one or more of the 7 patterns — no match ⇒ not AI.",
+    "Hyperpersonalization = segment of one (recommendations, offers).",
+    "Autonomous = acts with minimal human involvement (not scripted RPA).",
+    "Predictive = forecast + decision support (human decides).",
+    "Conversation = NLP/chat/voice/sentiment/translation.",
+    "Patterns & Anomalies = fraud, intrusion, odd-one-out ← fraud lives HERE.",
+    "Recognition = identify things in unstructured media (OCR, vision, speech-to-text).",
+    "Goal-Driven = reinforcement learning, rewards, optimal strategy.",
+    "Patterns combine — scope iteration 1 around one pattern (start small).",
+    "Patterns are technology-independent problem shapes, mapped in Phase I ."
+  ],
+  "revision": [
+    "7 Patterns = universal classification of AI use cases ; no pattern match → probably not AI.",
+    "1 Hyperpersonalization — segment of one; recommendations, tailored offers.",
+    "2 Autonomous Systems — acts with minimal human help; vehicles, robots, agents.",
+    "3 Predictive Analytics — forecast outcomes, decision support; churn, default, demand.",
+    "4 Conversation & Human Interaction — chatbots, voice, NLP, sentiment, translation.",
+    "5 Patterns & Anomalies — fraud, intrusion, odd-one-out, associations.",
+    "6 Recognition — identify things in images/audio/video/docs; OCR, face, tumor.",
+    "7 Goal-Driven Systems — reinforcement learning; optimize via rewards.",
+    "Patterns are technology-independent and combine in real systems.",
+    "Used in Phase I for AI validation; imply data/skill needs for later phases.",
+    "Fraud ≠ Recognition — it's Patterns & Anomalies (classic trap)."
+  ],
+  "knowledgeCheck": [
+    "Why do the 7 Patterns matter in Phase I decision-making?",
+    "Distinguish Recognition from Patterns & Anomalies with examples.",
+    "Distinguish Predictive Analytics from Goal-Driven Systems.",
+    "Give one healthcare example for each of any four patterns.",
+    "Which patterns dominate a self-driving car, and what does each contribute?",
+    "Why is a scripted RPA bot NOT the Autonomous Systems pattern?",
+    "What data types does each pattern typically require? (any four)",
+    "Give a retail example combining Hyperpersonalization and Predictive.",
+    "What risks are characteristic of the Conversation pattern?",
+    "A use case fits no pattern — what should the PM recommend?"
+  ],
+  "examTips": [
+    {
+      "heading": "Memory Tricks",
+      "bullets": [
+        "Mnemonic sentence: \" H appy A unts P repare C hai, P akode R oz G arma-garam\" → H yperpersonalization, A utonomous, P redictive, C onversation, P atterns&Anomalies, R ecognition, G oal-driven. 🍵",
+        "Core-question flash: personalize? act alone? predict? talk? odd-one-out? what-is-this? best-move?"
+      ]
+    },
+    {
+      "heading": "Keyword → Pattern Reflexes",
+      "bullets": [
+        "recommend/tailor → 1 | self-driving/robot → 2 | forecast/risk score → 3",
+        "chatbot/voice/translate → 4 | fraud/intrusion/unusual → 5",
+        "image/OCR/speech-to-text → 6 | optimize via reward/game → 7"
+      ]
+    },
+    {
+      "heading": "Confusion Killers",
+      "bullets": []
+    },
+    {
+      "heading": "Traps",
+      "bullets": [
+        "Fraud labeled \"Recognition\" → wrong (it's Patterns & Anomalies).",
+        "Assuming a use case can only have one pattern → combinations exist.",
+        "Treating RPA/rule automation as the Autonomous pattern → wrong."
+      ]
+    }
+  ]
+}

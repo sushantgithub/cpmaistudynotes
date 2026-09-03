@@ -1,0 +1,73 @@
+{
+  "top10": [
+    "Labels → Supervised; No labels → Unsupervised; Rewards → RL.",
+    "Classification = category; Regression = number.",
+    "Overfitting: train↑ test↓ → regularization/more data/simpler model.",
+    "Underfitting: both↓ → more complexity/better features.",
+    "Hyperparameters = human-set , tuned on the validation set only.",
+    "Baseline first , then iterate — timebox experiments.",
+    "Simplest sufficient model wins ; explainability can beat accuracy.",
+    "Phase IV ≈ 10–15% of effort — data prep still dominates.",
+    "Cross-validation = reliable performance estimates.",
+    "Transfer learning = practical shortcut using pre-trained models."
+  ],
+  "revision": [
+    "Phase IV = build & train — only ~ 10–15% of effort .",
+    "ML types: Supervised (labeled) / Unsupervised (unlabeled) / Reinforcement (rewards) .",
+    "Supervised outputs: Classification = category, Regression = number .",
+    "Parameters learned; hyperparameters human-set, tuned on validation set .",
+    "Overfitting = memorize (train↑ test↓); fix: regularization, simpler model, more data, early stopping, cross-validation.",
+    "Underfitting = too simple (both↓); fix: complexity, better features.",
+    "k-fold cross-validation → reliable estimates.",
+    "Baseline first → simplest sufficient model → timeboxed iteration.",
+    "Explainability can outrank accuracy (regulated industries).",
+    "Options: build vs buy/API vs pre-trained fine-tune (transfer learning) .",
+    "Version code+data+models for reproducibility ."
+  ],
+  "knowledgeCheck": [
+    "Classify: predicting tomorrow's electricity demand; grouping news articles by theme; teaching a drone to land via rewards.",
+    "Explain parameters vs hyperparameters with one example each.",
+    "Describe overfitting using a student analogy and list three remedies.",
+    "Why is a baseline model valuable?",
+    "When would a decision tree beat a neural network despite lower accuracy?",
+    "What is cross-validation and what problem does it solve?",
+    "Compare build vs buy vs transfer learning for an image recognition need.",
+    "Why must the test set not be used for tuning?",
+    "What is an ensemble model? Give an example.",
+    "How does the PM prevent \"endless experimentation\"?"
+  ],
+  "examTips": [
+    {
+      "heading": "Memory Tricks",
+      "bullets": [
+        "\"Labels = Supervised\" — the word to hunt in every scenario.",
+        "Class = Category, Regress = Real number (both start matching letters).",
+        "Overfit = Over-memorized (great at home, fails in exam hall).",
+        "Hyper = Human — hyperparameters are human-set.",
+        "RL keyword scan: reward, agent, environment, trial-and-error, goal ."
+      ]
+    },
+    {
+      "heading": "Keywords",
+      "bullets": [
+        "\" Simplest model that meets the need \"",
+        "\" Baseline first, iterate \"",
+        "\" Explainability for regulators\"",
+        "\" Validation set for tuning \""
+      ]
+    },
+    {
+      "heading": "Differentiators",
+      "bullets": []
+    },
+    {
+      "heading": "Traps",
+      "bullets": [
+        "\"Choose deep learning because it's advanced\" → wrong; match to need.",
+        "\"Tune hyperparameters on the test set\" → leakage, wrong.",
+        "\"Training accuracy 99% proves success\" → overfitting suspicion.",
+        "\"Spend most project time perfecting models\" → wrong effort model."
+      ]
+    }
+  ]
+}

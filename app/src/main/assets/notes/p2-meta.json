@@ -1,0 +1,71 @@
+{
+  "top10": [
+    "Phase II = WHAT data — assessment only; cleaning is Phase III.",
+    "Data requirements flow from the Phase I business problem .",
+    "GIGO — quality beats quantity.",
+    "~ 80% of enterprise data is unstructured .",
+    "Big Data V's: Volume, Variety, Velocity, Veracity .",
+    "Quality dimensions: Accuracy, Completeness, Consistency, Timeliness, Validity, Uniqueness .",
+    "Verify privacy/legal rights (GDPR, HIPAA, DPDP) before using data.",
+    "Check quantity and representativeness (bias prevention).",
+    "Phase II ends with a data go/no-go decision.",
+    "Phase II repeats every iteration ."
+  ],
+  "revision": [
+    "Phase II = WHAT data — after Phase I, before Phase III, every iteration.",
+    "Derive data requirements from the business problem (never data-first).",
+    "Data types: structured / semi-structured / unstructured (~ 80% unstructured ).",
+    "Sources: internal, external, generated .",
+    "Big Data V's: Volume, Variety, Velocity, Veracity (+Value) .",
+    "Quality dimensions ( A-CC-TVU ): Accuracy, Completeness, Consistency, Timeliness, Validity, Uniqueness.",
+    "GIGO — data quality decides model quality.",
+    "Perform EDA ; check quantity sufficiency ; check bias/representativeness .",
+    "Verify privacy, consent, regulations (GDPR/HIPAA/DPDP).",
+    "Ends with data go/no-go .",
+    "Assess in II, fix in III."
+  ],
+  "knowledgeCheck": [
+    "Why must data requirements come from the business problem instead of available data?",
+    "Explain GIGO with a banking example.",
+    "Give one example each of structured, semi-structured, and unstructured data in healthcare.",
+    "Differentiate accuracy and validity with examples.",
+    "List three internal and three external data sources for a retail demand forecast.",
+    "What is EDA and why is it done before data preparation?",
+    "What legal checks belong in Phase II?",
+    "How can unrepresentative data cause model bias? Give an example.",
+    "Name three possible responses to insufficient data quantity.",
+    "What are the deliverables at the end of Phase II?"
+  ],
+  "examTips": [
+    {
+      "heading": "Memory Tricks",
+      "bullets": [
+        "Phase II = WHAT data (I=WHY, III=HOW to prepare).",
+        "Quality dimensions: A-CC-TVU .",
+        "GIGO — quality first, always.",
+        "\" Assess in II, Fix in III \" — understanding vs preparation."
+      ]
+    },
+    {
+      "heading": "Keywords Signaling Right Answers",
+      "bullets": [
+        "\"Identify data requirements from the business problem \"",
+        "\" Assess data quality and quantity\"",
+        "\"Verify data rights/privacy \"",
+        "\" Data feasibility / data go/no-go\""
+      ]
+    },
+    {
+      "heading": "Differentiators",
+      "bullets": []
+    },
+    {
+      "heading": "Traps",
+      "bullets": [
+        "Options that clean/transform data in Phase II → wrong phase.",
+        "\"Use whatever data we already have\" without business mapping → wrong.",
+        "Ignoring legal/privacy review → wrong."
+      ]
+    }
+  ]
+}

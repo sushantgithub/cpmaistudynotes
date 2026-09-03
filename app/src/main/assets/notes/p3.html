@@ -1,0 +1,498 @@
+
+<hr/>
+<h2>1. Topic Overview</h2>
+<h3>Definition</h3>
+<p><strong>Phase III: Data Preparation</strong> is where raw data is <strong>cleaned, transformed, labeled, and engineered</strong> into a form suitable for model training. It answers: <strong>"HOW do we make the data usable?"</strong></p>
+<blockquote>
+<p><strong>One-line memory hook:</strong> Phase III = <strong>HOW to prepare the data</strong> — the "kitchen work" before cooking the model.</p>
+</blockquote>
+<h3>Why It Is Important</h3>
+<ul>
+<li><strong>Most time-consuming phase:</strong> typically <strong>60–80% of total AI project effort</strong> goes into data preparation. (Classic exam fact!)</li>
+<li>Model quality is capped by data quality — great preparation &gt; fancy algorithms.</li>
+<li>Poor preparation causes bias, leakage, and failed deployments.</li>
+</ul>
+<h3>Where It Is Used</h3>
+<ul>
+<li>After Phase II approval, <strong>before</strong> model development, in <strong>every iteration</strong>.</li>
+<li>Whenever new data arrives or pipelines are updated in production.</li>
+</ul>
+<hr/>
+<h2>2. Key Concepts</h2>
+<h3>2.1 Data Cleaning (Cleansing)</h3>
+<p>Fixing the problems found in Phase II:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Meaning</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Handling missing values</strong></td>
+<td>Remove rows, or <strong>impute</strong> (fill) with mean/median/mode or predictions</td>
+<td>Fill missing income with median income</td>
+</tr>
+<tr>
+<td><strong>Removing duplicates</strong></td>
+<td>Deduplicate records</td>
+<td>Same customer entered twice</td>
+</tr>
+<tr>
+<td><strong>Fixing errors</strong></td>
+<td>Correct invalid entries</td>
+<td>Age = 250 → correct or remove</td>
+</tr>
+<tr>
+<td><strong>Handling outliers</strong></td>
+<td>Detect extreme values; keep, cap, or remove based on context</td>
+<td>₹10 crore grocery bill</td>
+</tr>
+<tr>
+<td><strong>Standardizing</strong></td>
+<td>Unify formats/units</td>
+<td>"M/F" vs "1/2" → single scheme; kg vs lbs</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Important nuance:</strong> In <strong>fraud/anomaly</strong> use cases, outliers may BE the signal — don't blindly remove them!</p>
+<h3>2.2 Data Transformation</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Technique</th>
+<th>Meaning</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Normalization (Min-Max scaling)</strong></td>
+<td>Rescale values to 0–1 range</td>
+<td>Salary 20K–500K → 0–1</td>
+</tr>
+<tr>
+<td><strong>Standardization (Z-score)</strong></td>
+<td>Rescale to mean 0, std dev 1</td>
+<td>Common for many ML algorithms</td>
+</tr>
+<tr>
+<td><strong>Encoding categorical data</strong></td>
+<td>Convert categories to numbers</td>
+<td>One-hot encoding: City → [1,0,0]</td>
+</tr>
+<tr>
+<td><strong>Binning</strong></td>
+<td>Group continuous values into buckets</td>
+<td>Age → 18–25, 26–40, 41+</td>
+</tr>
+<tr>
+<td><strong>Aggregation</strong></td>
+<td>Summarize detail into higher level</td>
+<td>Daily sales → weekly sales</td>
+</tr>
+</tbody>
+</table></div>
+<h3>2.3 Feature Engineering (heavily tested)</h3>
+<ul>
+<li>A <strong>feature</strong> = an input variable the model learns from.</li>
+<li><strong>Feature engineering</strong> = creating new, more informative features from raw data using <strong>domain knowledge</strong>.</li>
+<li>Examples:</li>
+<li>From transaction timestamp → "transactions in last 1 hour" (fraud signal).</li>
+<li>From date of birth → "age".</li>
+<li>From two columns → ratio ("debt-to-income ratio").</li>
+<li><strong>Feature selection</strong> = choosing the most relevant features and dropping noise.</li>
+<li>Often the <strong>biggest driver of model performance</strong>.</li>
+</ul>
+<h3>2.4 Data Labeling (Annotation)</h3>
+<ul>
+<li>Attaching the <strong>correct answer</strong> (label) to each example for <strong>supervised learning</strong>.</li>
+<li>Examples: marking emails as spam/not-spam; drawing boxes around tumors in X-rays.</li>
+<li>Methods: <strong>internal experts, outsourced labeling teams, crowdsourcing, programmatic/weak labeling</strong>.</li>
+<li>Often <strong>expensive and slow</strong> — a major project cost the PM must plan.</li>
+<li><strong>Label quality matters:</strong> inconsistent labelers → noisy labels → weak model. Use labeling guidelines and inter-annotator checks.</li>
+</ul>
+<h3>2.5 Data Augmentation &amp; Synthetic Data</h3>
+<ul>
+<li><strong>Augmentation:</strong> create modified copies of existing data to expand the dataset — rotate/flip/crop images, add noise to audio.</li>
+<li><strong>Synthetic data:</strong> artificially generated data mimicking real data — useful when real data is scarce, expensive, or privacy-restricted.</li>
+</ul>
+<h3>2.6 Dataset Splitting</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Split</th>
+<th>Purpose</th>
+<th>Typical Share</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Training set</strong></td>
+<td>Model learns from this</td>
+<td>~70–80%</td>
+</tr>
+<tr>
+<td><strong>Validation set</strong></td>
+<td>Tune settings (hyperparameters)</td>
+<td>~10–15%</td>
+</tr>
+<tr>
+<td><strong>Test set</strong></td>
+<td>Final unbiased performance check</td>
+<td>~10–15%</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>Golden rule:</strong> Test data must stay <strong>unseen</strong> until final evaluation.</li>
+<li><strong>Data leakage</strong> = information from test/future data sneaking into training → falsely great results in the lab, failure in production. Big exam keyword!</li>
+</ul>
+<h3>2.7 Data Pipelines, ETL/ELT</h3>
+<ul>
+<li><strong>ETL:</strong> Extract → Transform → Load (transform before storing).</li>
+<li><strong>ELT:</strong> Extract → Load → Transform (store raw, transform later — common with data lakes).</li>
+<li><strong>Data pipeline:</strong> automated, repeatable flow of these steps — essential because preparation repeats <strong>every iteration and in production</strong>.</li>
+<li>Related storage: <strong>Data warehouse</strong> (structured, curated) vs <strong>Data lake</strong> (raw, all formats).</li>
+</ul>
+<h3>2.8 Class Imbalance Handling</h3>
+<ul>
+<li>When one class is rare (fraud = 0.1% of transactions).</li>
+<li>Fixes: <strong>oversampling</strong> minority (e.g., SMOTE), <strong>undersampling</strong> majority, class weights.</li>
+<li>Prepares data so the model doesn't just predict "not fraud" always.</li>
+</ul>
+<hr/>
+<h2>3. PMI CPMAI Exam Focus</h2>
+<h3>What the Exam Expects</h3>
+<ul>
+<li>Phase III is the <strong>most time/effort-consuming</strong> phase (<strong>60–80%</strong>).</li>
+<li>Distinguish <strong>cleaning vs transformation vs feature engineering vs labeling</strong>.</li>
+<li>Understand <strong>train/validation/test splits</strong> and <strong>data leakage</strong>.</li>
+<li>Know when <strong>augmentation/synthetic data</strong> helps.</li>
+<li>Recognize pipeline/automation importance for iteration.</li>
+</ul>
+<h3>Frequently Tested</h3>
+<ol>
+<li>"Which phase consumes the most effort?" → <strong>Phase III</strong>.</li>
+<li>Missing value handling and <strong>imputation</strong>.</li>
+<li><strong>Feature engineering</strong> definition and examples.</li>
+<li><strong>Labeling</strong> for supervised learning — cost/quality issues.</li>
+<li><strong>Data leakage</strong> scenarios.</li>
+<li>Outliers in fraud contexts (don't auto-delete).</li>
+</ol>
+<h3>Common Misconceptions</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Misconception</th>
+<th>Truth</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"Modeling takes the most time"</td>
+<td><strong>Data preparation</strong> does (60–80%)</td>
+</tr>
+<tr>
+<td>"Always delete outliers"</td>
+<td>In anomaly/fraud cases outliers are the <strong>signal</strong></td>
+</tr>
+<tr>
+<td>"Test data can help training"</td>
+<td>Never — that's <strong>data leakage</strong></td>
+</tr>
+<tr>
+<td>"Labeling is quick and cheap"</td>
+<td>Often a major cost and schedule item</td>
+</tr>
+<tr>
+<td>"Prepare once, done forever"</td>
+<td>Pipelines rerun <strong>every iteration</strong> and in production</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2>4. AI Project Manager Perspective</h2>
+<h3>Responsibilities</h3>
+<ul>
+<li><strong>Plan and budget</strong> for the largest phase (time, people, labeling costs).</li>
+<li>Ensure <strong>repeatable pipelines</strong>, not one-off manual scripts.</li>
+<li>Oversee <strong>labeling operations</strong>: guidelines, quality checks, vendor management.</li>
+<li>Guard against <strong>data leakage</strong> and <strong>bias introduction</strong>.</li>
+<li>Track data preparation progress with clear milestones.</li>
+<li>Maintain <strong>documentation</strong> (transformations applied, versions).</li>
+</ul>
+<h3>Stakeholders</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Stakeholder</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Data engineers</strong></td>
+<td>Build pipelines, ETL/ELT</td>
+</tr>
+<tr>
+<td><strong>Data scientists</strong></td>
+<td>Feature engineering, splits, imbalance handling</td>
+</tr>
+<tr>
+<td><strong>Labelers / SMEs</strong></td>
+<td>Annotate data correctly</td>
+</tr>
+<tr>
+<td><strong>Business SMEs</strong></td>
+<td>Provide domain knowledge for features</td>
+</tr>
+<tr>
+<td><strong>IT/security</strong></td>
+<td>Secure processing environments</td>
+</tr>
+<tr>
+<td><strong>Compliance</strong></td>
+<td>Approve anonymization/synthetic approaches</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Risks</h3>
+<ul>
+<li><strong>Schedule blowout</strong> — underestimating prep effort (most common!).</li>
+<li><strong>Data leakage</strong> → false confidence, production failure.</li>
+<li><strong>Bias amplification</strong> through careless cleaning/sampling.</li>
+<li><strong>Label noise</strong> from unclear guidelines.</li>
+<li><strong>Non-reproducible</strong> manual preparation.</li>
+<li>Losing <strong>outlier signal</strong> in anomaly use cases.</li>
+</ul>
+<h3>Best Practices</h3>
+<ul>
+<li>Budget <strong>60–80% of project effort</strong> here — communicate this to sponsors.</li>
+<li>Automate with <strong>pipelines</strong>; version datasets and transformations.</li>
+<li>Write <strong>labeling guidelines</strong>; measure inter-annotator agreement.</li>
+<li>Split data <strong>before</strong> any tuning; lock the test set away.</li>
+<li>Involve <strong>domain experts</strong> in feature engineering.</li>
+<li>Document everything for <strong>auditability</strong> (needed in regulated industries).</li>
+</ul>
+<h3>Decision-Making Approach</h3>
+<pre><code>Quality issues from Phase II
+        ▼
+Clean (missing, duplicates, errors, outliers*)
+        ▼                       *keep outliers if anomaly use case!
+Transform (scale, encode, aggregate)
+        ▼
+Engineer features (with domain SMEs)
+        ▼
+Label data (if supervised) ──► Quality-check labels
+        ▼
+Handle imbalance (if needed)
+        ▼
+Split: Train / Validation / Test (lock test set!)
+        ▼
+Automate as pipeline ──► Ready for Phase IV
+</code></pre>
+<hr/>
+<h2>5. Real-World Example (Healthcare — Diabetic Risk Prediction)</h2>
+<p><strong>Scenario:</strong> A hospital predicts which patients risk developing diabetes (Phase I: Predictive Analytics; Phase II: EMR data approved with known quality gaps).</p>
+<p><strong>Phase III step by step:</strong>
+1. <strong>Cleaning:</strong> 15% of BMI values missing → <strong>impute</strong> with median by age group. Remove duplicate patient records. Fix invalid entries (glucose = 0).
+2. <strong>Standardization:</strong> Merge lab units (mg/dL vs mmol/L) into one unit.
+3. <strong>Transformation:</strong> Normalize lab values; one-hot encode gender and smoking status.
+4. <strong>Feature engineering (with doctors):</strong> Create "BMI trend over 2 years", "family history flag", "HbA1c change rate" — clinically meaningful features.
+5. <strong>Labeling:</strong> Label = "developed diabetes within 3 years" derived from diagnosis codes; clinicians validate a sample of labels.
+6. <strong>Imbalance:</strong> Only 8% positive cases → apply class weighting.
+7. <strong>Split:</strong> 70/15/15 train/validation/test, split <strong>by patient</strong> (so the same patient never appears in both train and test — avoids leakage).
+8. <strong>Pipeline:</strong> All steps automated so next iteration (new EMR data) reruns in hours, not weeks.</p>
+<hr/>
+<h2>6. Visual Learning</h2>
+<h3>Effort Distribution (typical AI project)</h3>
+<pre><code>Data Preparation      ██████████████████████████  ~60-80%
+Model Development     ██████                       ~10-15%
+Evaluation            ███                          ~5-10%
+Deployment/Other      ████                         ~10%
+</code></pre>
+<h3>Train/Validation/Test Split</h3>
+<pre><code>FULL PREPARED DATASET
+├────────────────── 70-80% ──────────────────┤──10-15%──┤──10-15%──┤
+│              TRAINING SET                  │VALIDATION│  TEST 🔒  │
+│           (model learns here)              │ (tuning) │(untouched │
+│                                            │          │ till end!)│
+Leakage = test/future info entering training = FALSE success
+</code></pre>
+<hr/>
+<h2>7. Key Formulas or Frameworks</h2>
+<h3>Preparation Workflow</h3>
+<p><strong>Clean → Transform → Engineer Features → Label → Balance → Split → Pipeline</strong>
+(Mnemonic: "<strong>CTELBSP</strong>" or story: <em>Clean The Engine, Label Boxes, Split Properly</em>.)</p>
+<h3>Imputation Options</h3>
+<ul>
+<li>Numeric missing → <strong>mean/median</strong> (median if outliers exist)</li>
+<li>Categorical missing → <strong>mode</strong> or "Unknown" category</li>
+<li>Advanced → model-based imputation</li>
+</ul>
+<h3>Split Ratios</h3>
+<p>Common: <strong>70/15/15</strong> or <strong>80/10/10</strong> (train/validation/test).</p>
+<hr/>
+<h2>8. Important Terminology (Glossary)</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Simple Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Data cleaning</strong></td>
+<td>Fixing missing, duplicate, wrong, inconsistent values</td>
+</tr>
+<tr>
+<td><strong>Imputation</strong></td>
+<td>Filling missing values (mean/median/mode/model)</td>
+</tr>
+<tr>
+<td><strong>Outlier</strong></td>
+<td>Extreme value far from the rest</td>
+</tr>
+<tr>
+<td><strong>Normalization</strong></td>
+<td>Rescaling values to a 0–1 range</td>
+</tr>
+<tr>
+<td><strong>Standardization</strong></td>
+<td>Rescaling to mean 0, standard deviation 1</td>
+</tr>
+<tr>
+<td><strong>One-hot encoding</strong></td>
+<td>Turning categories into binary columns</td>
+</tr>
+<tr>
+<td><strong>Feature</strong></td>
+<td>An input variable for the model</td>
+</tr>
+<tr>
+<td><strong>Feature engineering</strong></td>
+<td>Creating better input variables using domain knowledge</td>
+</tr>
+<tr>
+<td><strong>Feature selection</strong></td>
+<td>Keeping only the most useful features</td>
+</tr>
+<tr>
+<td><strong>Labeling / annotation</strong></td>
+<td>Attaching correct answers for supervised learning</td>
+</tr>
+<tr>
+<td><strong>Data augmentation</strong></td>
+<td>Expanding data via modified copies (flip/rotate images)</td>
+</tr>
+<tr>
+<td><strong>Synthetic data</strong></td>
+<td>Artificially generated realistic data</td>
+</tr>
+<tr>
+<td><strong>Training / validation / test sets</strong></td>
+<td>Learn / tune / final-check data splits</td>
+</tr>
+<tr>
+<td><strong>Data leakage</strong></td>
+<td>Test or future information contaminating training</td>
+</tr>
+<tr>
+<td><strong>ETL / ELT</strong></td>
+<td>Extract-Transform-Load / Extract-Load-Transform</td>
+</tr>
+<tr>
+<td><strong>Data pipeline</strong></td>
+<td>Automated repeatable data processing flow</td>
+</tr>
+<tr>
+<td><strong>SMOTE / oversampling</strong></td>
+<td>Techniques to fix class imbalance</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2>9. Exam Tips</h2>
+<h3>Memory Tricks</h3>
+<ul>
+<li><strong>"80/80 rule":</strong> ~80% of data is unstructured (Phase II) and <strong>up to ~80% of effort is data prep</strong> (Phase III).</li>
+<li><strong>Leakage = lying to yourself</strong> — great lab scores, dead in production.</li>
+<li>Fraud/anomaly projects: <strong>outliers are gold</strong>, don't delete.</li>
+<li><strong>"Assess in II, Fix in III."</strong></li>
+</ul>
+<h3>Keywords</h3>
+<ul>
+<li>"<strong>Clean, transform, feature engineering, labeling</strong>"</li>
+<li>"<strong>Most time-consuming phase</strong>"</li>
+<li>"<strong>Train/validation/test split</strong>", "<strong>hold-out test set</strong>"</li>
+<li>"<strong>Data leakage</strong>", "<strong>imputation</strong>", "<strong>augmentation</strong>"</li>
+</ul>
+<h3>Differentiators</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Pair</th>
+<th>Difference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Normalization vs Standardization</td>
+<td>0–1 range vs mean-0/std-1</td>
+</tr>
+<tr>
+<td>Feature engineering vs selection</td>
+<td><strong>Create</strong> new features vs <strong>choose</strong> among existing</td>
+</tr>
+<tr>
+<td>Augmentation vs Synthetic</td>
+<td>Modify real data vs generate new artificial data</td>
+</tr>
+<tr>
+<td>Validation vs Test set</td>
+<td>Tuning vs final untouched evaluation</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Traps</h3>
+<ul>
+<li>"Spend most time on modeling" → wrong; prep dominates.</li>
+<li>"Use the test set to improve the model" → <strong>leakage</strong>, wrong.</li>
+<li>"Delete all outliers" in a fraud scenario → wrong.</li>
+<li>Doing prep manually with no pipeline → unsustainable for iterations.</li>
+</ul>
+<hr/>
+<h2>11. Quick Revision Sheet</h2>
+<ul>
+<li><strong>Phase III = HOW to prepare data</strong> — cleaning, transformation, features, labels, splits.</li>
+<li>Consumes <strong>60–80% of total project effort</strong> — the biggest phase.</li>
+<li>Cleaning: <strong>missing (impute), duplicates, errors, outliers, standardize</strong>.</li>
+<li><strong>Don't remove outliers in anomaly/fraud use cases.</strong></li>
+<li>Transformation: <strong>normalize, standardize, encode (one-hot), bin, aggregate</strong>.</li>
+<li><strong>Feature engineering</strong> (domain-driven new inputs) is a top performance driver.</li>
+<li><strong>Labeling</strong> enables supervised learning — plan cost, guidelines, quality checks.</li>
+<li><strong>Augmentation/synthetic data</strong> expand scarce datasets.</li>
+<li>Split <strong>train/validation/test</strong>; test set stays locked → avoid <strong>data leakage</strong>.</li>
+<li>Fix <strong>class imbalance</strong> (oversample/undersample/weights).</li>
+<li>Automate via <strong>pipelines (ETL/ELT)</strong>; version and document everything.</li>
+</ul>
+<hr/>
+<h2>⭐ Top 10 Things to Remember for the Exam</h2>
+<ol>
+<li><strong>Phase III = biggest effort: 60–80%</strong> of the project.</li>
+<li><strong>Assess in II, fix in III</strong> — cleaning belongs here.</li>
+<li><strong>Median imputation</strong> beats mean when outliers exist.</li>
+<li><strong>Keep outliers</strong> in fraud/anomaly use cases.</li>
+<li><strong>Feature engineering</strong> with domain experts drives performance.</li>
+<li><strong>Labeling</strong> is costly — plan budget, guidelines, quality checks.</li>
+<li><strong>Train/Validation/Test</strong> — lock the test set.</li>
+<li><strong>Data leakage</strong> = inflated lab results, production failure.</li>
+<li><strong>Augmentation &amp; synthetic data</strong> solve scarcity and privacy limits.</li>
+<li>Build <strong>automated pipelines</strong> — CPMAI iterates.</li>
+</ol>
+<hr/>
+<p><em>Next: Phase IV — Model Development.</em></p>

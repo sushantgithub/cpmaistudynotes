@@ -1,0 +1,539 @@
+
+<hr/>
+<h2>1. Topic Overview</h2>
+<h3>Definition</h3>
+<p><strong>Phase I: Business Understanding</strong> is the <strong>first phase</strong> of the CPMAI methodology. In this phase, you identify the <strong>business problem</strong>, decide <strong>whether AI is the right solution</strong>, map the problem to one of the <strong>7 Patterns of AI</strong>, and define <strong>measurable success criteria (KPIs and ROI)</strong> — all <strong>before</strong> touching any data or building any model.</p>
+<blockquote>
+<p><strong>One-line memory hook:</strong> Phase I answers the question — <em>"WHY are we doing this project, and is AI even needed?"</em></p>
+</blockquote>
+<h3>Why It Is Important</h3>
+<ul>
+<li><strong>Most AI projects fail</strong> (industry studies cite up to <strong>80%+ failure rates</strong>) — and the <strong>#1 reason is poor business understanding</strong>, not bad technology.</li>
+<li>AI projects are <strong>data projects</strong>, but data work is expensive. Phase I prevents wasting money on problems that don't need AI.</li>
+<li>It creates the <strong>go / no-go decision point</strong>: if the business case is weak, <strong>stop here</strong>.</li>
+<li>It aligns <strong>stakeholders</strong> early, so expectations are realistic.</li>
+</ul>
+<h3>Where It Is Used in AI Projects</h3>
+<ul>
+<li>At the <strong>very start</strong> of every AI project.</li>
+<li>At the <strong>start of every iteration</strong> (CPMAI is <strong>iterative</strong> — you revisit Phase I in each cycle).</li>
+<li>Whenever the <strong>scope changes</strong>, a <strong>new use case</strong> appears, or <strong>ROI must be re-justified</strong>.</li>
+</ul>
+<hr/>
+<h2>2. Key Concepts</h2>
+<h3>2.1 CPMAI Is Built on CRISP-DM</h3>
+<ul>
+<li><strong>CRISP-DM</strong> (Cross-Industry Standard Process for Data Mining) is an older, proven methodology for data projects.</li>
+<li>CPMAI <strong>extends CRISP-DM</strong> with AI-specific and agile/iterative best practices.</li>
+<li>Phase I of CPMAI = "Business Understanding" phase of CRISP-DM, <strong>enhanced for AI</strong>.</li>
+</ul>
+<h3>2.2 "Do You Even Need AI?" (The AI Go/No-Go Question)</h3>
+<p>The single most tested idea in Phase I. Before anything else, ask:
+- Can this problem be solved with <strong>simple rules, automation (RPA), or a report</strong>? → Then <strong>don't use AI</strong>.
+- Does the problem require <strong>learning from data</strong>, handling <strong>patterns</strong>, or making <strong>predictions</strong>? → AI <strong>may</strong> fit.</p>
+<p><strong>Rule of thumb:</strong> If a problem can be solved with straightforward <strong>deterministic rules</strong> (if-then logic), it does <strong>not</strong> need machine learning.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>Right Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Calculate tax = 18% of invoice</td>
+<td>Simple rule / formula (NO AI)</td>
+</tr>
+<tr>
+<td>Move data from Excel to a portal every day</td>
+<td><strong>RPA</strong> / automation (NO AI)</td>
+</tr>
+<tr>
+<td>Predict which customers will churn next month</td>
+<td><strong>AI (Predictive Analytics pattern)</strong></td>
+</tr>
+<tr>
+<td>Read handwritten cheques automatically</td>
+<td><strong>AI (Recognition pattern)</strong></td>
+</tr>
+</tbody>
+</table></div>
+<h3>2.3 The 7 Patterns of AI (Pattern Mapping)</h3>
+<p>In Phase I you must <strong>map the business problem to one or more of the 7 Patterns of AI</strong>. If it doesn't map to any pattern, it's probably <strong>not an AI problem</strong>.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Pattern</th>
+<th>Simple Meaning</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Hyperpersonalization</strong></td>
+<td>Treat each person as a unique individual</td>
+<td>Netflix/Amazon recommendations; personalized banking offers</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Autonomous Systems</strong></td>
+<td>Machines that act with minimal human help</td>
+<td>Self-driving cars; autonomous warehouse robots</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Predictive Analytics &amp; Decision Support</strong></td>
+<td>Predict future outcomes to help humans decide</td>
+<td>Loan default prediction; demand forecasting</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Conversation &amp; Human Interaction</strong></td>
+<td>Machines talking with humans in natural language</td>
+<td>Chatbots; voice assistants</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>Patterns &amp; Anomalies</strong></td>
+<td>Find hidden patterns or spot the "odd one out"</td>
+<td>Credit card <strong>fraud detection</strong>; network intrusion detection</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>Recognition</strong></td>
+<td>Identify things in unstructured data (images, audio, video, text)</td>
+<td>Face recognition; X-ray tumor detection; OCR</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>Goal-Driven Systems</strong></td>
+<td>Learn by trial and error to reach a goal</td>
+<td>Game-playing AI; route optimization via reinforcement learning</td>
+</tr>
+</tbody>
+</table></div>
+<h3>2.4 Defining Business Success: KPIs and ROI</h3>
+<ul>
+<li><strong>KPI (Key Performance Indicator):</strong> A <strong>measurable business metric</strong> that tells you if the project succeeded. Example: "Reduce fraud losses by 20% in 6 months."</li>
+<li><strong>ROI (Return on Investment):</strong> The financial benefit compared to cost. In Phase I you build the <strong>business case</strong> showing expected ROI.</li>
+<li><strong>Exam keyword:</strong> Success must be defined in <strong>business terms</strong> (money saved, time reduced, customers retained) — <strong>NOT</strong> just technical terms (model accuracy).</li>
+</ul>
+<blockquote>
+<p><strong>Trap:</strong> "95% model accuracy" is a <strong>model metric</strong>, not a <strong>business KPI</strong>. The exam loves this distinction.</p>
+</blockquote>
+<h3>2.5 Think Big, Start Small, Iterate Often</h3>
+<p>CPMAI's core mantra, established in Phase I:
+- <strong>Think Big:</strong> Have a long-term AI vision (e.g., "AI-driven fraud prevention across all channels").
+- <strong>Start Small:</strong> Pick a <strong>small, well-scoped pilot</strong> (e.g., "detect fraud in credit card transactions only").
+- <strong>Iterate Often:</strong> Deliver in <strong>short iterations</strong> (weeks, not years), learn, and expand.</p>
+<h3>2.6 Feasibility Assessment</h3>
+<p>In Phase I, check feasibility across several angles:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Feasibility Type</th>
+<th>Question Asked</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Business feasibility</strong></td>
+<td>Is there real ROI? Will the org adopt it?</td>
+</tr>
+<tr>
+<td><strong>Data feasibility</strong></td>
+<td>Does enough <strong>quality data</strong> exist (checked deeper in Phase II)?</td>
+</tr>
+<tr>
+<td><strong>Technology/skills feasibility</strong></td>
+<td>Do we have tools and skilled people?</td>
+</tr>
+<tr>
+<td><strong>Ethical/regulatory feasibility</strong></td>
+<td>Is it legal, fair, explainable, compliant (e.g., <strong>RBI, GDPR, HIPAA</strong>)?</td>
+</tr>
+<tr>
+<td><strong>Operational feasibility</strong></td>
+<td>Can the model actually run in production and be maintained?</td>
+</tr>
+</tbody>
+</table></div>
+<h3>2.7 Key Questions Asked in Phase I</h3>
+<ol>
+<li>What <strong>business problem</strong> are we solving?</li>
+<li><strong>Why</strong> does this problem need AI (which of the 7 patterns)?</li>
+<li>Who are the <strong>stakeholders</strong> and <strong>end users</strong>?</li>
+<li>What does <strong>success</strong> look like (KPIs, ROI)?</li>
+<li>What are the <strong>constraints</strong> (budget, timeline, regulation, ethics)?</li>
+<li>What is the smallest <strong>first iteration</strong> we can deliver?</li>
+<li>What is the <strong>go/no-go</strong> decision?</li>
+</ol>
+<h3>2.8 Cognitive Technology vs. Traditional Software</h3>
+<ul>
+<li><strong>Traditional software:</strong> Deterministic — same input → same output; behavior is <strong>programmed</strong>.</li>
+<li><strong>AI/Cognitive systems:</strong> Probabilistic — output is a <strong>prediction with confidence</strong>, behavior is <strong>learned from data</strong>.</li>
+<li><strong>Why it matters in Phase I:</strong> Stakeholders must accept that AI is <strong>never 100% accurate</strong>, needs <strong>continuous retraining</strong>, and success is measured <strong>probabilistically</strong>.</li>
+</ul>
+<hr/>
+<h2>3. PMI CPMAI Exam Focus</h2>
+<h3>What the Exam Expects You to Know</h3>
+<ul>
+<li>Phase I is <strong>always first</strong> and is revisited <strong>every iteration</strong>.</li>
+<li>The <strong>go/no-go decision</strong> happens here.</li>
+<li>How to <strong>map problems to the 7 Patterns of AI</strong>.</li>
+<li>Difference between <strong>business KPIs</strong> and <strong>model metrics</strong>.</li>
+<li>Why AI projects fail: <strong>starting with technology instead of business need</strong> ("a solution looking for a problem").</li>
+<li>CPMAI's relationship to <strong>CRISP-DM</strong> and <strong>agile</strong> methods.</li>
+</ul>
+<h3>Frequently Tested Concepts</h3>
+<ol>
+<li>"Do you even need AI?" scenarios — picking <strong>RPA/rules vs. AI</strong>.</li>
+<li>Matching a scenario to the correct <strong>AI pattern</strong>.</li>
+<li>Identifying the <strong>first thing</strong> a project manager should do (always: <strong>understand the business problem</strong>, never: collect data / pick an algorithm).</li>
+<li><strong>Think Big, Start Small, Iterate Often</strong>.</li>
+<li>Business case, ROI, KPI definitions.</li>
+</ol>
+<h3>Common Misconceptions (Exam Traps)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Misconception</th>
+<th>Truth</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"Start by gathering data"</td>
+<td>Start by understanding the <strong>business problem</strong></td>
+</tr>
+<tr>
+<td>"High accuracy = successful project"</td>
+<td>Success = <strong>business KPI achievement</strong></td>
+</tr>
+<tr>
+<td>"AI is right for every automation problem"</td>
+<td>Rule-based problems need <strong>RPA</strong>, not AI</td>
+</tr>
+<tr>
+<td>"Phase I happens only once"</td>
+<td>It repeats <strong>every iteration</strong></td>
+</tr>
+<tr>
+<td>"Big bang delivery is best"</td>
+<td><strong>Start small</strong>, iterate</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2>4. AI Project Manager Perspective</h2>
+<h3>Responsibilities in Phase I</h3>
+<ul>
+<li>Facilitate <strong>business problem definition</strong> workshops.</li>
+<li>Drive the <strong>go/no-go</strong> decision with evidence.</li>
+<li>Map problem to <strong>AI pattern(s)</strong> with the data science team.</li>
+<li>Define and get sign-off on <strong>KPIs, ROI, and success criteria</strong>.</li>
+<li>Identify <strong>constraints</strong>: budget, timeline, regulation, ethics, data privacy.</li>
+<li>Scope the <strong>first small iteration</strong> (MVP).</li>
+<li>Manage <strong>stakeholder expectations</strong> about probabilistic AI behavior.</li>
+</ul>
+<h3>Stakeholders</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Stakeholder</th>
+<th>Interest in Phase I</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Business sponsor / executives</strong></td>
+<td>ROI, strategic fit, funding</td>
+</tr>
+<tr>
+<td><strong>End users</strong> (e.g., fraud analysts, doctors, store managers)</td>
+<td>Will it actually help daily work?</td>
+</tr>
+<tr>
+<td><strong>Data science / ML team</strong></td>
+<td>Is the problem technically solvable? Which pattern?</td>
+</tr>
+<tr>
+<td><strong>Data engineering / IT</strong></td>
+<td>Data availability, systems integration</td>
+</tr>
+<tr>
+<td><strong>Legal / compliance / risk</strong></td>
+<td>Regulation (RBI, GDPR, HIPAA), ethics, bias</td>
+</tr>
+<tr>
+<td><strong>Customers</strong> (indirect)</td>
+<td>Fairness, privacy, experience</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Risks Identified in Phase I</h3>
+<ul>
+<li><strong>Vague problem definition</strong> → project drift.</li>
+<li><strong>No measurable KPI</strong> → cannot prove success.</li>
+<li><strong>Unrealistic expectations</strong> ("AI will be perfect").</li>
+<li><strong>Regulatory/ethical risk</strong> (biased lending model, privacy breach).</li>
+<li><strong>Choosing AI when rules/RPA would do</strong> → wasted budget.</li>
+<li><strong>Insufficient sponsorship</strong> → project abandoned mid-way.</li>
+</ul>
+<h3>Best Practices</h3>
+<ul>
+<li>Always ask <strong>"Do we even need AI?"</strong> first.</li>
+<li>Write a <strong>one-page business case</strong> with KPIs and ROI before any data work.</li>
+<li>Map to the <strong>7 Patterns</strong>; if no pattern fits, reconsider.</li>
+<li>Scope a <strong>small pilot</strong> deliverable in one iteration.</li>
+<li>Involve <strong>compliance and ethics early</strong>, not at the end.</li>
+<li>Document <strong>assumptions and constraints</strong>.</li>
+</ul>
+<h3>Decision-Making Approach</h3>
+<pre><code>Business problem clear? ──No──► Clarify with stakeholders first
+        │Yes
+Can rules/RPA solve it? ──Yes──► Use RPA/rules (NO-GO for AI)
+        │No
+Maps to a 7-Pattern?    ──No───► Probably not an AI problem (NO-GO)
+        │Yes
+ROI + KPI defined?      ──No───► Build business case first
+        │Yes
+Feasible (data, skills,
+ethics, ops)?           ──No───► Descope / defer / NO-GO
+        │Yes
+        ▼
+   GO → Proceed to Phase II (Data Understanding)
+</code></pre>
+<hr/>
+<h2>5. Real-World Example (Banking — Fraud Detection)</h2>
+<p><strong>Scenario:</strong> A bank (like a Fiserv client!) loses ₹50 crore/year to credit card fraud. The COO says, "Let's use AI!"</p>
+<p><strong>Step-by-step Phase I application:</strong></p>
+<ol>
+<li><strong>Define the business problem:</strong> "Reduce credit card fraud losses, currently ₹50 Cr/year, without increasing false declines that annoy genuine customers."</li>
+<li><strong>Ask: Do we need AI?</strong> Existing rule-based system (e.g., "block transactions &gt; ₹2 lakh from foreign IPs") catches only known fraud types. New fraud patterns evolve constantly → <strong>rules cannot keep up</strong> → AI is justified.</li>
+<li><strong>Map to AI pattern:</strong> <strong>Patterns &amp; Anomalies</strong> (detect unusual transactions) + <strong>Predictive Analytics</strong> (fraud probability score).</li>
+<li><strong>Define KPIs:</strong>
+   - Reduce fraud losses by <strong>20% in 6 months</strong> (business KPI).
+   - Keep false positive rate below <strong>2%</strong> (customer experience KPI).</li>
+<li><strong>ROI:</strong> Expected savings ₹10 Cr/year vs. project cost ₹2 Cr → strong business case.</li>
+<li><strong>Constraints:</strong> RBI regulations, customer data privacy, model explainability for audits.</li>
+<li><strong>Think Big, Start Small:</strong> Vision = fraud AI across all channels. Pilot = <strong>credit card transactions only</strong>, one region, first iteration in 8 weeks.</li>
+<li><strong>Go/No-Go:</strong> Business case approved → <strong>GO</strong> → move to Phase II (check if transaction data is available and usable).</li>
+</ol>
+<hr/>
+<h2>6. Visual Learning</h2>
+<h3>CPMAI Six Phases (Phase I highlighted)</h3>
+<pre><code>┌─────────────────────────────────────────────────────────┐
+│                CPMAI METHODOLOGY (Iterative)            │
+│                                                         │
+│  ┌──────────────┐                                       │
+│  │ ★ PHASE I ★  │  Business Understanding  ← YOU ARE    │
+│  │  (WHY?)      │  Problem, Pattern, KPI,     HERE      │
+│  └──────┬───────┘  ROI, Go/No-Go                        │
+│         ▼                                               │
+│  Phase II  Data Understanding   (WHAT data?)            │
+│         ▼                                               │
+│  Phase III Data Preparation     (HOW to clean?)         │
+│         ▼                                               │
+│  Phase IV  Model Development    (BUILD model)           │
+│         ▼                                               │
+│  Phase V   Model Evaluation     (GOOD enough?)          │
+│         ▼                                               │
+│  Phase VI  Operationalization   (RUN in production)     │
+│         │                                               │
+│         └────────── ITERATE (back to Phase I) ──────────┘
+└─────────────────────────────────────────────────────────┘
+</code></pre>
+<h3>Phase I Inputs → Activities → Outputs</h3>
+<pre><code>INPUTS                 ACTIVITIES                 OUTPUTS
+──────                 ──────────                 ───────
+Business pain      →   Define problem         →   Problem statement
+Stakeholder needs  →   Ask "Need AI?"         →   AI justification
+Strategy/vision    →   Map to 7 Patterns      →   Pattern mapping
+Budget/constraints →   Define KPIs &amp; ROI      →   Business case
+Regulations        →   Assess feasibility     →   Go/No-Go decision
+                   →   Scope first iteration  →   Iteration plan
+</code></pre>
+<hr/>
+<h2>7. Key Formulas or Frameworks</h2>
+<h3>The CPMAI Methodology</h3>
+<ul>
+<li><strong>6 phases</strong>, <strong>iterative</strong> (not waterfall), built on <strong>CRISP-DM + Agile</strong>.</li>
+<li>Each iteration is <strong>short</strong> and delivers <strong>incremental value</strong>.</li>
+<li>Phases: I-Business Understanding → II-Data Understanding → III-Data Preparation → IV-Model Development → V-Model Evaluation → VI-Model Operationalization.</li>
+</ul>
+<h3>ROI Framework (Business Case Math)</h3>
+<pre><code>ROI (%) = (Expected Benefit − Total Cost) / Total Cost × 100
+
+Example: Benefit ₹10 Cr, Cost ₹2 Cr
+ROI = (10 − 2) / 2 × 100 = 400%
+</code></pre>
+<h3>Go/No-Go Checklist (memorize as "P-P-K-F")</h3>
+<ul>
+<li><strong>P</strong>roblem clearly defined?</li>
+<li><strong>P</strong>attern (one of 7) identified?</li>
+<li><strong>K</strong>PI + ROI measurable?</li>
+<li><strong>F</strong>easible (data, skills, ethics, ops)?
+→ All yes = <strong>GO</strong>. Any no = fix or <strong>NO-GO</strong>.</li>
+</ul>
+<hr/>
+<h2>8. Important Terminology (Glossary)</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Simple Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CPMAI</strong></td>
+<td>Cognitive Project Management for AI — a 6-phase, iterative methodology for AI projects</td>
+</tr>
+<tr>
+<td><strong>CRISP-DM</strong></td>
+<td>Older data mining methodology that CPMAI is built upon</td>
+</tr>
+<tr>
+<td><strong>Business Understanding</strong></td>
+<td>Phase I — defining the problem, value, and go/no-go</td>
+</tr>
+<tr>
+<td><strong>7 Patterns of AI</strong></td>
+<td>Seven categories every AI use case maps to</td>
+</tr>
+<tr>
+<td><strong>KPI</strong></td>
+<td>Measurable business metric of success</td>
+</tr>
+<tr>
+<td><strong>ROI</strong></td>
+<td>Financial return compared to project cost</td>
+</tr>
+<tr>
+<td><strong>Go/No-Go Decision</strong></td>
+<td>Formal decision to proceed or stop, made in Phase I</td>
+</tr>
+<tr>
+<td><strong>RPA</strong></td>
+<td>Robotic Process Automation — rule-based task automation, <strong>not AI</strong></td>
+</tr>
+<tr>
+<td><strong>MVP / Pilot</strong></td>
+<td>Smallest useful first version of the solution</td>
+</tr>
+<tr>
+<td><strong>Deterministic</strong></td>
+<td>Same input always gives same output (traditional software)</td>
+</tr>
+<tr>
+<td><strong>Probabilistic</strong></td>
+<td>Output is a prediction with a confidence level (AI systems)</td>
+</tr>
+<tr>
+<td><strong>Feasibility Assessment</strong></td>
+<td>Checking if the project is doable — business, data, tech, ethics, operations</td>
+</tr>
+<tr>
+<td><strong>Business Case</strong></td>
+<td>Document justifying the project: problem, benefits, costs, ROI</td>
+</tr>
+<tr>
+<td><strong>Iteration</strong></td>
+<td>One short cycle through all 6 CPMAI phases</td>
+</tr>
+<tr>
+<td><strong>Stakeholder</strong></td>
+<td>Anyone affected by or influencing the project</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2>9. Exam Tips</h2>
+<h3>Memory Tricks</h3>
+<ul>
+<li><strong>Phase I = WHY?</strong> (Phase II = WHAT data? Phase III = HOW to prepare?)</li>
+<li>7 Patterns mnemonic: <strong>"HAPPY CPR Goals"</strong> → <strong>H</strong>yperpersonalization, <strong>A</strong>utonomous, <strong>P</strong>redictive, <strong>P</strong>atterns &amp; Anomalies, Con<strong>v</strong>ersational, <strong>R</strong>ecognition, <strong>G</strong>oal-driven. (Or make your own — e.g., <strong>"HAP-CPRG"</strong>.)</li>
+<li>Go/No-Go checklist: <strong>P-P-K-F</strong> (Problem, Pattern, KPI, Feasibility).</li>
+<li>Mantra: <strong>"Think Big, Start Small, Iterate Often."</strong></li>
+</ul>
+<h3>Keywords That Signal the Right Answer</h3>
+<ul>
+<li>"<strong>First</strong> understand the <strong>business problem</strong>"</li>
+<li>"<strong>Do we even need AI?</strong>"</li>
+<li>"Map to one of the <strong>7 Patterns</strong>"</li>
+<li>"Define <strong>measurable KPIs</strong> and <strong>ROI</strong>"</li>
+<li>"<strong>Start small</strong> with a pilot"</li>
+</ul>
+<h3>Differentiating Similar Concepts</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Confusing Pair</th>
+<th>Difference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>RPA vs AI</strong></td>
+<td>RPA = fixed rules, repetitive tasks. AI = learns from data, handles patterns/predictions</td>
+</tr>
+<tr>
+<td><strong>KPI vs Model Metric</strong></td>
+<td>KPI = business outcome (₹ saved). Model metric = technical (accuracy, precision)</td>
+</tr>
+<tr>
+<td><strong>Phase I vs Phase II</strong></td>
+<td>Phase I = business "why". Phase II = data "what"</td>
+</tr>
+<tr>
+<td><strong>CRISP-DM vs CPMAI</strong></td>
+<td>CPMAI = CRISP-DM + AI-specific + agile/iterative enhancements</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Common Exam Traps to Avoid</h3>
+<ul>
+<li>Any answer that says "<strong>start by collecting data</strong>" or "<strong>start by selecting an algorithm</strong>" in a new-project scenario → <strong>WRONG</strong>. Business understanding comes first.</li>
+<li>Any answer implying AI should be used for <strong>simple rule-based tasks</strong> → WRONG (use RPA).</li>
+<li>Any answer defining success <strong>only by accuracy</strong> → WRONG (need business KPI).</li>
+<li>"Complete all requirements upfront, then build" (waterfall thinking) → WRONG (CPMAI is iterative).</li>
+</ul>
+<hr/>
+<h2>11. Quick Revision Sheet (One Page)</h2>
+<ul>
+<li><strong>Phase I = Business Understanding = the WHY phase = FIRST phase</strong>, repeated <strong>every iteration</strong>.</li>
+<li>Built on <strong>CRISP-DM</strong>, enhanced with <strong>AI-specific + agile</strong> practices.</li>
+<li>Core question: <strong>"Do we even need AI?"</strong> → If rules/RPA can solve it, <strong>don't use AI</strong>.</li>
+<li>Map every use case to the <strong>7 Patterns of AI</strong>: Hyperpersonalization, Autonomous Systems, Predictive Analytics, Conversation, Patterns &amp; Anomalies, Recognition, Goal-Driven Systems.</li>
+<li>Define <strong>business KPIs + ROI</strong> — accuracy alone ≠ success.</li>
+<li><strong>Go/No-Go decision</strong> happens in Phase I (P-P-K-F checklist).</li>
+<li>Mantra: <strong>Think Big, Start Small, Iterate Often.</strong></li>
+<li>
+<h1>1 reason AI projects fail: <strong>poor business understanding / no clear business problem</strong>.</h1>
+</li>
+<li>Feasibility check: business, data, tech/skills, <strong>ethics/regulatory</strong>, operational.</li>
+<li>Stakeholders aligned early; expectations set that AI is <strong>probabilistic</strong>, not perfect.</li>
+<li>Output of Phase I: <strong>problem statement, pattern mapping, business case (KPI+ROI), constraints, go/no-go, first-iteration scope</strong>.</li>
+<li>Next phase: <strong>Phase II — Data Understanding</strong>.</li>
+</ul>
+<hr/>
+<h2>⭐ Top 10 Things to Remember for the Exam</h2>
+<ol>
+<li><strong>Phase I comes FIRST</strong> — every scenario asking "what should the PM do first?" → understand the <strong>business problem</strong>.</li>
+<li><strong>"Do we even need AI?"</strong> — rules/RPA beat AI for deterministic, repetitive tasks.</li>
+<li>Every valid AI use case maps to one of the <strong>7 Patterns of AI</strong> — memorize all seven with examples.</li>
+<li>Success = <strong>business KPIs and ROI</strong>, never accuracy alone.</li>
+<li>The <strong>Go/No-Go decision</strong> is a Phase I output (P-P-K-F: Problem, Pattern, KPI, Feasibility).</li>
+<li><strong>Think Big, Start Small, Iterate Often</strong> — reject big-bang answers.</li>
+<li>CPMAI = <strong>CRISP-DM + AI-specific + agile/iterative</strong> enhancements.</li>
+<li>Phase I <strong>repeats in every iteration</strong> — it is not one-time.</li>
+<li><strong>Ethics, bias, and regulation</strong> are assessed in Phase I, not left for the end.</li>
+<li>
+<h1>1 cause of AI project failure = <strong>poor business understanding</strong> ("solution looking for a problem").</h1>
+</li>
+</ol>
+<hr/>
+<p><em>Next topic: Phase II — Data Understanding.</em></p>

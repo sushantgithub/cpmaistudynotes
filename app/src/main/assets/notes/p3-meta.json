@@ -1,0 +1,72 @@
+{
+  "top10": [
+    "Phase III = biggest effort: 60–80% of the project.",
+    "Assess in II, fix in III — cleaning belongs here.",
+    "Median imputation beats mean when outliers exist.",
+    "Keep outliers in fraud/anomaly use cases.",
+    "Feature engineering with domain experts drives performance.",
+    "Labeling is costly — plan budget, guidelines, quality checks.",
+    "Train/Validation/Test — lock the test set.",
+    "Data leakage = inflated lab results, production failure.",
+    "Augmentation & synthetic data solve scarcity and privacy limits.",
+    "Build automated pipelines — CPMAI iterates."
+  ],
+  "revision": [
+    "Phase III = HOW to prepare data — cleaning, transformation, features, labels, splits.",
+    "Consumes 60–80% of total project effort — the biggest phase.",
+    "Cleaning: missing (impute), duplicates, errors, outliers, standardize .",
+    "Don't remove outliers in anomaly/fraud use cases.",
+    "Transformation: normalize, standardize, encode (one-hot), bin, aggregate .",
+    "Feature engineering (domain-driven new inputs) is a top performance driver.",
+    "Labeling enables supervised learning — plan cost, guidelines, quality checks.",
+    "Augmentation/synthetic data expand scarce datasets.",
+    "Split train/validation/test ; test set stays locked → avoid data leakage .",
+    "Fix class imbalance (oversample/undersample/weights).",
+    "Automate via pipelines (ETL/ELT) ; version and document everything."
+  ],
+  "knowledgeCheck": [
+    "Why does data preparation consume the majority of AI project effort?",
+    "List three ways to handle missing values and when each fits.",
+    "Explain the difference between normalization and standardization.",
+    "Give two feature engineering examples for a loan default model.",
+    "Why are labeling guidelines and quality checks necessary?",
+    "When would you choose synthetic data over real data?",
+    "Explain data leakage and one way to prevent it.",
+    "How would you handle a dataset with 0.5% fraud cases?",
+    "Why must the test set remain unseen during development?",
+    "What is the difference between a data warehouse and a data lake?"
+  ],
+  "examTips": [
+    {
+      "heading": "Memory Tricks",
+      "bullets": [
+        "\"80/80 rule\": ~80% of data is unstructured (Phase II) and up to ~80% of effort is data prep (Phase III).",
+        "Leakage = lying to yourself — great lab scores, dead in production.",
+        "Fraud/anomaly projects: outliers are gold , don't delete.",
+        "\"Assess in II, Fix in III.\""
+      ]
+    },
+    {
+      "heading": "Keywords",
+      "bullets": [
+        "\" Clean, transform, feature engineering, labeling \"",
+        "\" Most time-consuming phase \"",
+        "\" Train/validation/test split \", \" hold-out test set \"",
+        "\" Data leakage \", \" imputation \", \" augmentation \""
+      ]
+    },
+    {
+      "heading": "Differentiators",
+      "bullets": []
+    },
+    {
+      "heading": "Traps",
+      "bullets": [
+        "\"Spend most time on modeling\" → wrong; prep dominates.",
+        "\"Use the test set to improve the model\" → leakage , wrong.",
+        "\"Delete all outliers\" in a fraud scenario → wrong.",
+        "Doing prep manually with no pipeline → unsustainable for iterations."
+      ]
+    }
+  ]
+}

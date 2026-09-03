@@ -1,0 +1,722 @@
+[
+  {
+    "id": "core-1",
+    "front": "Order the nesting: AI, DL, ML",
+    "back": "AI ⊃ ML ⊃ DL",
+    "topicId": "core"
+  },
+  {
+    "id": "core-2",
+    "front": "What kind of AI exists today?",
+    "back": "Narrow (weak) AI",
+    "topicId": "core"
+  },
+  {
+    "id": "core-3",
+    "front": "AI outputs are ___, not guaranteed",
+    "back": "Probabilistic (predictions with confidence)",
+    "topicId": "core"
+  },
+  {
+    "id": "core-4",
+    "front": "Expand DIKUW",
+    "back": "Data, Information, Knowledge, Understanding, Wisdom",
+    "topicId": "core"
+  },
+  {
+    "id": "core-5",
+    "front": "Which DIKUW level is \"raw sensor values\"?",
+    "back": "Data",
+    "topicId": "core"
+  },
+  {
+    "id": "core-6",
+    "front": "Which DIKUW level chooses the best action?",
+    "back": "Wisdom",
+    "topicId": "core"
+  },
+  {
+    "id": "core-7",
+    "front": "ML type with labeled data?",
+    "back": "Supervised",
+    "topicId": "core"
+  },
+  {
+    "id": "core-8",
+    "front": "ML type discovering clusters?",
+    "back": "Unsupervised",
+    "topicId": "core"
+  },
+  {
+    "id": "core-9",
+    "front": "ML type learning from rewards?",
+    "back": "Reinforcement",
+    "topicId": "core"
+  },
+  {
+    "id": "core-10",
+    "front": "Data-centric AI improves what?",
+    "back": "The data (quality, labels, coverage)",
+    "topicId": "core"
+  },
+  {
+    "id": "core-11",
+    "front": "Roughly what share of AI projects fail?",
+    "back": "A large majority (~80%+)",
+    "topicId": "core"
+  },
+  {
+    "id": "core-12",
+    "front": "#1 category of failure causes?",
+    "back": "Business/data/management (not technology)",
+    "topicId": "core"
+  },
+  {
+    "id": "core-13",
+    "front": "CPMAI is built on which methodology?",
+    "back": "CRISP-DM (plus agile, AI-specific additions)",
+    "topicId": "core"
+  },
+  {
+    "id": "core-14",
+    "front": "Is CPMAI waterfall or iterative?",
+    "back": "Iterative",
+    "topicId": "core"
+  },
+  {
+    "id": "core-15",
+    "front": "A pincode standing in for community is called?",
+    "back": "A proxy variable (proxy bias)",
+    "topicId": "core"
+  },
+  {
+    "id": "p1-1",
+    "front": "What is the first phase of CPMAI?",
+    "back": "Phase I — Business Understanding",
+    "topicId": "p1"
+  },
+  {
+    "id": "p1-2",
+    "front": "What key question does Phase I answer?",
+    "back": "\"WHY are we doing this, and do we even need AI?\"",
+    "topicId": "p1"
+  },
+  {
+    "id": "p1-3",
+    "front": "CPMAI is built on which older methodology?",
+    "back": "CRISP-DM",
+    "topicId": "p1"
+  },
+  {
+    "id": "p1-4",
+    "front": "Name the 7 Patterns of AI",
+    "back": "Hyperpersonalization, Autonomous Systems, Predictive Analytics, Conversation & Human Interaction, Patterns & Anomalies, Recognition, Goal-Driven Systems",
+    "topicId": "p1"
+  },
+  {
+    "id": "p1-5",
+    "front": "Fraud detection maps to which pattern?",
+    "back": "Patterns & Anomalies",
+    "topicId": "p1"
+  },
+  {
+    "id": "p1-6",
+    "front": "Product recommendations map to which pattern?",
+    "back": "Hyperpersonalization",
+    "topicId": "p1"
+  },
+  {
+    "id": "p1-7",
+    "front": "Chatbots map to which pattern?",
+    "back": "Conversation & Human Interaction",
+    "topicId": "p1"
+  },
+  {
+    "id": "p1-8",
+    "front": "What tool suits repetitive rule-based tasks instead of AI?",
+    "back": "RPA (Robotic Process Automation)",
+    "topicId": "p1"
+  },
+  {
+    "id": "p1-9",
+    "front": "What is the CPMAI mantra set in Phase I?",
+    "back": "Think Big, Start Small, Iterate Often",
+    "topicId": "p1"
+  },
+  {
+    "id": "p1-10",
+    "front": "KPI vs model metric — which defines project success?",
+    "back": "Business KPI",
+    "topicId": "p1"
+  },
+  {
+    "id": "p1-11",
+    "front": "What formal decision is made in Phase I?",
+    "back": "Go / No-Go decision",
+    "topicId": "p1"
+  },
+  {
+    "id": "p1-12",
+    "front": "How often is Phase I performed?",
+    "back": "At the start of every iteration",
+    "topicId": "p1"
+  },
+  {
+    "id": "p1-13",
+    "front": "Traditional software is deterministic; AI is ___?",
+    "back": "Probabilistic",
+    "topicId": "p1"
+  },
+  {
+    "id": "p1-14",
+    "front": "Top reason AI projects fail?",
+    "back": "Poor/missing business understanding",
+    "topicId": "p1"
+  },
+  {
+    "id": "p1-15",
+    "front": "What comes immediately after Phase I?",
+    "back": "Phase II — Data Understanding",
+    "topicId": "p1"
+  },
+  {
+    "id": "p2-1",
+    "front": "What question does Phase II answer?",
+    "back": "\"WHAT data do we need, and is it good enough?\"",
+    "topicId": "p2"
+  },
+  {
+    "id": "p2-2",
+    "front": "What does GIGO stand for?",
+    "back": "Garbage In, Garbage Out",
+    "topicId": "p2"
+  },
+  {
+    "id": "p2-3",
+    "front": "Three broad data types?",
+    "back": "Structured, semi-structured, unstructured",
+    "topicId": "p2"
+  },
+  {
+    "id": "p2-4",
+    "front": "% of enterprise data that is unstructured?",
+    "back": "~80%",
+    "topicId": "p2"
+  },
+  {
+    "id": "p2-5",
+    "front": "Name the Big Data V's",
+    "back": "Volume, Variety, Velocity, Veracity (+Value)",
+    "topicId": "p2"
+  },
+  {
+    "id": "p2-6",
+    "front": "Six data quality dimensions?",
+    "back": "Accuracy, Completeness, Consistency, Timeliness, Validity, Uniqueness",
+    "topicId": "p2"
+  },
+  {
+    "id": "p2-7",
+    "front": "Missing values violate which dimension?",
+    "back": "Completeness",
+    "topicId": "p2"
+  },
+  {
+    "id": "p2-8",
+    "front": "Duplicates violate which dimension?",
+    "back": "Uniqueness",
+    "topicId": "p2"
+  },
+  {
+    "id": "p2-9",
+    "front": "What is EDA?",
+    "back": "Exploratory Data Analysis — initial statistical exploration",
+    "topicId": "p2"
+  },
+  {
+    "id": "p2-10",
+    "front": "Is data cleaned in Phase II?",
+    "back": "No — cleaning happens in Phase III",
+    "topicId": "p2"
+  },
+  {
+    "id": "p2-11",
+    "front": "What is PII?",
+    "back": "Personally Identifiable Information",
+    "topicId": "p2"
+  },
+  {
+    "id": "p2-12",
+    "front": "What decision ends Phase II?",
+    "back": "Data go/no-go",
+    "topicId": "p2"
+  },
+  {
+    "id": "p2-13",
+    "front": "Data trapped in one department is called?",
+    "back": "A data silo",
+    "topicId": "p2"
+  },
+  {
+    "id": "p2-14",
+    "front": "Whose needs define data requirements?",
+    "back": "The business problem from Phase I",
+    "topicId": "p2"
+  },
+  {
+    "id": "p2-15",
+    "front": "What is data lineage?",
+    "back": "The record of data's origin and transformations",
+    "topicId": "p2"
+  },
+  {
+    "id": "p3-1",
+    "front": "Which phase takes the most effort in AI projects?",
+    "back": "Phase III — Data Preparation (60–80%)",
+    "topicId": "p3"
+  },
+  {
+    "id": "p3-2",
+    "front": "What is imputation?",
+    "back": "Filling in missing values",
+    "topicId": "p3"
+  },
+  {
+    "id": "p3-3",
+    "front": "Best imputation for numeric data with outliers?",
+    "back": "Median",
+    "topicId": "p3"
+  },
+  {
+    "id": "p3-4",
+    "front": "What is one-hot encoding?",
+    "back": "Converting categories into binary numeric columns",
+    "topicId": "p3"
+  },
+  {
+    "id": "p3-5",
+    "front": "Normalization rescales data to what range?",
+    "back": "0 to 1",
+    "topicId": "p3"
+  },
+  {
+    "id": "p3-6",
+    "front": "What is feature engineering?",
+    "back": "Creating new informative input variables using domain knowledge",
+    "topicId": "p3"
+  },
+  {
+    "id": "p3-7",
+    "front": "What is labeling?",
+    "back": "Attaching correct answers for supervised learning",
+    "topicId": "p3"
+  },
+  {
+    "id": "p3-8",
+    "front": "Rotating/flipping images to expand data is called?",
+    "back": "Data augmentation",
+    "topicId": "p3"
+  },
+  {
+    "id": "p3-9",
+    "front": "Three dataset splits?",
+    "back": "Training, validation, test",
+    "topicId": "p3"
+  },
+  {
+    "id": "p3-10",
+    "front": "Which split must remain untouched until the end?",
+    "back": "Test set",
+    "topicId": "p3"
+  },
+  {
+    "id": "p3-11",
+    "front": "Test info leaking into training is called?",
+    "back": "Data leakage",
+    "topicId": "p3"
+  },
+  {
+    "id": "p3-12",
+    "front": "When should outliers be preserved?",
+    "back": "Anomaly/fraud detection use cases",
+    "topicId": "p3"
+  },
+  {
+    "id": "p3-13",
+    "front": "ETL stands for?",
+    "back": "Extract, Transform, Load",
+    "topicId": "p3"
+  },
+  {
+    "id": "p3-14",
+    "front": "Technique for class imbalance oversampling?",
+    "back": "SMOTE",
+    "topicId": "p3"
+  },
+  {
+    "id": "p3-15",
+    "front": "Why automate preparation as pipelines?",
+    "back": "CPMAI iterates — prep reruns every iteration and in production",
+    "topicId": "p3"
+  },
+  {
+    "id": "p4-1",
+    "front": "ML type that requires labeled data?",
+    "back": "Supervised learning",
+    "topicId": "p4"
+  },
+  {
+    "id": "p4-2",
+    "front": "ML type for finding hidden groups?",
+    "back": "Unsupervised (clustering)",
+    "topicId": "p4"
+  },
+  {
+    "id": "p4-3",
+    "front": "ML type using rewards and trial-error?",
+    "back": "Reinforcement learning",
+    "topicId": "p4"
+  },
+  {
+    "id": "p4-4",
+    "front": "Predicting a price is classification or regression?",
+    "back": "Regression",
+    "topicId": "p4"
+  },
+  {
+    "id": "p4-5",
+    "front": "Predicting spam/not-spam is?",
+    "back": "Classification",
+    "topicId": "p4"
+  },
+  {
+    "id": "p4-6",
+    "front": "Who sets hyperparameters?",
+    "back": "Humans (before training)",
+    "topicId": "p4"
+  },
+  {
+    "id": "p4-7",
+    "front": "High train accuracy + low test accuracy means?",
+    "back": "Overfitting",
+    "topicId": "p4"
+  },
+  {
+    "id": "p4-8",
+    "front": "Poor performance on train AND test means?",
+    "back": "Underfitting",
+    "topicId": "p4"
+  },
+  {
+    "id": "p4-9",
+    "front": "Two fixes for overfitting?",
+    "back": "Regularization, more data (also simpler model, dropout, early stopping)",
+    "topicId": "p4"
+  },
+  {
+    "id": "p4-10",
+    "front": "Which split is used for hyperparameter tuning?",
+    "back": "Validation set",
+    "topicId": "p4"
+  },
+  {
+    "id": "p4-11",
+    "front": "What is k-fold cross-validation?",
+    "back": "Rotating k train/validate splits and averaging results",
+    "topicId": "p4"
+  },
+  {
+    "id": "p4-12",
+    "front": "Most explainable classic algorithm?",
+    "back": "Decision tree",
+    "topicId": "p4"
+  },
+  {
+    "id": "p4-13",
+    "front": "Reusing a pre-trained model on your data is called?",
+    "back": "Transfer learning (fine-tuning)",
+    "topicId": "p4"
+  },
+  {
+    "id": "p4-14",
+    "front": "What model should be built first?",
+    "back": "A simple baseline",
+    "topicId": "p4"
+  },
+  {
+    "id": "p4-15",
+    "front": "Share of project effort in Phase IV?",
+    "back": "~10–15%",
+    "topicId": "p4"
+  },
+  {
+    "id": "p5-1",
+    "front": "Two levels of CPMAI evaluation?",
+    "back": "Technical and business (plus ethical checks)",
+    "topicId": "p5"
+  },
+  {
+    "id": "p5-2",
+    "front": "Formula for precision?",
+    "back": "TP / (TP + FP)",
+    "topicId": "p5"
+  },
+  {
+    "id": "p5-3",
+    "front": "Formula for recall?",
+    "back": "TP / (TP + FN)",
+    "topicId": "p5"
+  },
+  {
+    "id": "p5-4",
+    "front": "Formula for F1?",
+    "back": "2 × (P × R) / (P + R)",
+    "topicId": "p5"
+  },
+  {
+    "id": "p5-5",
+    "front": "Type I vs Type II error?",
+    "back": "Type I = false positive; Type II = false negative",
+    "topicId": "p5"
+  },
+  {
+    "id": "p5-6",
+    "front": "Metric for cancer screening priority?",
+    "back": "Recall",
+    "topicId": "p5"
+  },
+  {
+    "id": "p5-7",
+    "front": "Metric when false alarms are costly?",
+    "back": "Precision",
+    "topicId": "p5"
+  },
+  {
+    "id": "p5-8",
+    "front": "What is the accuracy paradox?",
+    "back": "High accuracy on imbalanced data while missing the rare class entirely",
+    "topicId": "p5"
+  },
+  {
+    "id": "p5-9",
+    "front": "AUC of 0.5 means?",
+    "back": "Random guessing",
+    "topicId": "p5"
+  },
+  {
+    "id": "p5-10",
+    "front": "Two regression metrics?",
+    "back": "MAE and RMSE (also R²)",
+    "topicId": "p5"
+  },
+  {
+    "id": "p5-11",
+    "front": "Who decides the classification threshold tradeoff?",
+    "back": "The business (cost of FP vs FN)",
+    "topicId": "p5"
+  },
+  {
+    "id": "p5-12",
+    "front": "What is shadow testing?",
+    "back": "Running the model in parallel without acting on outputs",
+    "topicId": "p5"
+  },
+  {
+    "id": "p5-13",
+    "front": "What must final metrics be computed on?",
+    "back": "The untouched test set",
+    "topicId": "p5"
+  },
+  {
+    "id": "p5-14",
+    "front": "Three possible Phase V outcomes?",
+    "back": "Deploy, iterate, stop",
+    "topicId": "p5"
+  },
+  {
+    "id": "p5-15",
+    "front": "What non-technical audits happen in Phase V?",
+    "back": "Fairness/bias and explainability reviews",
+    "topicId": "p5"
+  },
+  {
+    "id": "p6-1",
+    "front": "What is Phase VI also commonly called?",
+    "back": "Model Operationalization / MLOps stage",
+    "topicId": "p6"
+  },
+  {
+    "id": "p6-2",
+    "front": "Does deployment end the AI project?",
+    "back": "No — monitoring, retraining, governance continue",
+    "topicId": "p6"
+  },
+  {
+    "id": "p6-3",
+    "front": "Data drift vs concept drift?",
+    "back": "Inputs change vs input→output relationship changes",
+    "topicId": "p6"
+  },
+  {
+    "id": "p6-4",
+    "front": "Serving mode for millisecond decisions?",
+    "back": "Real-time (online) inference",
+    "topicId": "p6"
+  },
+  {
+    "id": "p6-5",
+    "front": "Serving mode for nightly bulk scoring?",
+    "back": "Batch inference",
+    "topicId": "p6"
+  },
+  {
+    "id": "p6-6",
+    "front": "Model runs on the device itself — called?",
+    "back": "Edge deployment",
+    "topicId": "p6"
+  },
+  {
+    "id": "p6-7",
+    "front": "Parallel run with no live impact?",
+    "back": "Shadow deployment",
+    "topicId": "p6"
+  },
+  {
+    "id": "p6-8",
+    "front": "Gradual rollout to small traffic first?",
+    "back": "Canary release",
+    "topicId": "p6"
+  },
+  {
+    "id": "p6-9",
+    "front": "Three retraining trigger styles?",
+    "back": "Scheduled, trigger-based (drift/alerts), continuous",
+    "topicId": "p6"
+  },
+  {
+    "id": "p6-10",
+    "front": "What is a model registry?",
+    "back": "Catalog of model versions and lifecycle stages",
+    "topicId": "p6"
+  },
+  {
+    "id": "p6-11",
+    "front": "What is a feature store?",
+    "back": "Central feature repository ensuring training-serving consistency",
+    "topicId": "p6"
+  },
+  {
+    "id": "p6-12",
+    "front": "What is training-serving skew?",
+    "back": "Production features differ from training features",
+    "topicId": "p6"
+  },
+  {
+    "id": "p6-13",
+    "front": "What five areas should monitoring cover?",
+    "back": "Performance, drift, business KPI, operations, fairness",
+    "topicId": "p6"
+  },
+  {
+    "id": "p6-14",
+    "front": "What is human-in-the-loop?",
+    "back": "Human review/approval inside the AI decision flow",
+    "topicId": "p6"
+  },
+  {
+    "id": "p6-15",
+    "front": "Where do production learnings go in CPMAI?",
+    "back": "Into the next iteration — back to Phase I",
+    "topicId": "p6"
+  },
+  {
+    "id": "pat-1",
+    "front": "How many patterns of AI are there?",
+    "back": "Seven",
+    "topicId": "pat"
+  },
+  {
+    "id": "pat-2",
+    "front": "Netflix recommendations = which pattern?",
+    "back": "Hyperpersonalization",
+    "topicId": "pat"
+  },
+  {
+    "id": "pat-3",
+    "front": "Self-driving car's overall pattern?",
+    "back": "Autonomous Systems (combining others)",
+    "topicId": "pat"
+  },
+  {
+    "id": "pat-4",
+    "front": "Demand forecasting = which pattern?",
+    "back": "Predictive Analytics & Decision Support",
+    "topicId": "pat"
+  },
+  {
+    "id": "pat-5",
+    "front": "Voice assistant = which pattern?",
+    "back": "Conversation & Human Interaction",
+    "topicId": "pat"
+  },
+  {
+    "id": "pat-6",
+    "front": "Credit card fraud detection = which pattern?",
+    "back": "Patterns & Anomalies",
+    "topicId": "pat"
+  },
+  {
+    "id": "pat-7",
+    "front": "Reading text from scanned cheques = ?",
+    "back": "Recognition (OCR)",
+    "topicId": "pat"
+  },
+  {
+    "id": "pat-8",
+    "front": "AlphaGo-style game AI = ?",
+    "back": "Goal-Driven Systems",
+    "topicId": "pat"
+  },
+  {
+    "id": "pat-9",
+    "front": "\"Segment of one\" belongs to which pattern?",
+    "back": "Hyperpersonalization",
+    "topicId": "pat"
+  },
+  {
+    "id": "pat-10",
+    "front": "Which pattern typically uses reinforcement learning?",
+    "back": "Goal-Driven Systems",
+    "topicId": "pat"
+  },
+  {
+    "id": "pat-11",
+    "front": "Which pattern deals mostly with unstructured media?",
+    "back": "Recognition",
+    "topicId": "pat"
+  },
+  {
+    "id": "pat-12",
+    "front": "Sentiment analysis = which pattern?",
+    "back": "Conversation & Human Interaction",
+    "topicId": "pat"
+  },
+  {
+    "id": "pat-13",
+    "front": "Market-basket \"bread→butter\" analysis = ?",
+    "back": "Patterns & Anomalies (association)",
+    "topicId": "pat"
+  },
+  {
+    "id": "pat-14",
+    "front": "Can a use case combine patterns?",
+    "back": "Yes — most real systems do",
+    "topicId": "pat"
+  },
+  {
+    "id": "pat-15",
+    "front": "Use case matches no pattern — conclusion?",
+    "back": "Probably not an AI problem (use rules/RPA/BI)",
+    "topicId": "pat"
+  }
+]

@@ -1,0 +1,70 @@
+{
+  "top10": [
+    "AI ⊃ ML ⊃ DL ; today's AI is narrow and probabilistic .",
+    "AI projects are data projects — data-centric beats model-centric.",
+    "DIKUW — climb from raw data toward (human-held) wisdom.",
+    "Labels→Supervised, none→Unsupervised, rewards→Reinforcement.",
+    "~80%+ failure rate , driven by business/data/management causes.",
+    "Each failure cause has a CPMAI phase antidote — know the mapping.",
+    "CPMAI = CRISP-DM + agile + AI-specific , six phases, iterative .",
+    "Think Big, Start Small, Iterate Often — reject big-bang answers.",
+    "Responsible AI in every phase — fairness, explainability, privacy, oversight.",
+    "Proxy variables smuggle bias — audit features and subgroups."
+  ],
+  "revision": [
+    "AI ⊃ ML ⊃ Deep Learning ; all current AI = narrow ; AI is probabilistic .",
+    "DIKUW: Data → Information → Knowledge → Understanding → Wisdom; wisdom stays human.",
+    "ML types: Supervised (labels) / Unsupervised (none) / Semi-supervised / Reinforcement (rewards) .",
+    "Data-centric > model-centric : fix data before chasing algorithms (GIGO).",
+    "~80%+ AI projects fail — for business/data/management reasons, not tech.",
+    "Failure causes ↔ CPMAI phase shields (no KPI→I, data surprise→II, prep underrated→III, wrong metric→V, decay→VI, big-bang→iterate).",
+    "CPMAI = CRISP-DM + AI-specific + agile ; six phases; iterative ; vendor-neutral.",
+    "Think Big, Start Small, Iterate Often.",
+    "Responsible AI (fairness, explainability, accountability, privacy, safety, human oversight) runs through every phase ; watch proxy variables ."
+  ],
+  "knowledgeCheck": [
+    "Explain AI vs ML vs deep learning with one example of each.",
+    "Why does the probabilistic nature of AI change stakeholder management?",
+    "Walk a fraud-alert scenario up all five DIKUW levels.",
+    "Classify these into ML types: churn labels model; customer clusters; warehouse-robot reward learning; 100 labeled + 100,000 unlabeled documents.",
+    "Argue for data-centric AI using the GIGO principle.",
+    "List five common AI failure causes and the CPMAI phase that guards each.",
+    "How does CPMAI extend CRISP-DM?",
+    "Why is agile alone insufficient for AI projects?",
+    "Name the responsible-AI principles and one practice for each of any three.",
+    "Define proxy-variable bias and one detection method."
+  ],
+  "examTips": [
+    {
+      "heading": "Memory Tricks",
+      "bullets": [
+        "Nesting dolls: AI (biggest) → ML → DL (smallest).",
+        "DIKUW ladder story: numbers → report → pattern → why → best action.",
+        "\"Fix the data first\" — when a scenario shows messy data + algorithm-hopping, the data-centric answer wins.",
+        "Failure question reflex: the cause is business/data/management ~always — never \"the algorithm was unlucky.\""
+      ]
+    },
+    {
+      "heading": "Keywords",
+      "bullets": [
+        "\" AI projects are data projects \"",
+        "\" Narrow AI \", \" probabilistic \"",
+        "\" Iterative , built on CRISP-DM \"",
+        "\" Responsible/trustworthy AI \", \" bias \", \" explainability \""
+      ]
+    },
+    {
+      "heading": "Differentiators",
+      "bullets": []
+    },
+    {
+      "heading": "Traps",
+      "bullets": [
+        "\"Buy a better algorithm to fix bad data\" → wrong.",
+        "\"AI will fully replace human wisdom/judgment\" → wrong (top of DIKUW stays human).",
+        "\"Run CPMAI phases once, sequentially, then done\" → wrong (iterate).",
+        "\"Ethics review only before launch\" → wrong (every phase)."
+      ]
+    }
+  ]
+}

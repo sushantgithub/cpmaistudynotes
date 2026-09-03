@@ -1,0 +1,114 @@
+{
+  "patternScenarios": [
+    {
+      "id": "ps1",
+      "prompt": "An insurer prices each customer a unique premium using driving-app telematics and claims history.",
+      "correctPatternId": 1,
+      "hint": "Segment of one — tailored to the individual."
+    },
+    {
+      "id": "ps2",
+      "prompt": "A drone inspects power lines, chooses flight paths, and flags damaged insulators without a pilot.",
+      "correctPatternId": 2,
+      "hint": "It perceives, decides, and acts in the world."
+    },
+    {
+      "id": "ps3",
+      "prompt": "A hospital estimates 30-day readmission risk so a nurse can schedule follow-ups.",
+      "correctPatternId": 3,
+      "hint": "Forecast + a human still decides."
+    },
+    {
+      "id": "ps4",
+      "prompt": "A bank chatbot answers balance questions and routes angry callers after sentiment scoring.",
+      "correctPatternId": 4,
+      "hint": "Language and conversation are the core capability."
+    },
+    {
+      "id": "ps5",
+      "prompt": "Nightly jobs flag employee badge-swipes that don't match that person's usual hours and doors.",
+      "correctPatternId": 5,
+      "hint": "Deviation from a baseline — not reading a photo."
+    },
+    {
+      "id": "ps6",
+      "prompt": "Customs software reads passport MRZ codes from booth camera stills.",
+      "correctPatternId": 6,
+      "hint": "Extracting identity from an image is Recognition / OCR."
+    },
+    {
+      "id": "ps7",
+      "prompt": "A traffic-light controller learns timing policies in simulation, rewarded for fewer stops.",
+      "correctPatternId": 7,
+      "hint": "Trial-and-error with a reward is Goal-Driven."
+    },
+    {
+      "id": "ps8",
+      "prompt": "A retailer finds that diapers and beer sell together on Friday nights and uses that association for shelf layout.",
+      "correctPatternId": 5,
+      "hint": "Market-basket association lives in Patterns & Anomalies."
+    },
+    {
+      "id": "ps9",
+      "prompt": "Speech-to-text turns clinic dictation into a draft EHR note.",
+      "correctPatternId": 6,
+      "hint": "Unstructured audio → identified text."
+    },
+    {
+      "id": "ps10",
+      "prompt": "A music app builds a different Discover mix for every listener.",
+      "correctPatternId": 1,
+      "hint": "Hyperpersonalization, not Conversation, if there is no dialogue."
+    }
+  ],
+  "phaseScenarios": [
+    {
+      "id": "ph1",
+      "prompt": "The sponsor wants 'AI like the demo we saw' but cannot name a KPI or who is harmed if it is wrong.",
+      "correctPhase": 1,
+      "hint": "No business problem, success metric, or ethics framing yet."
+    },
+    {
+      "id": "ph2",
+      "prompt": "You discover the 'labels' are free-text comments from 2014 with no rubric, covering 12% of cases.",
+      "correctPhase": 2,
+      "hint": "Can this data even support the question?"
+    },
+    {
+      "id": "ph3",
+      "prompt": "A teammate scaled every numeric column using min/max of the entire CSV, then split train/test.",
+      "correctPhase": 3,
+      "hint": "Preparation and leakage-safe splits."
+    },
+    {
+      "id": "ph4",
+      "prompt": "The data scientist has tried six architectures this week and wants to keep peeking at the holdout until one 'wins'.",
+      "correctPhase": 4,
+      "hint": "Model development governance — protect the test set."
+    },
+    {
+      "id": "ph5",
+      "prompt": "Accuracy is 98.9%. Fraud is 1.1% of rows. Leadership wants to go live tomorrow.",
+      "correctPhase": 5,
+      "hint": "Evaluate with the right metrics and a business Go/No-Go."
+    },
+    {
+      "id": "ph6",
+      "prompt": "After launch, precision slowly dies as a new fraud tactic appears. Nobody owns retraining.",
+      "correctPhase": 6,
+      "hint": "Drift, monitoring, and operational ownership."
+    },
+    {
+      "id": "ph7",
+      "prompt": "Legal asks whether a protected class is encoded via ZIP code before any model is trained.",
+      "correctPhase": 1,
+      "hint": "Responsible AI constraints belong in Business Understanding — and continue later — but the question is being asked at the start."
+    },
+    {
+      "id": "ph8",
+      "prompt": "You compare a champion production model to a challenger on 5% of live traffic with a kill switch.",
+      "correctPhase": 6,
+      "hint": "Champion-challenger is operationalization."
+    }
+  ]
+}
